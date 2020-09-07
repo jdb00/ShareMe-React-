@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
-import logo from './sharemelogo.svg';
+import { Router, Link, navigate} from '@reach/router'
 import './App.css';
+
+import RouteSplashPage from './RouteSplashPage'
+import RouteLogIn from './RouteLogIn'
+import RouteSignUp from './RouteSignUp'
+import RouteUpdateShare from './RouteUpdateShare'
+
 
 class App extends Component {
     constructor(props) {
@@ -10,25 +16,14 @@ class App extends Component {
     render() {
         return (
             <div className="app">
-                <div className="splashPage">
-                    <header>
-
-                    </header>
-                    <main>
-                        <div className="logo">
-                            <img src={logo} alt="" />
-                        </div>
-                        <div className="signin-signup">
-                            <button type="submit" class="btn btn-primary">Sign in</button>
-                            <button type="submit" class="btn btn-primary">Sign up</button>
-                        </div>
-                    </main>
-                    <footer>
-
-                    </footer>
-                </div>
+                <Router>
+                    <RouteSplashPage path="splash" />
+                    <RouteLogIn  path="users/authenticate"/>
+                    <RouteSignUp path="users/create"/>
+                    <RouteUpdateShare path="bla"/>
+                </Router>
             </div>
-        );
+        )
     }
 }
 

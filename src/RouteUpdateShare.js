@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import logo from './sharemelogo.svg';
 import './App.css';
 
-class UpdateShare extends Component {
+class RouteUpdateShare extends Component {
     constructor(props) {
         super(props)
     }
@@ -26,19 +25,19 @@ class UpdateShare extends Component {
                     </div>
                     <form>
                         <div className="form-group">
-                            <label for="exampleInputEmail1">Update title</label>
-                            <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                            <label for="updatetitle">Update title</label>
+                            <input type="text" className="form-control" id="updatetitle" aria-describedby="updatetitle"
                                 placeholder="Update title of share"/>
                         </div>
     
                         <div className="form-group">
-                            <label for="exampleInputPassword1">Update description</label>
-                            <textarea name="comment" id="" cols="30" rows="10">Update comment</textarea>
+                            <label for="updatedescription">Update description</label>
+                            <textarea name="comment" id="updatedescription" cols="30" rows="10">Update comment</textarea>
                         </div>
     
                         <div className="form-group">
-                            <label for="exampleInputPassword1">Update image</label>
-                            <input type="file" className="form-control" id="exampleInputPassword1" placeholder="Update photo"/>
+                            <label for="updateimage">Update image</label>
+                            <input type="file" className="form-control" id="updateimage" placeholder="Update photo"/>
                         </div>
     
                         <button type="submit" className="btn btn-primary">Update</button>
@@ -55,4 +54,4 @@ class UpdateShare extends Component {
     }
 }
 
-export default UpdateShare
+export default RouteUpdateShare
