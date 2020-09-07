@@ -15,11 +15,11 @@ class RouteSplashPage extends Component {
                     </header>
                     <main>
                         <div className="logo">
-                            <img src={logo} alt="" />
+                            <img src='../assets/ShareMe Logo 1.svg' alt="" />
                         </div>
                         <div className="signin-signup">
-                            <button type="submit" class="btn btn-primary">Sign in</button>
-                            <button type="submit" class="btn btn-primary">Sign up</button>
+                            <button type="submit" className="btn btn-primary">Sign in</button>
+                            <button type="submit" className="btn btn-primary">Sign up</button>
                         </div>
                     </main>
                     <footer>

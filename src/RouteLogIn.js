@@ -12,7 +12,7 @@ class RouteLogIn extends Component {
                 <div className="signIn">
                     <header>
                         <div className="logo">
-                            <img src='../ShareMe Logo 1.svg' alt="" />
+                        <img src='../assets/ShareMe Logo 1.svg' alt="" />
                         </div>
                     </header>
                     <main>
@@ -23,20 +23,20 @@ class RouteLogIn extends Component {
                         <form>
 
                             <div className="form-group">
-                                <label for="email"></label>
+                                <label htmlFor="email"></label>
                                 <input type="email" className="form-control" id="email" aria-describedby="email"
                                     placeholder="Email" />
                             </div>
 
                             <div className="form-group">
-                                <label for="password"></label>
+                                <label htmlFor="password"></label>
                                 <input type="text" className="form-control" id="password" aria-describedby="password"
                                     placeholder="Password" />
                             </div>
 
                         </form>
 
-                        <a href="New Shares.html"><button type="submit" className="btn btn-primary">Sign In</button></a>
+                        <button type="submit" className="btn btn-primary">Sign In</button>
 
                     </main>
                     <footer>

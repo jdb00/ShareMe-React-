@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './sharemelogo.svg';
 import './App.css';
 
 class UserPosts extends Component {
