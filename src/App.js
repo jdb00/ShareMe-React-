@@ -5,7 +5,11 @@ import './App.css';
 import RouteSplashPage from './RouteSplashPage'
 import RouteLogIn from './RouteLogIn'
 import RouteSignUp from './RouteSignUp'
+import RouteAddShare from './RouteAddShare'
+import RouteNewShare from './RouteNewShare'
 import RouteUpdateShare from './RouteUpdateShare'
+import RouteUserPosts from './RouteUserPosts'
+import RouteSettings from './RouteSettings'
 
 
 class App extends Component {
@@ -20,7 +24,11 @@ class App extends Component {
                     <RouteSplashPage path="splash" />
                     <RouteLogIn  path="users/authenticate"/>
                     <RouteSignUp path="users/create"/>
-                    <RouteUpdateShare path="bla"/>
+                    <RouteAddShare path="user/add/comment"/>
+                    <RouteNewShare path="user/comment"/>
+                    <RouteUpdateShare path="user/update"/>
+                    <RouteUserPosts path="user/posts"/>
+                    <RouteSettings path="user/settings"/>
                 </Router>
             </div>
         )

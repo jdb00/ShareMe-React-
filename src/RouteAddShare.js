@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
-class RouteUpdateShare extends Component {
+class RouteAddShare extends Component {
     constructor(props) {
         super(props)
     }
@@ -19,28 +19,27 @@ class RouteUpdateShare extends Component {
                         </div>
                     </header>
                     <main>
-                        <h2>Update share</h2>
+                        <h2>Add share</h2>
                         <div className="logo">
-                            <img src="assets/Vector.png" alt="" />
+                            <img src="../assets/Vector.png" alt="" />
                         </div>
                         <form>
                             <div className="form-group">
-                                <label htmlFor="update-title">Update title</label>
-                                <input type="text" className="form-control" id="updatetitle" aria-describedby="update-title"
-                                    placeholder="Update title of share" />
+                                <label htmlFor="title">Title of your share</label>
+                                <input type="text" className="form-control" id="title" aria-describedby="title" placeholder="Enter the title of the share" />
                             </div>
 
                             <div className="form-group">
-                                <label htmlFor="update-description">Update description</label>
-                                <textarea name="comment" defaultValue='Update comment' id="update-description" cols="30" rows="10"></textarea>
+                                <label htmlFor="comment">Description of your share</label>
+                                <textarea name="comment" id="" cols="30" rows="10">Enter a comment</textarea>
                             </div>
 
                             <div className="form-group">
-                                <label htmlFor="update-image">Update image</label>
-                                <input type="file" className="form-control" id="update-image" placeholder="Update photo" />
+                                <label htmlFor="pics">Add your image</label>
+                                <input type="file" className="form-control" id="pics" placeholder="Add a photo" />
                             </div>
 
-                            <button type="submit" className="btn btn-primary">Update</button>
+                            <button type="submit" className="btn btn-primary">Add</button>
                         </form>
                     </main>
                     <footer>
@@ -54,4 +53,4 @@ class RouteUpdateShare extends Component {
     }
 }
 
-export default RouteUpdateShare
+export default RouteAddShare
