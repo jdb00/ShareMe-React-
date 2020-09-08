@@ -6,6 +6,7 @@ import RouteSplashPage from './RouteSplashPage'
 import RouteLogIn from './RouteLogIn'
 import RouteSignUp from './RouteSignUp'
 import RouteUpdateShare from './RouteUpdateShare'
+import RouteShareModal from './RouteShareModal'
 
 
 class App extends Component {
@@ -21,6 +22,7 @@ class App extends Component {
                     <RouteLogIn  path="users/authenticate"/>
                     <RouteSignUp path="users/create"/>
                     <RouteUpdateShare path="bla"/>
+                    <RouteShareModal path="feed/share/"/>
                 </Router>
             </div>
         )
