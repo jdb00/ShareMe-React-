@@ -10,6 +10,7 @@ import RouteNewShare from './RouteNewShare'
 import RouteUpdateShare from './RouteUpdateShare'
 import RouteUserPosts from './RouteUserPosts'
 import RouteSettings from './RouteSettings'
+import RouteShareModal from './RouteShareModal';
 
 
 class App extends Component {
@@ -29,6 +30,7 @@ class App extends Component {
                     <RouteUpdateShare path="user/update"/>
                     <RouteUserPosts path="user/posts"/>
                     <RouteSettings path="user/settings"/>
+                    <RouteShareModal path="feed/share/:id"/>
                 </Router>
             </div>
         )
