@@ -7,6 +7,8 @@ $bg-color: #0D0D0D;
 $logo-color: #0597F2;
 $text-color: #E5E5E5;
 $shadow-color: #0CF25D;
+$lighter-color: #1D1D1D;
+$light-color: white;
 
 
 @mixin header {
@@ -406,4 +408,145 @@ body{
             @include footer;
         }
     }
+
+    
 }
+
+.share-modal{
+    background-color: $bg-color;
+    min-width: 100vw;
+    height: 100vh;
+    .fa-times{
+        color: $logo-color;
+        font-size: 2em;
+        position:absolute;
+        right: .5em;
+        top: .25em;
+    }
+    .share-image{
+        width: 100%;
+        max-height: 25vh;
+        object-fit: cover;
+        border-radius: 0 0 .5em .5em;
+    }
+    .content{
+        color: $light-color;
+        border-radius: .5em;
+        width: 100%;
+        margin: auto;
+        padding: 1em;        
+    }
+    .content::after{
+        content:"";
+        display: block;
+        margin-top: 1em;
+        border-bottom: 1px $logo-color solid;
+    }
+
+    .body-text{
+        border-radius: .5em;
+        background-color: $lighter-color;
+        padding: .5em .75em;
+    }
+
+    .share-info{
+        display: flex;
+        justify-content: space-between;
+        span{
+            font-weight: 600;
+        }
+    }
+
+    h1{
+        padding: 0;
+        margin: 0;
+        font-weight: 500;
+        font-size: 1.5em;
+    }
+
+    p{
+        font-weight: 300;
+    }
+
+} 
+
+.comments{
+    width: 80%;
+    margin: auto;
+    overflow-y: auto;
+    .comment{
+        margin-bottom: 1em;
+    }
+    .comment-info{
+        display: flex;
+        position: relative;
+        color: $light-color;
+    }
+    .user-image{
+        height: 1.75em;
+        width: 1.75em;
+        border: thin $logo-color solid;
+        border-radius: 50%;
+    }
+    .user-name{
+        font-size: 1em;
+        padding: 0;
+        margin: 0;
+        padding: .25em;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .comment-body{
+        display: flex;
+        justify-content: space-between;
+        p{
+            margin: .25em 0;
+            color: $light-color;
+        }
+    }
+    .comment::after{
+        content: '';
+        display: block;
+        margin-top: .5em;
+        border-bottom: thin white solid;
+    }
+}
+
+.add-comment{
+    bottom: 0;
+    min-height: 4.5em;
+    left: 0;
+    width: 100vw;
+    padding-bottom: .5em;
+    background-color: $lighter-color;
+    .add-input{
+        display: flex;
+        background-color: $light-color;
+        margin: auto;
+        padding: .25em .75em;
+        width: 80%;
+        border-radius: .5em;
+    }
+    #comment-input{
+        padding: .5em 1em;
+        width: 80%;
+        border: 0;
+        display: block;
+        margin: auto;
+    }
+    i{
+        align-self: center;
+        color: $logo-color;
+        font-size: 2em;
+        padding: 0 .5em;
+        text-align: center;
+    }
+}
+
+.add-comment::before{
+    content: '';
+    margin-bottom: 1em;
+    display: block;
+    border-top: thin white solid;
+}
+
