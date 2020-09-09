@@ -69,7 +69,7 @@ $light-color: white;
 
             label{
                 color: $text-color;
-                font-weight: 100;
+                font-weight: 400;
                 font-size: .75em;
                 text-transform: uppercase;
                 letter-spacing: .15em;
@@ -85,14 +85,14 @@ $light-color: white;
                 background-color: rgba($color: $logo-color, $alpha: .25);
                 font-size: .75em;
                 color: rgba($color: $text-color, $alpha: .5);
-                font-weight: 100;
+                font-weight: 400;
                 padding: 1em;
             }
 
             ::placeholder{
                 font-size: .75em;
                 color: rgba($color: $text-color, $alpha: .5);
-                font-weight: 100;
+                font-weight: 400;
             }
         }
 }

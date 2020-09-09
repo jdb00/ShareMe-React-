@@ -319,7 +319,7 @@ body {
 
 .app .addUpdateShare main form .form-group label {
   color: #E5E5E5;
-  font-weight: 100;
+  font-weight: 400;
   font-size: .75em;
   text-transform: uppercase;
   letter-spacing: .15em;
@@ -335,32 +335,32 @@ body {
   background-color: rgba(5, 151, 242, 0.25);
   font-size: .75em;
   color: rgba(229, 229, 229, 0.5);
-  font-weight: 100;
+  font-weight: 400;
   padding: 1em;
 }
 
 .app .addUpdateShare main form .form-group ::-webkit-input-placeholder {
   font-size: .75em;
   color: rgba(229, 229, 229, 0.5);
-  font-weight: 100;
+  font-weight: 400;
 }
 
 .app .addUpdateShare main form .form-group :-ms-input-placeholder {
   font-size: .75em;
   color: rgba(229, 229, 229, 0.5);
-  font-weight: 100;
+  font-weight: 400;
 }
 
 .app .addUpdateShare main form .form-group ::-ms-input-placeholder {
   font-size: .75em;
   color: rgba(229, 229, 229, 0.5);
-  font-weight: 100;
+  font-weight: 400;
 }
 
 .app .addUpdateShare main form .form-group ::placeholder {
   font-size: .75em;
   color: rgba(229, 229, 229, 0.5);
-  font-weight: 100;
+  font-weight: 400;
 }
 
 .app .addUpdateShare main form button {
@@ -591,7 +591,7 @@ body {
 
 .app .settings main form .form-group label {
   color: #E5E5E5;
-  font-weight: 100;
+  font-weight: 400;
   font-size: .75em;
   text-transform: uppercase;
   letter-spacing: .15em;
@@ -607,32 +607,32 @@ body {
   background-color: rgba(5, 151, 242, 0.25);
   font-size: .75em;
   color: rgba(229, 229, 229, 0.5);
-  font-weight: 100;
+  font-weight: 400;
   padding: 1em;
 }
 
 .app .settings main form .form-group ::-webkit-input-placeholder {
   font-size: .75em;
   color: rgba(229, 229, 229, 0.5);
-  font-weight: 100;
+  font-weight: 400;
 }
 
 .app .settings main form .form-group :-ms-input-placeholder {
   font-size: .75em;
   color: rgba(229, 229, 229, 0.5);
-  font-weight: 100;
+  font-weight: 400;
 }
 
 .app .settings main form .form-group ::-ms-input-placeholder {
   font-size: .75em;
   color: rgba(229, 229, 229, 0.5);
-  font-weight: 100;
+  font-weight: 400;
 }
 
 .app .settings main form .form-group ::placeholder {
   font-size: .75em;
   color: rgba(229, 229, 229, 0.5);
-  font-weight: 100;
+  font-weight: 400;
 }
 
 .app .settings main form .form-group {

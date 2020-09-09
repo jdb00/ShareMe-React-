@@ -27,12 +27,12 @@ class RouteAddShare extends Component {
                         <form>
                             <div className="form-group">
                                 <label htmlFor="title">Title of your share</label>
-                                <input type="text" className="form-control" id="title" aria-describedby="title" placeholder="Enter the title of the share" />
+                                <input type="text" defaultValue='Enter the title of the share' className="form-control" id="title" aria-describedby="title"/>
                             </div>
 
                             <div className="form-group">
                                 <label htmlFor="comment">Description of your share</label>
-                                <textarea name="comment" id="" cols="30" rows="10">Enter a comment</textarea>
+                                <textarea defaultValue='Enter a comment' name="comment" id="" cols="30" rows="10"></textarea>
                             </div>
 
                             <div className="form-group">
