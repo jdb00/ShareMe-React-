@@ -853,4 +853,56 @@ body {
   display: block;
   border-top: thin white solid;
 }
+
+/* newcard css */
+
+.app .box {
+  margin: 60px auto 0;
+  width: 450px;
+  height: 100px;
+  display: flex;
+  background-color: #1d1d1d;
+  color: white;
+  border-radius: 0.3em;
+}
+.app .box .left {
+  display: flex;
+  align-items: center;
+}
+.app .box .left img {
+  width: 80px;
+  height: 60px;
+  margin: 0 10px;
+}
+.app .box .right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  margin-right: 10px;
+}
+.app .box .right .top {
+  display: flex;
+  justify-content: space-between;
+}
+.app .box .right .line {
+  height: 1px;
+  margin: 10px 0;
+  background-color: #0597F2;
+}
+.app .box .right .bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.app .box .right .bottom img {
+  width: 20px;
+  height: 20px;
+}
+
+.button i{
+  color:#0597F2;
+  padding-left: 1em;
+}
+
 /*# sourceMappingURL=App.css.map */
