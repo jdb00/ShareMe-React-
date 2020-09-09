@@ -23,7 +23,6 @@ class RouteSignUp extends Component {
             email: formData.get('email-input'),
             password: this.validatePassword((formData.get('password-input')), (formData.get('confirm-password')))
         }
-        console.log(data.password)
         if(data.password !== null){
             var users = API.getUsers()
             API.addUser(data).then(res => navigate('/users/authenticate'))  
