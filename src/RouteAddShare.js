@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {navigate} from '@reach/router'
+import Footer from './footer'
 import API from './API'
 
 
@@ -57,9 +58,7 @@ class RouteAddShare extends Component {
                         </form>
                     </main>
                     <footer>
-                        <i className="fas fa-home"></i>
-                        <i className="fas fa-plus"></i>
-                        <i className="fas fa-cog"></i>
+                        <Footer />
                     </footer>
                 </div>
             </div>

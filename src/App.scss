@@ -108,12 +108,12 @@ $light-color: white;
 }
 
 @mixin footer {
-        min-height: 3em;
+        height: 3em;
         border-radius: .5em .5em 0em 0em;
         background-color: #00283e;
         display: flex;
         justify-content: space-between;
-        align-content: center;
+        align-items: center;
         position: fixed;
         bottom: 0;
         left: 0;
