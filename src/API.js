@@ -9,13 +9,15 @@ var API = {
     getUser : (id) => {
         return axios.get(urlPrefix+'/users'+id)
     },
-    addUser : (id, data) => {
-        return axios.post(urlPrefix+'/users'+id,data)
+    addUser : (data) => {
+        return axios.post(urlPrefix+'/users/',data)
     },
     deleteUser : (id) => {
         return axios.delete(urlPrefix+'/users'+id)
-    }
-
-    
-
+    },
+    addShare : (data) => {
+        return axios.post(urlPrefix+'/shares',data)
+    },
 }
+
+export default API
