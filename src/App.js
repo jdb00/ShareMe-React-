@@ -22,14 +22,14 @@ class App extends Component {
         return (
             <div className="app">
                 <Router>
-                    <RouteSplashPage path="splash" />
+                    <RouteSplashPage path="splash"/>
                     <RouteLogIn  path="users/authenticate"/>
                     <RouteSignUp path="users/create"/>
-                    <RouteAddShare path="user/add/comment"/>
-                    <RouteNewShare path="user/comment"/>
-                    <RouteUpdateShare path="user/update"/>
-                    <RouteUserPosts path="user/posts"/>
                     <RouteSettings path="user/settings"/>
+                    <RouteUserPosts path="user/posts"/>
+                    <RouteAddShare path="shares/add"/>
+                    <RouteNewShare path="shares"/>
+                    <RouteUpdateShare path="shares/update"/>
                     <RouteShareModal path="feed/share/:id"/>
                 </Router>
             </div>
