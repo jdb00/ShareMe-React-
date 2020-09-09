@@ -1,9 +1,33 @@
-import React, { Component } from 'react'
-import './App.css'
+import React, { Component } from 'react';
+import './App.css';
+import API from './API';
+import { navigate } from '@reach/router';
 
 class RouteSignUp extends Component {
-    constructor(props) {
-        super(props)
+
+    validatePassword = (password, password2) => {
+        if(password === password2){
+            return password
+        }
+        else{
+            return null
+        }
+    }
+
+    handleFormSubmit = (e) =>{
+        e.preventDefault();
+
+        var formData = new FormData(this.form);
+        var data = {
+            name: formData.get('name-input'),
+            email: formData.get('email-input'),
+            password: this.validatePassword((formData.get('password-input')), (formData.get('confirm-password')))
+        }
+        console.log(data.password)
+        if(data.password !== null){
+            var users = API.getUsers()
+            API.addUser(data).then(res => navigate('/users/authenticate'))  
+        }
     }
 
     render() {
@@ -20,34 +44,33 @@ class RouteSignUp extends Component {
                             <h1>Sign up</h1>
                             <img src="../assets/signup-faded.svg" alt="" />
                         </div>
-                        <form>
+                        <form onSubmit={this.handleFormSubmit} ref={(el) => {this.form = el}}>
                             <div className="form-group">
                                 <label htmlFor="name"></label>
-                                <input type="text" className="form-control" id="name" aria-describedby="name"
+                                <input type="text" className="form-control" name="name-input" id="name-input" aria-describedby="name"
                                     placeholder="Name" />
                             </div>
 
                             <div className="form-group">
                                 <label htmlFor="email"></label>
-                                <input type="email" className="form-control" id="email" aria-describedby="email"
+                                <input type="email" className="form-control" name="email-input" id="email-input" aria-describedby="email"
                                     placeholder="Email" />
                             </div>
 
                             <div className="form-group">
                                 <label htmlFor="password"></label>
-                                <input type="email" className="form-control" id="password" aria-describedby="password"
+                                <input type="password" className="form-control" name="password-input" id="password-input" aria-describedby="password"
                                     placeholder="Password" />
                             </div>
 
                             <div className="form-group">
                                 <label htmlFor="confirm-password"></label>
-                                <input type="email" className="form-control" id="confirm-password" aria-describedby="confirm-password"
+                                <input type="password" className="form-control" name="confirm-password" id="confirm-password" aria-describedby="confirm-password"
                                     placeholder="Confirm password" />
                             </div>
-
+                            <button type="submit" className="btn btn-primary">Sign up</button>
                         </form>
 
-                        <a href="Sign In.html"><button type="submit" className="btn btn-primary">Sign up</button></a>
 
                     </main>
                     <footer>
@@ -55,7 +78,7 @@ class RouteSignUp extends Component {
                     </footer>
                 </div>
             </div>
-        )
+        );
     }
 }
 
