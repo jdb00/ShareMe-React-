@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from 'react'
+import { Link, navigate } from '@reach/router'
+import './App.css'
 
 class RouteUpdateShare extends Component {
     constructor(props) {
@@ -44,9 +45,9 @@ class RouteUpdateShare extends Component {
                         </form>
                     </main>
                     <footer>
-                        <i className="fas fa-home"></i>
-                        <i className="fas fa-plus"></i>
-                        <i className="fas fa-cog"></i>
+                        <Link to='/user/posts'><i className="fas fa-home"></i></Link>
+                        <Link to='/shares/add'><i className="fas fa-plus"></i></Link>
+                        <Link to='/user/settings'><i className="fas fa-cog"></i></Link>
                     </footer>
                 </div>
             </div>
