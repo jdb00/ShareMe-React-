@@ -1,11 +1,24 @@
-import React, { Component } from 'react'
-import { Link, navigate } from '@reach/router'
-import './App.css'
+import React, { Component } from 'react';
+import {navigate} from '@reach/router'
+import API from './API'
+
 
 class RouteAddShare extends Component {
     constructor(props) {
         super(props)
     }
+
+    handleFormSubmit = (e) => {
+        e.preventDefault()
+        var formData = new FormData(this.addForm)
+        var data = {
+          title: formData.get('title'),
+          description: formData.get('description'),
+          image: formData.get('pics')
+        }
+        API.addShare(data).then(res => navigate('/shares'))
+      }
+
     render() {
         return (
             <div className="app">
@@ -24,29 +37,29 @@ class RouteAddShare extends Component {
                         <div className="logo">
                             <img src="../assets/Vector.png" alt="" />
                         </div>
-                        <form>
+                        <form onSubmit={this.handleFormSubmit} ref={(el) => {this.addForm = el}}>
                             <div className="form-group">
                                 <label htmlFor="title">Title of your share</label>
-                                <input type="text" className="form-control" id="title" aria-describedby="title" placeholder="Enter the title of the share" />
+                                <input type="text" className="form-control" name="title" id="title" placeholder="Enter the title of the share" />
                             </div>
 
                             <div className="form-group">
                                 <label htmlFor="comment">Description of your share</label>
-                                <textarea name="comment" id="" cols="30" rows="10">Enter a comment</textarea>
+                                <input type="text" className="form-control" name="description" id="description" placeholder="Description of share" />
                             </div>
 
                             <div className="form-group">
                                 <label htmlFor="pics">Add your image</label>
-                                <input type="file" className="form-control" id="pics" placeholder="Add a photo" />
+                                <input type="file" className="form-control" id="pics" name="pics" placeholder="Add a photo" />
                             </div>
 
                             <button type="submit" className="btn btn-primary">Add</button>
                         </form>
                     </main>
                     <footer>
-                        <Link to='/user/posts'><i className="fas fa-home"></i></Link>
-                        <Link to='/shares/add'><i className="fas fa-plus"></i></Link>
-                        <Link to='/user/settings'><i className="fas fa-cog"></i></Link>
+                        <i className="fas fa-home"></i>
+                        <i className="fas fa-plus"></i>
+                        <i className="fas fa-cog"></i>
                     </footer>
                 </div>
             </div>

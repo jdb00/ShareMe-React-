@@ -14,8 +14,11 @@ var API = {
     },
     deleteUser : (id) => {
         return axios.delete(urlPrefix+'/users'+id)
-    }
+    },
 
-    
-
+    addShare : (data) => {
+        return axios.post(urlPrefix+'/shares',data)
+    },
 }
+
+export default API
