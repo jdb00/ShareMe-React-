@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
+import {Link, navigate} from '@reach/router'
 import './App.css';
 
 class RouteSplashPage extends Component {
     constructor(props) {
         super(props)
+        this.state = {
+            
+        }
     }
 
     render() {
@@ -18,8 +22,8 @@ class RouteSplashPage extends Component {
                             <img src='../assets/ShareMe Logo 1.svg' alt="" />
                         </div>
                         <div className="signin-signup">
-                            <button type="submit" className="btn btn-primary">Sign in</button>
-                            <button type="submit" className="btn btn-primary">Sign up</button>
+                            <button type="submit" className="btn btn-primary"><Link to='/users/authenticate'>Sign in</Link></button>
+                            <button type="submit" className="btn btn-primary"><Link to='/users/create'>Sign up</Link></button>
                         </div>
                     </main>
                     <footer>

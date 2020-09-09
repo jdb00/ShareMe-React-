@@ -122,6 +122,8 @@ $light-color: white;
         width: 100vw;
 
         i{
+            position: relative;
+            z-index: 100;
             font-size: 2.5em;
             color: $logo-color;
         }

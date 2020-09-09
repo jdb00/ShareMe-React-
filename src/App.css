@@ -226,6 +226,8 @@ body {
 }
 
 .app .newShares footer i {
+  position: relative;
+  z-index: 100;
   font-size: 2.5em;
   color: #0597F2;
 }
@@ -396,6 +398,8 @@ body {
 }
 
 .app .addUpdateShare footer i {
+  position: relative;
+  z-index: 100;
   font-size: 2.5em;
   color: #0597F2;
 }
@@ -501,6 +505,8 @@ body {
 }
 
 .app .usersPosts footer i {
+  position: relative;
+  z-index: 100;
   font-size: 2.5em;
   color: #0597F2;
 }
@@ -682,6 +688,8 @@ body {
 }
 
 .app .settings footer i {
+  position: relative;
+  z-index: 100;
   font-size: 2.5em;
   color: #0597F2;
 }

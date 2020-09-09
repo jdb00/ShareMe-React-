@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {Link, navigate} from '@reach/router'
 import './App.css';
 
 class RouteLogIn extends Component {
@@ -36,7 +37,7 @@ class RouteLogIn extends Component {
 
                         </form>
 
-                        <button type="submit" className="btn btn-primary">Sign In</button>
+                        <button type="submit" className="btn btn-primary"><Link to='/user/posts'>Sign In</Link></button>
 
                     </main>
                     <footer>
