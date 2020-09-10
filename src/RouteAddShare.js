@@ -36,17 +36,17 @@ class RouteAddShare extends Component {
                         <form onSubmit={this.handleFormSubmit} ref={(el) => {this.addForm = el}}>
                             <div className="form-group">
                                 <label htmlFor="title">Title of your share</label>
-                                <input type="text" defaultValue='' className="form-control" id="title" placeholder='Enter the title of the share'/>
+                                <input type="text" defaultValue='' className="form-control" name="title" id="title" placeholder='Enter the title of the share'/>
                             </div>
 
                             <div className="form-group">
                                 <label htmlFor="comment">Description of your share</label>
-                                <textarea defaultValue='' name="comment" id="" cols="30" rows="10" placeholder='Enter a comment'></textarea>
+                                <input type="text" defaultValue='' className="form-control" name="description" id="description" placeholder='Enter your description' cols="30" rows="10"/>
                             </div>
 
                             <div className="form-group">
                                 <label htmlFor="pics">Add your image</label>
-                                <input type="file" className="form-control" id="pics" name="pics" placeholder="Add a photo" />
+                                <input type="file" className="form-control" name="image" id="image" placeholder="Add an image" />
                             </div>
 
                             <button type="submit" className="btn btn-primary">Add</button>
