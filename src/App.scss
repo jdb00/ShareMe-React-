@@ -80,18 +80,20 @@ $light-color: white;
                 border: none;
             }
 
+            input[type='text']{
+                color: $text-color;
+            }
+
             textarea{
                 width: 80vw;
                 background-color: rgba($color: $logo-color, $alpha: .25);
-                font-size: .75em;
-                color: rgba($color: $text-color, $alpha: .5);
-                font-weight: 400;
-                padding: 1em;
+                font-size: .85em;
+                color: $text-color;
+                padding: 2em;
             }
 
             ::placeholder{
-                font-size: .75em;
-                color: rgba($color: $text-color, $alpha: .5);
+                font-size: .85em;
                 font-weight: 400;
             }
         }
@@ -305,10 +307,6 @@ body{
                     text-align: center;
                     display: block;
                 }
-
-                // input[type='file']{
-                //     background-color: transparent;
-                // }
             }
         }
 

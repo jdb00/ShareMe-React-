@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link, navigate } from '@reach/router'
 import Footer from './footer'
+import Header from './header'
 import './App.css'
 
 class RouteUpdateShare extends Component {
@@ -12,13 +13,7 @@ class RouteUpdateShare extends Component {
             <div className="app">
                 <div className="addUpdateShare">
                     <header>
-                        <i className="fas fa-chevron-left"></i>
-                        <div className="logo">
-                            <img src="../assets/ShareMe Logo 1.svg" alt="" />
-                        </div>
-                        <div className="profimg">
-                            <img src="../assets/gettyimages-472015658 2.svg" alt="" />
-                        </div>
+                        <Header />
                     </header>
                     <main>
                         <h2>Update share</h2>
@@ -34,7 +29,7 @@ class RouteUpdateShare extends Component {
 
                             <div className="form-group">
                                 <label htmlFor="update-description">Update description</label>
-                                <textarea name="comment" defaultValue='Update comment' id="update-description" cols="30" rows="10"></textarea>
+                                <textarea name="comment" defaultValue='' id="update-description" cols="30" rows="10" placeholder='Update comment'></textarea>
                             </div>
 
                             <div className="form-group">

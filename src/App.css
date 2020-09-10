@@ -331,36 +331,35 @@ body {
   border: none;
 }
 
+.app .addUpdateShare main form .form-group input[type='text'] {
+  color: #E5E5E5;
+}
+
 .app .addUpdateShare main form .form-group textarea {
   width: 80vw;
   background-color: rgba(5, 151, 242, 0.25);
-  font-size: .75em;
-  color: rgba(229, 229, 229, 0.5);
-  font-weight: 400;
-  padding: 1em;
+  font-size: .85em;
+  color: #E5E5E5;
+  padding: 2em;
 }
 
 .app .addUpdateShare main form .form-group ::-webkit-input-placeholder {
-  font-size: .75em;
-  color: rgba(229, 229, 229, 0.5);
+  font-size: .85em;
   font-weight: 400;
 }
 
 .app .addUpdateShare main form .form-group :-ms-input-placeholder {
-  font-size: .75em;
-  color: rgba(229, 229, 229, 0.5);
+  font-size: .85em;
   font-weight: 400;
 }
 
 .app .addUpdateShare main form .form-group ::-ms-input-placeholder {
-  font-size: .75em;
-  color: rgba(229, 229, 229, 0.5);
+  font-size: .85em;
   font-weight: 400;
 }
 
 .app .addUpdateShare main form .form-group ::placeholder {
-  font-size: .75em;
-  color: rgba(229, 229, 229, 0.5);
+  font-size: .85em;
   font-weight: 400;
 }
 
@@ -605,36 +604,35 @@ body {
   border: none;
 }
 
+.app .settings main form .form-group input[type='text'] {
+  color: #E5E5E5;
+}
+
 .app .settings main form .form-group textarea {
   width: 80vw;
   background-color: rgba(5, 151, 242, 0.25);
-  font-size: .75em;
-  color: rgba(229, 229, 229, 0.5);
-  font-weight: 400;
-  padding: 1em;
+  font-size: .85em;
+  color: #E5E5E5;
+  padding: 2em;
 }
 
 .app .settings main form .form-group ::-webkit-input-placeholder {
-  font-size: .75em;
-  color: rgba(229, 229, 229, 0.5);
+  font-size: .85em;
   font-weight: 400;
 }
 
 .app .settings main form .form-group :-ms-input-placeholder {
-  font-size: .75em;
-  color: rgba(229, 229, 229, 0.5);
+  font-size: .85em;
   font-weight: 400;
 }
 
 .app .settings main form .form-group ::-ms-input-placeholder {
-  font-size: .75em;
-  color: rgba(229, 229, 229, 0.5);
+  font-size: .85em;
   font-weight: 400;
 }
 
 .app .settings main form .form-group ::placeholder {
-  font-size: .75em;
-  color: rgba(229, 229, 229, 0.5);
+  font-size: .85em;
   font-weight: 400;
 }
 
