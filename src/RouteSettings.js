@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link, navigate } from '@reach/router'
 import Footer from './footer'
+import Header from './header'
 import './App.css'
 
 class RouteSettings extends Component {
@@ -13,13 +14,7 @@ class RouteSettings extends Component {
             <div className="app">
                 <div className="settings">
                     <header>
-                        <i className="fas fa-chevron-left"></i>
-                        <div className="logo">
-                            <img src="../assets/ShareMe Logo 1.svg" alt="" />
-                        </div>
-                        <div className="profimg">
-                            <img src="../assets/gettyimages-472015658 2.svg" alt="" />
-                        </div>
+                        <Header />
                     </header>
                     <main>
                         <h1>Settings</h1>
@@ -43,8 +38,8 @@ class RouteSettings extends Component {
 
                             <div className="form-group">
                                 <label htmlFor="description">About me</label>
-                                <textarea name="comment" defaultValue='Add a comment' id="description" cols="10"
-                                    rows="5"></textarea>
+                                <textarea name="comment" defaultValue='' id="description" cols="10"
+                                    rows="5" placeholder='Add a comment'></textarea>
                                 <i className="fas fa-edit"></i>
                             </div>
 

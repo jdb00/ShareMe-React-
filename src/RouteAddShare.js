@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {navigate} from '@reach/router'
 import Footer from './footer'
+import Header from './header'
 import API from './API'
 
 
@@ -25,13 +26,7 @@ class RouteAddShare extends Component {
             <div className="app">
                 <div className="addUpdateShare">
                     <header>
-                        <i className="fas fa-chevron-left"></i>
-                        <div className="logo">
-                            <img src="../assets/ShareMe Logo 1.svg" alt="" />
-                        </div>
-                        <div className="profimg">
-                            <img src="../assets/gettyimages-472015658 2.svg" alt="" />
-                        </div>
+                        <Header />
                     </header>
                     <main>
                         <h2>Add share</h2>
@@ -41,12 +36,12 @@ class RouteAddShare extends Component {
                         <form onSubmit={this.handleFormSubmit} ref={(el) => {this.addForm = el}}>
                             <div className="form-group">
                                 <label htmlFor="title">Title of your share</label>
-                                <input type="text" defaultValue='Enter the title of the share' className="form-control" id="title" aria-describedby="title"/>
+                                <input type="text" defaultValue='' className="form-control" id="title" placeholder='Enter the title of the share'/>
                             </div>
 
                             <div className="form-group">
                                 <label htmlFor="comment">Description of your share</label>
-                                <textarea defaultValue='Enter a comment' name="comment" id="" cols="30" rows="10"></textarea>
+                                <textarea defaultValue='' name="comment" id="" cols="30" rows="10" placeholder='Enter a comment'></textarea>
                             </div>
 
                             <div className="form-group">
