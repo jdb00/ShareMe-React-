@@ -51,7 +51,9 @@ class RouteNewShare extends Component {
                                     key: share.id,
                                     loadShares: this.loadShares
                                     };
-                                    return (<RouteNewCard{...shareProps}/>)
+                                    if(shareProps.user != null){
+                                        return (<RouteNewCard{...shareProps}/>)
+                                    }
                                 })
                             }
                         </div>
