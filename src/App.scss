@@ -184,7 +184,6 @@ body{
         main{
             text-align: center;
             margin-top: 3em;
-
             .signIn, .signUp{
                 position: relative;
 
@@ -196,7 +195,6 @@ body{
                     letter-spacing: .1em;
                 }
             }
-
             img{
                 width: 8em;
             }
@@ -225,7 +223,6 @@ body{
     }
 
     .newShares{
-
         header{
             @include header;
             padding-top: 3em;
@@ -243,22 +240,23 @@ body{
         main{
             position: relative;
             margin-top: 2em;
-
-            h2{
-                position: absolute;
-                top: .05em;
-                color: $text-color;
-                font-size: 2.5em;
-                text-transform: uppercase;
-                width: 100vw;
-                text-align: center;   
+            .shares{
+                padding-bottom: 4em;
             }
-
             .logo{
                 text-align: center;
-
+                padding: 1em 0;
                 img{
                     width: 40vw;
+                }
+                h2{
+                    position: absolute;
+                    top: .05em;
+                    color: $text-color;
+                    font-size: 2.5em;
+                    text-transform: uppercase;
+                    width: 100vw;
+                    text-align: center;   
                 }
             }
         }
@@ -553,3 +551,58 @@ body{
     border-top: thin white solid;
 }
 
+.share-card{
+    /* newcard css */
+    margin: 1em auto;
+    width: 90%;
+    height: 100px;
+    display: flex;
+    background-color: #1d1d1d;
+    color: white;
+    border-radius: 0.3em;
+    .left {
+        display: flex;
+        align-items: center;
+        img {
+            border-radius: 0.25em;
+            object-fit: cover;
+            width: 80px;
+            height: 75px;
+            margin: 0 10px;
+        }
+    }
+    
+    .right {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex: 1;
+        margin-right: 10px;
+        .top {
+            display: flex;
+            justify-content: space-between;
+        }
+        span{
+            font-weight: bold;
+        }
+        .line {
+            height: 1px;
+            margin: 10px 0;
+            background-color: #0597F2;
+        }
+    }    
+    .bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        img {
+            width: 20px;
+            height: 20px;
+        }
+    }
+    .button i{
+        color:#0597F2;
+        font-size: 1.2em;
+        padding: .25em;
+    }
+}

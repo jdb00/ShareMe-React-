@@ -1,10 +1,28 @@
 import React, { Component } from 'react'
 import { Link, navigate } from '@reach/router'
+import ShareCard from './RouteNewCard'
 import './App.css'
+import RouteNewCard from './RouteNewCard'
+import API from './API'
 
 class RouteNewShare extends Component {
     constructor(props) {
         super(props)
+        this.state = {
+            shares: [
+                
+            ]
+        }
+    }
+
+    loadShares = () => {
+        API.getShares().then(res => {
+            this.setState({shares: res.data})
+        })
+    }
+
+    componentDidMount = () => {
+        this.loadShares()
     }
 
     render() {
@@ -19,14 +37,23 @@ class RouteNewShare extends Component {
                             <p>Hello <span className="name">Jim</span><br />What would you like to share today?</p>
                         </div>
                     </header>
+
                     <main>
-                        <h2>New shares</h2>
                         <div className="logo">
+                            <h2>New shares</h2>
                             <img src="../assets/signup-faded" alt="" />
                         </div>
-
-                        {/* Component to go here */}
-
+                        <div className="shares">
+                            {this.state.shares.map((share) => {
+                                var shareProps = {
+                                    ...share,
+                                    key: share.id,
+                                    loadShares: this.loadShares
+                                    };
+                                    return (<RouteNewCard{...shareProps}/>)
+                                })
+                            }
+                        </div>
                     </main>
                     <footer>
                     <Link to='/user/posts'><i className="fas fa-home"></i></Link>

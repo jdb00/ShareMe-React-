@@ -7,7 +7,7 @@ var API = {
         return axios.get(urlPrefix+'/users')
     },
     getUser : (id) => {
-        return axios.get(urlPrefix+'/users'+id)
+        return axios.get(urlPrefix+'/users/'+id)
     },
     addUser : (data) => {
         return axios.post(urlPrefix+'/users/',data)
@@ -18,6 +18,9 @@ var API = {
     addShare : (data) => {
         return axios.post(urlPrefix+'/shares',data)
     },
+    getShares : () => {
+        return axios.get(urlPrefix+'/shares')
+    }
 }
 
 export default API

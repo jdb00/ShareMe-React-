@@ -30,7 +30,7 @@ class App extends Component {
                     <RouteAddShare path="shares/add"/>
                     <RouteNewShare path="shares"/>
                     <RouteUpdateShare path="shares/update"/>
-                    <RouteShareModal path="feed/share/:id"/>
+                    <RouteShareModal path="shares/:id"/>
                 </Router>
             </div>
         )
