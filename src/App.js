@@ -19,7 +19,7 @@ class App extends Component {
         super(props)
         this.state = {
             currentUser: {
-                id:4,
+                id:2,
                 name: 'Jay Frost',
                 password: 'password101',
                 email: 'jayfrost@gmail.com',
@@ -46,7 +46,7 @@ class App extends Component {
                     <RouteLogIn  path="users/authenticate"/>
                     <RouteSignUp path="users/create"/>
                     <RouteSettings path="user/settings"/>
-                    <RouteUserPosts path="user/posts" currentUser = {this.state.currentUser}/>
+                    <RouteUserPosts path="user/posts" user = {this.state.currentUser}/>
                     <RouteAddShare path="shares/add"/>
                     <RouteNewShare path="shares" loadShares = {this.loadShares}/>
                     <RouteUpdateShare path="shares/update"/>

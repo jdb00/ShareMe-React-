@@ -14,19 +14,19 @@ class RouteUserPosts extends Component {
         }
     }
 
-    loadUser = (currentUser) => {
-        API.getUser(currentUser).then(res => {
+    loadUser = (user) => {
+        API.getUser(user).then(res => {
             console.log(res)
             this.setState({userShares: res.data.shares})
         })
     }
 
     componentDidMount = () => {
-        this.loadUser(this.props.currentUser.id)
+        this.loadUser(this.props.user.id)
     }
 
     render() {
-        var {currentUser} = this.props
+        var {user} = this.props
         return (
             <div className="app">
                 <div className="usersPosts">
@@ -37,14 +37,14 @@ class RouteUserPosts extends Component {
                         <div className="profimg">
                             <img src="../assets/gettyimages-472015658 2.svg" alt="" />
                         </div>
-                        <h1 className="user-name">{currentUser.name}</h1>
-                        <p>{currentUser.about_me}</p>
+                        <h1 className="user-name">{user.name}</h1>
+                        <p>{user.about_me}</p>
 
                         <div className="user-shares">
                             {this.state.userShares.map((share) => {
                                 var shareProps = {
                                     ...share,
-                                    currentUser,
+                                    user,
                                     key: share.id,
                                 };
                                 return <RouteNewCard {...shareProps}/>
