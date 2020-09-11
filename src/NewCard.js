@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import API from './API';
 
-class RouteNewCard extends Component {
+class NewCard extends Component {
     constructor(props) {
         super(props)
     }
@@ -19,6 +19,12 @@ class RouteNewCard extends Component {
             return title
         }
     }
+
+    // deleteShares = () => {
+	// 	var {id,loadUsers} = this.props
+    //     API.deleteShares(id)
+    //     loadUsers()
+	// }
 
     render() {
         var {title, image, user, createdAt} = this.props
@@ -46,4 +52,4 @@ class RouteNewCard extends Component {
     }
 }
 
-export default RouteNewCard;
+export default NewCard;

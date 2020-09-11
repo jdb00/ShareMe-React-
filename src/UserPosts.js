@@ -1,9 +1,23 @@
 import React, { Component } from 'react';
 import './App.css';
+import NewCard from './NewCard'
 
 class UserPosts extends Component {
   constructor(props) {
     super(props)
+    this.state = {
+      shares:[
+        {
+          id:1,
+          title:'Build a hut',
+          description: 'Nice project'
+        },{
+          id:2,
+          title:'Make a basket',
+          description: 'Pretty project'
+        }
+      ]
+    }
   }
 
   render() {
@@ -27,8 +41,10 @@ class UserPosts extends Component {
               <h1 className="user-name">Jim Carrey</h1>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam corporis laudantium itaque reiciendis vel molestias, harum eaque explicabo maxime magni?</p>
 
-              {/* Component to go here */}
-
+              {
+          <NewCard  />
+          
+        }
             </div>
           </main>
           <footer>

@@ -15,6 +15,9 @@ var API = {
     deleteUser : (id) => {
         return axios.delete(urlPrefix+'/users'+id)
     },
+    deleteShares : (id) => {
+        return axios.delete(urlPrefix+'/shares/'+id)
+    },
     addShare : (data) => {
         return axios.post(urlPrefix+'/shares',data)
     },

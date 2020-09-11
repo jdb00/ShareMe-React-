@@ -2,23 +2,22 @@ import React, { Component } from 'react'
 import { Link, navigate } from '@reach/router'
 import Footer from './footer'
 import './App.css'
-import RouteNewCard from './RouteNewCard'
 import API from './API'
-import ShareCard from './RouteNewCard'
+import NewCard from './NewCard'
 
 class RouteNewShare extends Component {
     constructor(props) {
         super(props)
         this.state = {
             shares: [
-                
+
             ]
         }
     }
 
     loadShares = () => {
         API.getShares().then(res => {
-            this.setState({shares: res.data})
+            this.setState({ shares: res.data })
         })
     }
 
@@ -42,7 +41,7 @@ class RouteNewShare extends Component {
                     <main>
                         <div className="logo">
                             <h2>New shares</h2>
-                            <img src="../assets/signup-faded" alt="" />
+                            <img src="../assets/signup-faded.svg" alt="" />
                         </div>
                         <div className="shares">
                             {this.state.shares.map((share) => {
@@ -50,11 +49,11 @@ class RouteNewShare extends Component {
                                     ...share,
                                     key: share.id,
                                     loadShares: this.loadShares
-                                    };
-                                    if(shareProps.user != null){
-                                        return (<RouteNewCard{...shareProps}/>)
-                                    }
-                                })
+                                };
+                                if (shareProps.user != null) {
+                                    return (<NewCard{...shareProps} />)
+                                }
+                            })
                             }
                         </div>
                     </main>
