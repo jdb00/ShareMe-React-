@@ -7,6 +7,9 @@ class RouteNewCard extends Component {
         super(props)
     }
     
+    deleteShares = () => {
+        console.log(this.props.id)
+    }
     titleLength = (title) => {
         var titleLength = title.length
 
@@ -20,8 +23,12 @@ class RouteNewCard extends Component {
         }
     }
 
+    componentDidMount = () => {
+        console.log(this.props)
+    }
+
     render() {
-        var {title, image, user, createdAt} = this.props
+        var {title, image, currentUser, createdAt} = this.props
         return (
             <div className="share-card">
                 <div className="left">
@@ -33,7 +40,7 @@ class RouteNewCard extends Component {
                 </div>
                 <div className="line"></div>
                 <div className="bottom">
-                    <div className="user">By: <span>{user.name}</span></div>
+                    <div className="user">By: <span>{currentUser.name}</span></div>
                     <div className="button">
                         <i className="fas fa-comment share-comment"></i>
                         <i className="fas fa-edit share-edit"></i>

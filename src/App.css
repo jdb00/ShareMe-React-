@@ -464,7 +464,7 @@ body {
 }
 
 .app .usersPosts main {
-  width: 80vw;
+  width: 100vw;
   margin: 2em auto;
   color: #E5E5E5;
 }
@@ -477,6 +477,10 @@ body {
   width: 8em;
   height: 8em;
   border-radius: 50%;
+}
+
+.app .usersPosts main .user-shares {
+  padding-bottom: 1em;
 }
 
 .app .usersPosts main h1 {

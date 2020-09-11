@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Router, Link, navigate} from '@reach/router'
 import './App.css';
+import API from './API'
 
 import RouteSplashPage from './RouteSplashPage'
 import RouteLogIn from './RouteLogIn'
@@ -16,7 +17,26 @@ import RouteShareModal from './RouteShareModal';
 class App extends Component {
     constructor(props) {
         super(props)
+        this.state = {
+            currentUser: {
+                id:4,
+                name: 'Jay Frost',
+                password: 'password101',
+                email: 'jayfrost@gmail.com',
+                profile_picture: 'photo.jpg',
+                about_me: 'The motto γνῶθι σ(ε)αυτόν (“know thyself”) was one of the maxims inscribed on the pediment of the temple of Apollo at Delphi, along with μηδὲν ἄγαν (“nothing in excess”), inviting mankind to exercise moderation in life.'
+            },
+            shares: [
+                {
+
+                },
+
+            ]
+        }
     }
+
+
+
 
     render() {
         return (
@@ -26,9 +46,9 @@ class App extends Component {
                     <RouteLogIn  path="users/authenticate"/>
                     <RouteSignUp path="users/create"/>
                     <RouteSettings path="user/settings"/>
-                    <RouteUserPosts path="user/posts"/>
+                    <RouteUserPosts path="user/posts" currentUser = {this.state.currentUser}/>
                     <RouteAddShare path="shares/add"/>
-                    <RouteNewShare path="shares"/>
+                    <RouteNewShare path="shares" loadShares = {this.loadShares}/>
                     <RouteUpdateShare path="shares/update"/>
                     <RouteShareModal path="shares/:id"/>
                 </Router>
