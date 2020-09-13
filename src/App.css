@@ -410,6 +410,11 @@ body {
   color: #0597F2;
 }
 
+.app .usersPosts {
+  border: 5px solid green;
+  height: 60%;
+}
+
 .app .usersPosts header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -701,179 +706,13 @@ body {
   color: #0597F2;
 }
 
-.share-modal {
-  background-color: #0D0D0D;
-  min-width: 100vw;
-  height: 100vh;
-}
-
-.share-modal .fa-times {
-  color: #0597F2;
-  font-size: 2em;
-  position: absolute;
-  right: .5em;
-  top: .25em;
-}
-
-.share-modal .share-image {
-  width: 100%;
-  max-height: 25vh;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 0 0 .5em .5em;
-}
-
-.share-modal .content {
-  color: white;
-  border-radius: .5em;
-  width: 100%;
-  margin: auto;
-  padding: 1em;
-}
-
-.share-modal .content::after {
-  content: "";
-  display: block;
-  margin-top: 1em;
-  border-bottom: 1px #0597F2 solid;
-}
-
-.share-modal .body-text {
-  border-radius: .5em;
-  background-color: #1D1D1D;
-  padding: .5em .75em;
-}
-
-.share-modal .share-info {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.share-modal .share-info span {
-  font-weight: 600;
-}
-
-.share-modal h1 {
-  padding: 0;
-  margin: 0;
-  font-weight: 500;
-  font-size: 1.5em;
-  border-bottom: thin #fcfcfc solid;
-}
-
-.share-modal p {
-  font-weight: 300;
-}
-
-.comments {
-  width: 80%;
-  margin: auto;
-  overflow-y: auto;
-}
-
-.comments .comment {
-  margin-bottom: 1em;
-}
-
-.comments .comment-info {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-  color: white;
-}
-
-.comments .user-image {
-  height: 1.75em;
-  width: 1.75em;
-  border: thin #0597F2 solid;
-  border-radius: 50%;
-}
-
-.comments .user-name {
-  font-size: 1em;
-  padding: 0;
-  margin: 0;
-  padding: .25em;
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.comments .comment-body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.comments .comment-body p {
-  margin: .25em 0;
-  color: white;
-}
-
-.comments .comment::after {
-  content: '';
-  display: block;
-  margin-top: .5em;
-  border-bottom: thin white solid;
-}
-
-.add-comment {
-  bottom: 0;
-  min-height: 4.5em;
-  left: 0;
-  width: 100vw;
-  padding-bottom: .5em;
-  background-color: #1D1D1D;
-}
-
-.add-comment .add-input {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  background-color: white;
-  margin: auto;
-  padding: .25em .75em;
-  width: 80%;
-  border-radius: .5em;
-}
-
-.add-comment #comment-input {
-  padding: .5em 1em;
-  width: 80%;
-  border: 0;
-  display: block;
-  margin: auto;
-}
-
-.add-comment i {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  color: #0597F2;
-  font-size: 2em;
-  padding: 0 .5em;
-  text-align: center;
-}
-
-.add-comment::before {
-  content: '';
-  margin-bottom: 1em;
-  display: block;
-  border-top: thin white solid;
-}
-
-.share-card {
-  /* newcard css */
-  margin: 1em auto;
+.app .share-card {
+  border: 1px solid red;
+  margin: 0 auto;
+  padding: .5em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   width: 90%;
-  height: 100px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -882,25 +721,19 @@ body {
   border-radius: 0.3em;
 }
 
-.share-card .left {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+.app .share-card .photo {
+  margin: .5em;
 }
 
-.share-card .left img {
+.app .share-card .photo img {
   border-radius: 0.25em;
   -o-object-fit: cover;
      object-fit: cover;
-  width: 80px;
-  height: 75px;
-  margin: 0 10px;
+  width: 4em;
+  height: 4em;
 }
 
-.share-card .right {
+.app .share-card .comments {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -911,13 +744,9 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  margin-right: 10px;
 }
 
-.share-card .right .top {
+.app .share-card .comments .top {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -926,36 +755,21 @@ body {
           justify-content: space-between;
 }
 
-.share-card .right span {
-  font-weight: bold;
-}
-
-.share-card .right .line {
-  height: 1px;
-  margin: 10px 0;
-  background-color: #0597F2;
-}
-
-.share-card .bottom {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.share-card .bottom img {
-  width: 20px;
-  height: 20px;
-}
-
-.share-card .button i {
+.app .share-card .comments .top .button i {
   color: #0597F2;
   font-size: 1.2em;
   padding: .25em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.app .share-card .comments span {
+  font-weight: bold;
+  letter-spacing: .1em;
+}
+
+.app .share-card .comments hr {
+  height: .005em;
+  background-color: #0597F2;
 }
 /*# sourceMappingURL=App.css.map */

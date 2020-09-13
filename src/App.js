@@ -9,7 +9,6 @@ import RouteNewShare from './RouteNewShare'
 import RouteUpdateShare from './RouteUpdateShare'
 import RouteUserPosts from './RouteUserPosts'
 import RouteSettings from './RouteSettings'
-import RouteShareModal from './RouteShareModal';
 import NewCard from './NewCard';
 
 
@@ -38,7 +37,6 @@ class App extends Component {
                     <RouteAddShare path="shares/add" />
                     <RouteNewShare path="shares" />
                     <RouteUpdateShare path="shares/update" />
-                    <RouteShareModal path="shares/:id" />
                     <NewCard path="new/card" />
 
                 </Router>

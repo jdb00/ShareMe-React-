@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Footer from './footer'
 import Header from './header'
+import NewCard from './NewCard'
 import './App.css'
 
 class RouteUserPosts extends Component {
@@ -21,10 +22,8 @@ class RouteUserPosts extends Component {
                         </div>
                         <h1 className="user-name">Jim Carrey</h1>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam corporis laudantium itaque reiciendis vel molestias, harum eaque explicabo maxime magni?</p>
-
-                        {/* Component to go here */}
-
                     </main>
+                    <NewCard />
                     <footer>
                         <Footer />
                     </footer>
