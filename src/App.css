@@ -109,6 +109,14 @@ body {
   color: rgba(5, 151, 242, 0.5);
 }
 
+.app .signUp main p, .app .signIn main p {
+  font-size: 1.5em;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: red;
+  margin: 2em;
+}
+
 .app .signUp main button, .app .signIn main button {
   position: relative;
   margin: 0 auto;
@@ -411,7 +419,6 @@ body {
 }
 
 .app .usersPosts {
-  border: 5px solid green;
   height: 60%;
 }
 
@@ -707,15 +714,15 @@ body {
 }
 
 .app .share-card {
-  border: 1px solid red;
   margin: 0 auto;
-  padding: .5em;
+  padding: .25em;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 90%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  justify-items: space-between;
   background-color: #1d1d1d;
   color: white;
   border-radius: 0.3em;
@@ -734,6 +741,7 @@ body {
 }
 
 .app .share-card .comments {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -741,12 +749,10 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 
 .app .share-card .comments .top {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -771,5 +777,13 @@ body {
 .app .share-card .comments hr {
   height: .005em;
   background-color: #0597F2;
+}
+
+.app .share-card .comments .bottom .title {
+  margin-bottom: 1em;
+}
+
+.app .share-card .comments .bottom span {
+  font-weight: 700;
 }
 /*# sourceMappingURL=App.css.map */

@@ -14,8 +14,8 @@ class RouteLogIn extends Component {
         e.preventDefault()
         var formData = new FormData(this.form);
         var data = {
-          email:formData.get('email'),
-          password:formData.get('password'),
+          username:formData.get('username-input'),
+          password:formData.get('password-input'),
         }
     
         var {setCurrentUser} = this.props
@@ -28,14 +28,14 @@ class RouteLogIn extends Component {
         .then(user => {
           if(user){
             setCurrentUser(user)
-            localStorage.setItem('users',user.id)
-            navigate('user/posts')
+            localStorage.setItem('userId',user.id)
+            navigate('/user/posts')
           }else{
-            this.setState({message:'This was wrong'})
+            this.setState({message:'Try again'})
           }
         })
-
-    }
+    
+      }
 
     render() {
         return (
@@ -53,17 +53,18 @@ class RouteLogIn extends Component {
                         </div>
                         <form onSubmit={this.handleFormSubmit} ref={(el) => {this.form = el}}>
                             <div className="form-group">
-                                <label htmlFor="email"></label>
-                                <input type="email" className="form-control" id="email" name="email"
+                                <label htmlFor="email-input"></label>
+                                <input type="email" className="form-control" id="email-input" name="email-input"
                                     placeholder="Email" />
                             </div>
 
                             <div className="form-group">
-                                <label htmlFor="password"></label>
-                                <input type="text" className="form-control" id="password" name="password"
+                                <label htmlFor="password-input"></label>
+                                <input type="password" className="form-control" id="password-input" name="password-input"
                                     placeholder="Password" />
                             </div>
                             <button type="submit" className="btn btn-primary">Sign In</button>
+                            <p>{this.state.message}</p>
                         </form>
                     </main>
                     <footer>

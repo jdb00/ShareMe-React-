@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Router, Link, navigate } from '@reach/router'
-
+import { Router } from '@reach/router'
+import API from './API'
 import RouteSplashPage from './RouteSplashPage'
 import RouteLogIn from './RouteLogIn'
 import RouteSignUp from './RouteSignUp'
@@ -16,7 +16,7 @@ class App extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            types: [],
+            shares: [],
             currentUser: null
         }
     }
@@ -25,19 +25,28 @@ class App extends Component {
         this.setState({currentUser:user})
       }
 
+      componentDidMount(){
+
+        var userId = localStorage.getItem('userId')
+        if(userId){
+          API.getSingleUser(userId).then(res => this.setState({currentUser:res.data}))
+        }
+      }
+
     render() {
+        var {types, currentUser} = this.state
         return (
             <div className="app">
                 <Router>
                     <RouteSplashPage path="splash" />
-                    <RouteLogIn path="users/authenticate" />
+                    <RouteLogIn setCurrentUser={this.setCurrentUser} path="/users/authenticate" />
                     <RouteSignUp path="users/create" />
                     <RouteSettings path="user/settings" />
                     <RouteUserPosts path="user/posts" />
                     <RouteAddShare path="shares/add" />
                     <RouteNewShare path="shares" />
                     <RouteUpdateShare path="shares/update" />
-                    <NewCard path="new/card" />
+                    {currentUser ? <NewCard currentUser={currentUser} path="new/card" /> : null}
 
                 </Router>
             </div>

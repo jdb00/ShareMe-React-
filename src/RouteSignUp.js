@@ -1,33 +1,22 @@
 import React, { Component } from 'react';
-import './App.css';
 import API from './API';
 import { navigate } from '@reach/router';
 
 class RouteSignUp extends Component {
 
-    validatePassword = (password, password2) => {
-        if(password === password2){
-            return password
-        }
-        else{
-            return null
-        }
-    }
-
-    handleFormSubmit = (e) =>{
+    handleFormSubmit = (e) => {
         e.preventDefault();
-
+    
         var formData = new FormData(this.form);
         var data = {
-            name: formData.get('name-input'),
-            email: formData.get('email-input'),
-            password: this.validatePassword((formData.get('password-input')), (formData.get('confirm-password')))
+          name:formData.get('name-input'),
+          email:formData.get('email-input'),
+          password:formData.get('password-input'),
         }
-        if(data.password !== null){
-            var users = API.getUsers()
-            API.addUser(data).then(res => navigate('/users/authenticate'))  
-        }
-    }
+    
+        API.addUser(data).then(res => navigate('/users/authenticate'))
+      
+      }
 
     render() {
         return (
@@ -45,28 +34,23 @@ class RouteSignUp extends Component {
                         </div>
                         <form onSubmit={this.handleFormSubmit} ref={(el) => {this.form = el}}>
                             <div className="form-group">
-                                <label htmlFor="name"></label>
+                                <label htmlFor="name-input"></label>
                                 <input type="text" className="form-control" name="name-input" id="name-input" aria-describedby="name"
                                     placeholder="Name" />
                             </div>
 
                             <div className="form-group">
-                                <label htmlFor="email"></label>
+                                <label htmlFor="email-input"></label>
                                 <input type="email" className="form-control" name="email-input" id="email-input" aria-describedby="email"
                                     placeholder="Email" />
                             </div>
 
                             <div className="form-group">
-                                <label htmlFor="password"></label>
+                                <label htmlFor="password-input"></label>
                                 <input type="password" className="form-control" name="password-input" id="password-input" aria-describedby="password"
                                     placeholder="Password" />
                             </div>
 
-                            <div className="form-group">
-                                <label htmlFor="confirm-password"></label>
-                                <input type="password" className="form-control" name="confirm-password" id="confirm-password" aria-describedby="confirm-password"
-                                    placeholder="Confirm password" />
-                            </div>
                             <button type="submit" className="btn btn-primary">Sign up</button>
                         </form>
 

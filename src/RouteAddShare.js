@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {navigate} from '@reach/router'
+import { navigate } from '@reach/router'
 import Footer from './footer'
 import Header from './header'
 import API from './API'
@@ -12,19 +12,25 @@ class RouteAddShare extends Component {
 
     handleFormSubmit = (e) => {
         e.preventDefault()
-        var formData = new FormData(this.addForm)
 
-        .then(fileName => {
-            var{currentUser} = this.props
-        var data = {
-          title: formData.get('title'),
-          description: formData.get('description'),
-          image: fileName,
-          user_id: currentUser.id
-        }
-        API.addShare(data).then(res => navigate('/shares'))
-    })
-      }
+        var formData = new FormData(this.form)
+
+        API.uploadFile(formData)
+            .then(res => res.data)
+
+            .then(fileName => {
+                var { currentUser } = this.props;
+                var data = {
+                    title: formData.get('title-input'),
+                    share: formData.get('share-input'),
+                    photo: fileName,
+                    user_id: currentUser.id
+                }
+                API.addShares(data).then(res => navigate('/user/posts'))
+
+            })
+
+    }
 
     render() {
         return (
@@ -38,20 +44,20 @@ class RouteAddShare extends Component {
                         <div className="logo">
                             <img src="../assets/Vector.png" alt="" />
                         </div>
-                        <form onSubmit={this.handleFormSubmit} ref={(el) => {this.addForm = el}}>
+                        <form onSubmit={this.handleFormSubmit} ref={(el) => { this.addForm = el }}>
                             <div className="form-group">
-                                <label htmlFor="title">Title of your share</label>
-                                <input type="text" defaultValue='' className="form-control" name="title" id="title" placeholder='Enter the title of the share'/>
+                                <label htmlFor="title-input">Title of your share</label>
+                                <input type="text" defaultValue='' className="form-control" name="title-input" id="title-input" placeholder='Enter the title of the share' />
                             </div>
 
                             <div className="form-group">
-                                <label htmlFor="comment">Description of your share</label>
-                                <input type="text" defaultValue='' className="form-control" name="description" id="description" placeholder='Enter your description' cols="30" rows="10"/>
+                                <label htmlFor="share-input">Description of your share</label>
+                                <input type="text" defaultValue='' className="form-control" name="share-input" id="share-input" placeholder='Enter your description' cols="30" rows="10" />
                             </div>
 
                             <div className="form-group">
-                                <label htmlFor="pics">Add your image</label>
-                                <input type="file" className="form-control" name="image" id="image" placeholder="Add an image" />
+                                <label htmlFor="photo-input">Add your image</label>
+                                <input type="file" className="form-control" name="photo-input" id="photo-input" placeholder="Add an image" />
                             </div>
 
                             <button type="submit" className="btn btn-primary">Add</button>
