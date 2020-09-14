@@ -10,6 +10,8 @@ class RouteNewCard extends Component {
     deleteShares = () => {
         console.log(this.props.id)
     }
+
+    //if title is super long trim it down to a reasonable number of characters and add ellipses, otherwise return original title
     titleLength = (title) => {
         var titleLength = title.length
 

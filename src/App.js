@@ -20,7 +20,7 @@ class App extends Component {
         this.state = {
             currentUser: {
                 id:2,
-                name: 'Jay Frost',
+                name: 'JimCarreyGodX',
                 password: 'password101',
                 email: 'jayfrost@gmail.com',
                 profile_picture: 'photo.jpg',
@@ -31,10 +31,22 @@ class App extends Component {
 
                 },
 
-            ]
+            ],
+            targetShare:{
+                id: 1,
+                user_id: 2,
+                title: 'Check out Jim Carrey!!!',
+                description: 'Look at Jim Carrey, he\'s looking great with his beard and winning smile',
+                image: 'photo.png'
+            },
         }
     }
 
+    loadShare = (id) => {
+        API.loadShare(id).then(res => {
+            this.setState({targetShare: res.data})
+        })
+    }
 
 
 
@@ -46,11 +58,11 @@ class App extends Component {
                     <RouteLogIn  path="users/authenticate"/>
                     <RouteSignUp path="users/create"/>
                     <RouteSettings path="user/settings"/>
-                    <RouteUserPosts path="user/posts" user = {this.state.currentUser}/>
+                    <RouteUserPosts path="user/shares" user = {this.state.currentUser}/>
                     <RouteAddShare path="shares/add"/>
-                    <RouteNewShare path="shares" loadShares = {this.loadShares}/>
+                    <RouteNewShare path="shares"/>
                     <RouteUpdateShare path="shares/update"/>
-                    <RouteShareModal path="shares/:id"/>
+                    <RouteShareModal path="shares/:id" user = {this.state.currentUser} targetShareProps = {this.state.targetShare}/>
                 </Router>
             </div>
         )

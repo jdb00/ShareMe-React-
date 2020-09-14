@@ -433,7 +433,14 @@ body{
         border-radius: .5em;
         width: 100%;
         margin: auto;
-        padding: 1em;        
+        padding: 1em;   
+        .title{
+            padding-bottom: .5em;
+        } 
+        p{
+            padding-top: .5em;
+            margin-bottom: 0;
+        }    
     }
     .content::after{
         content:"";
@@ -441,7 +448,6 @@ body{
         margin-top: 1em;
         border-bottom: 1px $logo-color solid;
     }
-
     .body-text{
         border-radius: .5em;
         background-color: $lighter-color;
@@ -517,6 +523,7 @@ body{
     min-height: 4.5em;
     left: 0;
     width: 100vw;
+    position: fixed;
     padding-bottom: .5em;
     background-color: $lighter-color;
     .add-input{

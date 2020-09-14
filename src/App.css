@@ -735,6 +735,15 @@ body {
   padding: 1em;
 }
 
+.share-modal .content .title {
+  padding-bottom: .5em;
+}
+
+.share-modal .content p {
+  padding-top: .5em;
+  margin-bottom: 0;
+}
+
 .share-modal .content::after {
   content: "";
   display: block;
@@ -833,6 +842,7 @@ body {
   min-height: 4.5em;
   left: 0;
   width: 100vw;
+  position: fixed;
   padding-bottom: .5em;
   background-color: #1D1D1D;
 }

@@ -16,7 +16,6 @@ class RouteUserPosts extends Component {
 
     loadUser = (user) => {
         API.getUser(user).then(res => {
-            console.log(res)
             this.setState({userShares: res.data.shares})
         })
     }

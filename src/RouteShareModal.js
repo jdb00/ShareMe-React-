@@ -1,12 +1,56 @@
 import React, { Component } from 'react'
 import './App.css'
+import API from './API'
+import CommentCard from './CommentCard'
 
 class RouteShareModal extends Component {
     constructor(props) {
         super(props)
+        this.state = {
+            comments: [
+                {
+                    id: 1,
+                    comment: 'Small comment',
+                    user: {
+                        id: 1,
+                        name: 'Jordan',
+                    }
+                },
+                {
+                    id: 3,
+                    comment: 'This is a medium comment',
+                    user: {
+                        id:2,
+                        name: 'Marcus'
+                    }
+                },
+                {
+                    id: 2,
+                    comment: 'This is a really really big big long comment',
+                    user: {
+                        id:3,
+                        name: 'Jay'
+                    }
+                },
+
+            ]
+        }
+    }
+
+    //remember to remove this
+    componentDidMount = () => {
+        //todo: get comments from share need virtual?
+    }
+
+    loadComments = (id) => {
+        API.loadComments(id).then(res =>{
+            this.setState({comments: res.data})
+        })
     }
 
     render() {
+        var {description, image, title}  = this.props.targetShareProps
+        var {user} = this.props
         return (
             <div className="share-modal">
                 <div className="share-container">
@@ -14,48 +58,25 @@ class RouteShareModal extends Component {
                     <img className="share-image" src="/assets/gettyimages-472015658 2.svg" alt=""/>
                     <div className="content">
                         <div className="body-text">
-                        <h1 className="title">Lorem, ipsum dolor.</h1>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi sapiente, commodi officia magni labore quae magnam sed illum tenetur deleniti illo doloremque inventore cupiditate modi!</p>
+                        <h1 className="title">{title}</h1>
+                            <p>{description}</p>
                         <div className="share-info">
-                            <p className="date">21 July 2020</p>
-                            <p className="user">User: <span>user_name</span></p>
+                            <p className="date"></p>
+                            <p className="user">User: <span>{user.name}</span></p>
                         </div>
                     </div>
 
                 </div>
                 <div className="comments">
-                    <div className="comment">
-                        <div className="comment-info">
-                            <img className="user-image" src="/assets/gettyimages-472015658 2.svg" alt=""/>
-                            <h3 className="user-name">user_name</h3>
-                        </div>
-                        <div className="comment-body">
-                            <p>Lorem ipsum dolor sit amet.</p>
-                            <p className="timestamp">32s</p>
-                        </div>
-                    </div>
+                    {this.state.comments.map((comment)=>{
+                        var commentProps = {
+                            ...comment,
+                            key: comment.id,
+                        }
 
-                    <div className="comment">
-                        <div className="comment-info">
-                            <img className="user-image" src="/assets/gettyimages-472015658 2.svg" alt=""/>
-                            <h3 className="user-name">user_name</h3>
-                        </div>
-                        <div className="comment-body">
-                            <p>Lorem ipsum dolor sit amet.</p>
-                            <p className="timestamp">32s</p>
-                        </div>
-                    </div>
-
-                    <div className="comment">
-                        <div className="comment-info">
-                            <img className="user-image" src="/assets/gettyimages-472015658 2.svg" alt=""/>
-                            <h3 className="user-name">user_name</h3>
-                        </div>
-                        <div className="comment-body">
-                            <p>Lorem ipsum dolor sit amet.</p>
-                            <p className="timestamp">32s</p>
-                        </div>
-                    </div>
+                        return (<CommentCard {...commentProps}/>)
+                    })
+                }
                 </div>
 
                 <div className="add-comment">
