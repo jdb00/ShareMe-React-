@@ -449,6 +449,12 @@ body{
                 display: flex;
                 justify-content: space-between;
 
+                h3{
+                    font-size: 1.25em;
+                    letter-spacing: .1em;
+                    color: $text-color;
+                }
+
                 .button i{
                     color:#0597F2;
                     font-size: 1.2em;
@@ -457,23 +463,30 @@ body{
                 }
             }
             span{
-                font-weight: bold;
-                letter-spacing: .1em;
+                font-weight: 300;
             }
+            
             hr {
                 height: .005em;
                 background-color: #0597F2;
             }
 
             .bottom{
-               
+                position: relative;
+               max-width: 100%;
+
                 .title{
-                    margin-bottom: 1em;
+                    margin-bottom: .5em;
                 }
                 
                 span{
                     font-weight: 700;
                 }
+            }
+
+            .comment{
+                font-weight: 100;
+                font-size: .85em;
             }
         }    
     }

@@ -34,7 +34,7 @@ class App extends Component {
       }
 
     render() {
-        var {types, currentUser} = this.state
+        var { currentUser} = this.state
         return (
             <div className="app">
                 <Router>

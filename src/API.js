@@ -4,6 +4,7 @@ var urlPrefix = 'http://localhost:4020/api'
 
 var API = {
     //USER
+    serverUrl : 'http://localhost:4020/',
     addUser: (data) => {
         return axios.post(urlPrefix + '/users/', data)
     },

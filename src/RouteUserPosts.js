@@ -50,7 +50,6 @@ class RouteUserPosts extends Component {
                         {
                             currentUser ? (<h1>Welcome <br/>{currentUser.name}</h1>) : null
                         }
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam corporis laudantium itaque reiciendis vel molestias, harum eaque explicabo maxime magni?</p>
                     </main>
                     <NewCard />
                     <footer>

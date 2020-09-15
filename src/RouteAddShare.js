@@ -6,27 +6,24 @@ import API from './API'
 
 
 class RouteAddShare extends Component {
-    constructor(props) {
-        super(props)
-    }
 
     handleFormSubmit = (e) => {
         e.preventDefault()
 
-        var formData = new FormData(this.form)
+        var formData = new FormData(this.addForm)
 
         API.uploadFile(formData)
             .then(res => res.data)
 
             .then(fileName => {
-                var { currentUser } = this.props;
+                // var { currentUser } = this.props;
                 var data = {
                     title: formData.get('title-input'),
                     share: formData.get('share-input'),
                     photo: fileName,
-                    user_id: currentUser.id
+                    user_id: 1
                 }
-                API.addShares(data).then(res => navigate('/user/posts'))
+                API.addShare(data).then(res => navigate('/user/posts'))
 
             })
 
