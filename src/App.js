@@ -12,6 +12,7 @@ import RouteUpdateShare from './RouteUpdateShare'
 import RouteUserPosts from './RouteUserPosts'
 import RouteSettings from './RouteSettings'
 import RouteShareModal from './RouteShareModal';
+import RouteNewCard from './RouteNewCard'
 
 
 class App extends Component {
@@ -25,29 +26,9 @@ class App extends Component {
                 email: 'jayfrost@gmail.com',
                 profile_picture: 'photo.jpg',
                 about_me: 'The motto γνῶθι σ(ε)αυτόν (“know thyself”) was one of the maxims inscribed on the pediment of the temple of Apollo at Delphi, along with μηδὲν ἄγαν (“nothing in excess”), inviting mankind to exercise moderation in life.'
-            },
-            shares: [
-                {
-
-                },
-
-            ],
-            targetShare:{
-                id: 1,
-                user_id: 2,
-                title: 'Check out Jim Carrey!!!',
-                description: 'Look at Jim Carrey, he\'s looking great with his beard and winning smile',
-                image: 'photo.png'
-            },
+            }
         }
     }
-
-    loadShare = (id) => {
-        API.loadShare(id).then(res => {
-            this.setState({targetShare: res.data})
-        })
-    }
-
 
 
     render() {
@@ -58,9 +39,9 @@ class App extends Component {
                     <RouteLogIn  path="users/authenticate"/>
                     <RouteSignUp path="users/create"/>
                     <RouteSettings path="user/settings"/>
-                    <RouteUserPosts path="user/shares" user = {this.state.currentUser}/>
+                    <RouteUserPosts path="user/shares" user = {this.state.currentUser} loadShare={this.loadShare}/>
                     <RouteAddShare path="shares/add"/>
-                    <RouteNewShare path="shares"/>
+                    <RouteNewShare path="shares" loadShare = {this.loadShare}/>
                     <RouteUpdateShare path="shares/update"/>
                     <RouteShareModal path="shares/:id" user = {this.state.currentUser} targetShareProps = {this.state.targetShare}/>
                 </Router>

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './App.css'
 import API from './API'
 import CommentCard from './CommentCard'
+import { Link, navigate } from '@reach/router'
 
 class RouteShareModal extends Component {
     constructor(props) {
@@ -9,52 +10,48 @@ class RouteShareModal extends Component {
         this.state = {
             comments: [
                 {
-                    id: 1,
-                    comment: 'Small comment',
+                    id: 40,
+                    user_id: 2,
+                    share_id: 1600141887518,
+                    comment: 'blablablabla',
                     user: {
-                        id: 1,
-                        name: 'Jordan',
-                    }
-                },
-                {
-                    id: 3,
-                    comment: 'This is a medium comment',
-                    user: {
-                        id:2,
-                        name: 'Marcus'
-                    }
-                },
-                {
-                    id: 2,
-                    comment: 'This is a really really big big long comment',
-                    user: {
-                        id:3,
-                        name: 'Jay'
-                    }
-                },
 
-            ]
+                    }
+                }
+            ],
+            share:{
+
+            },
         }
     }
 
-    //remember to remove this
-    componentDidMount = () => {
+    componentDidMount(){
         //todo: get comments from share need virtual?
+        this.loadShare()
     }
 
-    loadComments = (id) => {
-        API.loadComments(id).then(res =>{
-            this.setState({comments: res.data})
+    loadShare = () => {
+        var {id} = this.props
+   
+        API.getShare(id).then(res => {
+            this.setState({share: res.data})
+            this.setState({comments: res.data.comments})
         })
     }
 
+    goBack = () =>{
+        // console.log(this.state.comments)
+        window.history.back()
+    }
+
+
     render() {
-        var {description, image, title}  = this.props.targetShareProps
+        var {description, image, title}  = this.state.share
         var {user} = this.props
-        return (
+        return title ? (
             <div className="share-modal">
                 <div className="share-container">
-                    <i className="fas fa-times"></i>    
+                    <i className="fas fa-times" onClick={this.goBack}></i>    
                     <img className="share-image" src="/assets/gettyimages-472015658 2.svg" alt=""/>
                     <div className="content">
                         <div className="body-text">
@@ -71,9 +68,8 @@ class RouteShareModal extends Component {
                     {this.state.comments.map((comment)=>{
                         var commentProps = {
                             ...comment,
-                            key: comment.id,
+                            key: "comment" + comment.id,
                         }
-
                         return (<CommentCard {...commentProps}/>)
                     })
                 }
@@ -87,7 +83,7 @@ class RouteShareModal extends Component {
                 </div>
             </div>
         </div>
-        );
+        ):null
     }
 }
 

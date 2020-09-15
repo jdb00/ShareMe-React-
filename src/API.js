@@ -20,6 +20,9 @@ var API = {
     },
     getShares : () => {
         return axios.get(urlPrefix+'/shares')
+    },
+    getShare : (id) => {
+        return axios.get(urlPrefix+'/shares/'+id)
     }
 }
 

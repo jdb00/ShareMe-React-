@@ -12,17 +12,20 @@ $light-color: white;
 
 
 @mixin header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    z-index: 10;
-    top: 0;
-    width: 100vw;
-    height: 6em;
-    margin: 0 auto;
-    padding: 1em;
-    background: linear-gradient(180deg, rgba(0,40,62,1) 50%, rgba(13,13,13,.0) 100%);
+    .header-container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        z-index: 10;
+        top: 0;
+        width: 100vw;
+        height: 6em;
+        margin: 0 auto;
+        padding: 1em;
+        background: linear-gradient(180deg, rgba(0,40,62,1) 50%, rgba(13,13,13,.0) 100%);
+    }
+   
 
 
     .fa-chevron-left{
@@ -227,13 +230,16 @@ body{
     .newShares{
         header{
             @include header;
-            padding-top: 3em;
+            padding-top: 1.5em;
             .profimg{
                 img{
                     width: 6em;
                     height: 6em;
                     box-shadow: none;
                 }   
+            }
+            .header-container{
+                background: transparent;
             }
         }
 
@@ -350,11 +356,9 @@ body{
     }
 
     .settings{
-
         header{
         @include header;
         }
-
         main{
 
             .profimg{
@@ -480,6 +484,7 @@ body{
     width: 80%;
     margin: auto;
     overflow-y: auto;
+    padding-bottom: 5em;
     .comment{
         margin-bottom: 1em;
     }

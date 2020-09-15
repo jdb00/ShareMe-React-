@@ -31,11 +31,15 @@ class RouteNewShare extends Component {
             <div className="app">
                 <div className="newShares">
                     <header>
-                        <div className="profimg">
-                            <img src='../assets/gettyimages-472015658 2.svg' alt=""/>
-                        </div>
-                        <div className="welcome">
-                            <p>Hello <span className="name">Jim</span><br/>What would you like to share today?</p>
+                        <div className="header-container">
+                            <div className="profimg">
+                                <Link to="/user/shares">
+                                    <img src='../assets/gettyimages-472015658 2.svg' alt=""/>
+                                </Link>
+                            </div>
+                            <div className="welcome">
+                                <p>Hello <span className="name">Jim.</span><br/>What would you like to share today?</p>
+                            </div>
                         </div>
                     </header>
 
@@ -49,12 +53,12 @@ class RouteNewShare extends Component {
                                 var shareProps = {
                                     ...share,
                                     key: share.id,
-                                    loadShares: this.loadShares
+                                    loadShares: this.loadShares,
+                                    // loadShare: this.props.loadShare
                                     };
 
                                     if(shareProps.user != null){
                                         return (<RouteNewCard{...shareProps}/>)
-                            
                                     }
                                 })
                             }

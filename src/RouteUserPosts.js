@@ -44,6 +44,7 @@ class RouteUserPosts extends Component {
                                 var shareProps = {
                                     ...share,
                                     user,
+                                    loadShare: this.props.loadShare,
                                     key: share.id,
                                 };
                                 return <RouteNewCard {...shareProps}/>
