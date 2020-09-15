@@ -10,12 +10,11 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #0D0D0D;
 }
 
 .app {
   width: 100vw;
-  height: 100vh;
+  background-color: #0D0D0D;
 }
 
 .app .splashPage main {
@@ -53,6 +52,10 @@ body {
   margin-bottom: 2em;
 }
 
+.app .signUp, .app .signIn {
+  height: 100vh;
+}
+
 .app .signUp header, .app .signIn header {
   text-align: center;
   padding-top: 3em;
@@ -65,11 +68,11 @@ body {
   margin-top: 3em;
 }
 
-.app .signUp main .signIn, .app .signUp main .signUp, .app .signIn main .signIn, .app .signIn main .signUp {
+.app .signUp main .logIn, .app .signUp main .logUp, .app .signIn main .logIn, .app .signIn main .logUp {
   position: relative;
 }
 
-.app .signUp main .signIn h1, .app .signUp main .signUp h1, .app .signIn main .signIn h1, .app .signIn main .signUp h1 {
+.app .signUp main .logIn h1, .app .signUp main .logUp h1, .app .signIn main .logIn h1, .app .signIn main .logUp h1 {
   position: absolute;
   text-align: center;
   width: 100vw;
@@ -83,8 +86,7 @@ body {
 
 .app .signUp main form, .app .signIn main form {
   width: 90vw;
-  margin: 3em auto;
-  height: 16em;
+  margin: 9em auto;
 }
 
 .app .signUp main form input, .app .signIn main form input {
@@ -142,7 +144,6 @@ body {
   position: sticky;
   z-index: 10;
   top: 0;
-  width: 100vw;
   height: 6em;
   margin: 0 auto;
   padding: 1em;
@@ -246,6 +247,10 @@ body {
   color: #0597F2;
 }
 
+.app .addUpdateShare {
+  height: 100vh;
+}
+
 .app .addUpdateShare header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -260,7 +265,6 @@ body {
   position: sticky;
   z-index: 10;
   top: 0;
-  width: 100vw;
   height: 6em;
   margin: 0 auto;
   padding: 1em;
@@ -384,7 +388,7 @@ body {
   border: none;
   color: #0597F2;
   border-radius: 15px;
-  margin-top: -1em;
+  margin-top: 3em;
   text-align: center;
   display: block;
 }
@@ -419,7 +423,8 @@ body {
 }
 
 .app .usersPosts {
-  height: 60%;
+  min-height: 100vh;
+  background-color: #0D0D0D;
 }
 
 .app .usersPosts header {
@@ -436,7 +441,6 @@ body {
   position: sticky;
   z-index: 10;
   top: 0;
-  width: 100vw;
   height: 6em;
   margin: 0 auto;
   padding: 1em;
@@ -476,8 +480,7 @@ body {
 }
 
 .app .usersPosts main {
-  width: 80vw;
-  margin: 2em auto;
+  margin: 0 auto;
   color: #E5E5E5;
 }
 
@@ -530,6 +533,11 @@ body {
   color: #0597F2;
 }
 
+.app .usersPosts .cards {
+  background-color: transparent;
+  padding-bottom: 3em;
+}
+
 .app .settings header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -544,7 +552,6 @@ body {
   position: sticky;
   z-index: 10;
   top: 0;
-  width: 100vw;
   height: 6em;
   margin: 0 auto;
   padding: 1em;
@@ -714,22 +721,25 @@ body {
 }
 
 .app .share-card {
-  margin: 0 auto;
-  padding: .25em;
+  margin: .5em auto;
+  padding: .55em;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 90%;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  justify-items: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   background-color: #1d1d1d;
   color: white;
   border-radius: 0.3em;
 }
 
 .app .share-card .photo {
-  margin: .5em;
+  margin-right: .5em;
 }
 
 .app .share-card .photo img {
@@ -741,18 +751,10 @@ body {
 }
 
 .app .share-card .comments {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  width: 30em;
 }
 
 .app .share-card .comments .top {
-  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -769,6 +771,7 @@ body {
 
 .app .share-card .comments .top .button i {
   color: #0597F2;
+  text-align: right;
   font-size: 1.2em;
   padding: .25em;
   -webkit-box-sizing: border-box;
@@ -795,10 +798,5 @@ body {
 
 .app .share-card .comments .bottom span {
   font-weight: 700;
-}
-
-.app .share-card .comments .comment {
-  font-weight: 100;
-  font-size: .85em;
 }
 /*# sourceMappingURL=App.css.map */

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Link, navigate} from '@reach/router'
+import {Link } from '@reach/router'
 import './App.css';
 
 class RouteSplashPage extends Component {

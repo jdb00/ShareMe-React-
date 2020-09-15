@@ -20,17 +20,19 @@ class App extends Component {
             currentUser: null
         }
     }
-
-    setCurrentUser = (user) => {
-        this.setState({currentUser:user})
+    
+      componentDidMount(){
+        API.getShares().then(res => this.setState({shares:res.data}))
+        //local storage
+        var userId = localStorage.getItem('userId')
+        
+        if (userId) {
+            API.getSingleUser(userId).then(res => this.setState({ currentUser: res.data }))
+        }
       }
 
-      componentDidMount(){
-
-        var userId = localStorage.getItem('userId')
-        if(userId){
-          API.getSingleUser(userId).then(res => this.setState({currentUser:res.data}))
-        }
+      setCurrentUser = (user) => {
+        this.setState({currentUser:user})
       }
 
     render() {

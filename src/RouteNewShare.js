@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Link, navigate } from '@reach/router'
 import Footer from './footer'
 import './App.css'
 import API from './API'
@@ -9,9 +8,7 @@ class RouteNewShare extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            shares: [
-
-            ]
+            shares: []
         }
     }
 

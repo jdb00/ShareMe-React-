@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import {Link, navigate} from '@reach/router'
+import {  navigate } from '@reach/router'
 import API from './API';
 
 class RouteLogIn extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            message:''
+            message: ''
         }
     }
 
@@ -14,28 +14,28 @@ class RouteLogIn extends Component {
         e.preventDefault()
         var formData = new FormData(this.form);
         var data = {
-          username:formData.get('username-input'),
-          password:formData.get('password-input'),
+            username: formData.get('username-input'),
+            password: formData.get('password-input'),
         }
-    
-        var {setCurrentUser} = this.props
-    
+
+        var { setCurrentUser } = this.props
+
         API.authenticate(data)
-        .then(res => {
-          var user = res.data
-          return user
-        })
-        .then(user => {
-          if(user){
-            setCurrentUser(user)
-            localStorage.setItem('userId',user.id)
-            navigate('/user/posts')
-          }else{
-            this.setState({message:'Try again'})
-          }
-        })
-    
-      }
+            .then(res => {
+                var user = res.data
+                return user
+            })
+            .then(user => {
+                if (user) {
+                    setCurrentUser(user)
+                    localStorage.setItem('userId', user.id)
+                    navigate('/user/posts')
+                } else {
+                    this.setState({ message: 'Try again' })
+                }
+            })
+
+    }
 
     render() {
         return (
@@ -43,15 +43,15 @@ class RouteLogIn extends Component {
                 <div className="signIn">
                     <header>
                         <div className="logo">
-                        <img src='../assets/ShareMe Logo 1.svg' alt="" />
+                            <img src='../assets/ShareMe Logo 1.svg' alt="" />
                         </div>
                     </header>
                     <main>
-                        <div className="signIn">
+                        <div className="logIn">
                             <h1>Sign in</h1>
                             <img src='../assets/signup-faded.svg' alt="" />
                         </div>
-                        <form onSubmit={this.handleFormSubmit} ref={(el) => {this.form = el}}>
+                        <form onSubmit={this.handleFormSubmit} ref={(el) => { this.form = el }}>
                             <div className="form-group">
                                 <label htmlFor="email-input"></label>
                                 <input type="email" className="form-control" id="email-input" name="email-input"

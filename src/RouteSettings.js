@@ -1,21 +1,23 @@
 import React, { Component } from 'react'
-import { Link, navigate } from '@reach/router'
 import Footer from './footer'
 import Header from './header'
+import {navigate} from '@reach/router'
 import './App.css'
 
 class RouteSettings extends Component {
-    constructor(props) {
-        super(props)
-    }
+
+      handleLogoutClick = (e) => {
+        e.preventDefault()
+        localStorage.removeItem('userId')
+        this.setState({currentUser:null})
+        navigate('/users/authenticate')
+      }
 
     render() {
         return (
             <div className="app">
                 <div className="settings">
-                    <header>
                         <Header />
-                    </header>
                     <main>
                         <h1>Settings</h1>
                         <div className="profimg">
@@ -52,7 +54,7 @@ class RouteSettings extends Component {
 
                             <div className="buttons">
                                 <button type="submit" className="update">Update</button>
-                                <button type="submit" className="sign-out">Sign out</button>
+                                <button type="submit" className="sign-out" onClick={this.handleLogoutClick}>Sign out</button>
                             </div>
                         </form>
                     </main>

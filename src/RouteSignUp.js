@@ -6,17 +6,17 @@ class RouteSignUp extends Component {
 
     handleFormSubmit = (e) => {
         e.preventDefault();
-    
+
         var formData = new FormData(this.form);
         var data = {
-          name:formData.get('name-input'),
-          email:formData.get('email-input'),
-          password:formData.get('password-input'),
+            name: formData.get('name-input'),
+            email: formData.get('email-input'),
+            password: formData.get('password-input'),
         }
-    
+
         API.addUser(data).then(res => navigate('/users/authenticate'))
-      
-      }
+
+    }
 
     render() {
         return (
@@ -28,11 +28,11 @@ class RouteSignUp extends Component {
                         </div>
                     </header>
                     <main>
-                        <div className="signUp">
+                        <div className="logUp">
                             <h1>Sign up</h1>
                             <img src="../assets/signup-faded.svg" alt="" />
                         </div>
-                        <form onSubmit={this.handleFormSubmit} ref={(el) => {this.form = el}}>
+                        <form onSubmit={this.handleFormSubmit} ref={(el) => { this.form = el }}>
                             <div className="form-group">
                                 <label htmlFor="name-input"></label>
                                 <input type="text" className="form-control" name="name-input" id="name-input" aria-describedby="name"

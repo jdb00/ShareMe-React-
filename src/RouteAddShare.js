@@ -33,9 +33,7 @@ class RouteAddShare extends Component {
         return (
             <div className="app">
                 <div className="addUpdateShare">
-                    <header>
                         <Header />
-                    </header>
                     <main>
                         <h2>Add share</h2>
                         <div className="logo">

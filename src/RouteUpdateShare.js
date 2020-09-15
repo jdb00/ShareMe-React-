@@ -1,13 +1,10 @@
 import React, { Component } from 'react'
-import { Link, navigate } from '@reach/router'
 import Footer from './footer'
 import Header from './header'
 import './App.css'
 
 class RouteUpdateShare extends Component {
-    constructor(props) {
-        super(props)
-    }
+
     render() {
         return (
             <div className="app">
