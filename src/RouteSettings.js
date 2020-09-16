@@ -5,15 +5,25 @@ import {navigate} from '@reach/router'
 import './App.css'
 
 class RouteSettings extends Component {
+    constructor(props){
+        super(props)
+        this.state = {
+          currentUser: null
+        }
+      }
+    setCurrentUser = (user) => {
+        this.setState({currentUser:user})
+      }
 
       handleLogoutClick = (e) => {
         e.preventDefault()
         localStorage.removeItem('userId')
         this.setState({currentUser:null})
-        navigate('/users/authenticate')
+        navigate('/splash')
       }
 
     render() {
+        var { share, title, photo, user, currentUser } = this.props
         return (
             <div className="app">
                 <div className="settings">
@@ -27,7 +37,7 @@ class RouteSettings extends Component {
                             <div className="form-group">
                                 <label htmlFor="name">Name</label>
                                 <input type="text" className="form-control" id="name" aria-describedby="name"
-                                    placeholder="Jim" />
+                                    placeholder={user} />
                                 <i className="fas fa-edit"></i>
                             </div>
 

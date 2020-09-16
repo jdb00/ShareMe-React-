@@ -28,26 +28,38 @@ class RouteUserPosts extends Component {
         return (
             <div className="app">
                 <div className="usersPosts">
-                        <Header />
-                    <main>
+                    <header>
+                        <div className="logo">
+                            <img src="../assets/ShareMe Logo 1.svg" alt="" />
+                        </div>
                         <div className="profimg">
                             <img src="../assets/gettyimages-472015658 2.svg" alt="" />
                         </div>
-                        <h1>Welcome <br />{currentUser}</h1>
-                    </main>
-                    <div className="cards">
+                    </header>
                     {
-                        this.state.shares.map((share) => {
-
-                            var shareProps = {
-                                ...share,
-                                key: share.id,
-                                loadShares: this.loadShares
-
-                            }
-                            return (<NewCard {...shareProps} />)
-                        })
+                        currentUser ? (
+                            <main>
+                                {/* <div className="profimg">
+                                    <img src="../assets/gettyimages-472015658 2.svg" alt="" />
+                                </div> */}
+                                <h1>Hello <br /><span>{currentUser.name}</span></h1>
+                            </main>
+                        ) : null
                     }
+                    <div className="cards">
+                        {
+                            this.state.shares.map((share) => {
+
+                                var shareProps = {
+                                    ...share,
+                                    key: share.id,
+                                    loadShares: this.loadShares,
+                                    currentUser: currentUser,
+
+                                }
+                                return (<NewCard {...shareProps} />)
+                            })
+                        }
                     </div>
                     <footer>
                         <Footer />

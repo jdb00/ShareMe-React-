@@ -21,19 +21,17 @@ class RouteAddShare extends Component {
                     title: formData.get('title-input'),
                     share: formData.get('share-input'),
                     photo: fileName,
-                    user_id: 1
+                    user_id: this.props.currentUser.id
                 }
                 API.addShare(data).then(res => navigate('/user/posts'))
-
             })
-
     }
 
     render() {
         return (
             <div className="app">
                 <div className="addUpdateShare">
-                        <Header />
+                    <Header />
                     <main>
                         <h2>Add share</h2>
                         <div className="logo">

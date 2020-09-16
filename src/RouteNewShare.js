@@ -5,12 +5,6 @@ import API from './API'
 import NewCard from './NewCard'
 
 class RouteNewShare extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            shares: []
-        }
-    }
 
     loadShares = () => {
         API.getShares().then(res => {
@@ -41,16 +35,17 @@ class RouteNewShare extends Component {
                             <img src="../assets/signup-faded.svg" alt="" />
                         </div>
                         <div className="shares">
-                            {this.state.shares.map((share) => {
-                                var shareProps = {
-                                    ...share,
-                                    key: share.id,
-                                    loadShares: this.loadShares
-                                };
-                                if (shareProps.user != null) {
-                                    return (<NewCard{...shareProps} />)
-                                }
-                            })
+                            {
+                                this.state.shares.map((share) => {
+                                    var shareProps = {
+                                        ...share,
+                                        key: share.id,
+                                        loadShares: this.loadShares
+                                    };
+                                    if (shareProps.user != null) {
+                                        return (<NewCard{...shareProps} />)
+                                    }
+                                })
                             }
                         </div>
                     </main>
