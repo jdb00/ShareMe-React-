@@ -19,20 +19,17 @@ class RouteSettings extends Component {
         e.preventDefault()
         localStorage.removeItem('userId')
         this.setState({currentUser:null})
-        navigate('/splash')
+        navigate('/user/posts')
       }
 
     render() {
-        var { share, title, photo, user, currentUser } = this.props
+        var {  user } = this.props
         return (
             <div className="app">
                 <div className="settings">
                         <Header />
                     <main>
                         <h1>Settings</h1>
-                        <div className="profimg">
-                            <img src="../assets/gettyimages-472015658 2.svg" alt="" />
-                        </div>
                         <form>
                             <div className="form-group">
                                 <label htmlFor="name">Name</label>

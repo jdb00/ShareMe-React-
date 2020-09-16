@@ -144,7 +144,7 @@ body {
   position: sticky;
   z-index: 10;
   top: 0;
-  height: 6em;
+  height: auto;
   margin: 0 auto;
   padding: 1em;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #00283e), to(rgba(13, 13, 13, 0)));
@@ -265,7 +265,7 @@ body {
   position: sticky;
   z-index: 10;
   top: 0;
-  height: 6em;
+  height: auto;
   margin: 0 auto;
   padding: 1em;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #00283e), to(rgba(13, 13, 13, 0)));
@@ -441,11 +441,14 @@ body {
   position: sticky;
   z-index: 10;
   top: 0;
-  height: 6em;
+  height: auto;
   margin: 0 auto;
   padding: 1em;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #00283e), to(rgba(13, 13, 13, 0)));
   background: linear-gradient(180deg, #00283e 50%, rgba(13, 13, 13, 0) 100%);
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .app .usersPosts header .fa-chevron-left {
@@ -479,19 +482,37 @@ body {
   font-weight: 100;
 }
 
-.app .usersPosts main {
-  margin: 0 auto;
-  color: #E5E5E5;
-}
-
-.app .usersPosts main .profimg {
+.app .usersPosts header .logedInUser {
   text-align: center;
 }
 
-.app .usersPosts main .profimg img {
-  width: 8em;
-  height: 8em;
-  border-radius: 50%;
+.app .usersPosts header .logedInUser h1 {
+  color: #E5E5E5;
+}
+
+.app .usersPosts header .logedInUser span {
+  color: #0597F2;
+  font-size: .8em;
+  text-transform: uppercase;
+}
+
+.app .usersPosts header .logedInUser p {
+  font-size: .8em;
+  width: 30vw;
+  margin: 0;
+}
+
+.app .usersPosts header p {
+  text-align: center;
+  color: #E5E5E5;
+  text-transform: uppercase;
+  margin-top: .5em;
+  font-weight: 700;
+}
+
+.app .usersPosts main {
+  margin: 0 auto;
+  color: #E5E5E5;
 }
 
 .app .usersPosts main h1 {
@@ -504,7 +525,6 @@ body {
 }
 
 .app .usersPosts main p {
-  text-align: center;
   font-size: .85em;
   font-weight: 100;
 }
@@ -543,6 +563,10 @@ body {
   padding-bottom: 3em;
 }
 
+.app .settings {
+  height: 100vh;
+}
+
 .app .settings header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -557,7 +581,7 @@ body {
   position: sticky;
   z-index: 10;
   top: 0;
-  height: 6em;
+  height: auto;
   margin: 0 auto;
   padding: 1em;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #00283e), to(rgba(13, 13, 13, 0)));
@@ -595,14 +619,8 @@ body {
   font-weight: 100;
 }
 
-.app .settings main .profimg {
-  text-align: center;
-}
-
-.app .settings main .profimg img {
-  width: 8em;
-  height: 8em;
-  border-radius: 50%;
+.app .settings main {
+  margin-top: 2em;
 }
 
 .app .settings main h1 {

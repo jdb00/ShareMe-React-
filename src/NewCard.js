@@ -23,17 +23,15 @@ class NewCard extends Component {
                         <div className="top">
                             <div className="user">Added by: <br />{user.name}</div>
                             <div className="button">
-                                <i className="fas fa-comment share-comment"></i>
-
                                 {
                                     (currentUser && currentUser.id === user.id) ? (
                                         <>
+                                            <i className="fas fa-comment share-comment"></i>
                                             <Link to='/shares/update'><i className="fas fa-edit share-edit"></i></Link>
                                             <i className="fas fa-trash-alt share-trash" onClick={this.handleTrashClick}></i>
                                         </>
                                     ) : null
                                 }
-
                             </div>
                         </div>
                         <hr />

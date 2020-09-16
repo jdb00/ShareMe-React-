@@ -18,7 +18,7 @@ $light-color: white;
     position: sticky;
     z-index: 10;
     top: 0;
-    height: 6em;
+    height: auto;
     margin: 0 auto;
     padding: 1em;
     background: linear-gradient(180deg, rgba(0,40,62,1) 50%, rgba(13,13,13,.0) 100%);
@@ -328,22 +328,42 @@ body{
 
         header{
             @include header;
+            align-items: flex-start;
+
+            .logedInUser{
+                text-align: center;
+
+
+                h1{
+                    color: $text-color;
+                }
+
+                span{
+                    color: $logo-color;
+                    font-size: .8em;
+                    text-transform: uppercase;
+                }
+
+                p{
+                    font-size: .8em;
+                    width: 30vw;
+                    margin: 0;
+                }
+            }
+
+            p{
+                text-align: center;
+                color: $text-color;
+                text-transform: uppercase;
+                margin-top: .5em;
+                font-weight: 700;
+            }
         }
 
         main{
             
             margin: 0 auto;
             color: $text-color;
-
-            .profimg{
-                text-align: center;
-                
-                img{
-                    width: 8em;
-                    height: 8em;
-                    border-radius: 50%;
-                }
-            }
 
             h1{
                 text-align: center;
@@ -355,7 +375,6 @@ body{
             }
 
             p{
-                text-align: center;
                 font-size: .85em;
                 font-weight: 100;
             }
@@ -371,22 +390,14 @@ body{
     }
 
     .settings{
+        height: 100vh;
 
         header{
         @include header;
         }
 
         main{
-
-            .profimg{
-                text-align: center;
-
-                img{
-                    width: 8em;
-                    height: 8em;
-                    border-radius: 50%;
-                }
-            }
+            margin-top: 2em;
 
             h1{
                 text-align: center;

@@ -4,18 +4,19 @@ import './App.css'
 
 class Header extends Component {
 
-    handleBackClick = ()=>{
+    handleBackClick = () => {
         navigate(-1)
     }
     render() {
+        var { currentUser } = this.props
         return (
             <header>
-                <i  className="fas fa-chevron-left" onClick={this.handleBackClick}></i>
+                <i className="fas fa-chevron-left" onClick={this.handleBackClick}></i>
                 <div className="logo">
                     <img src="../assets/ShareMe Logo 1.svg" alt="" />
                 </div>
                 <div className="profimg">
-                    <img src="../assets/gettyimages-472015658 2.svg" alt="" />
+                    <img src="../assets/avatar.jpg" alt="" />
                 </div>
             </header>
         )
