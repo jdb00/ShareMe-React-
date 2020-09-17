@@ -78,7 +78,7 @@ class RouteShareModal extends Component {
                 }
                 </div>
 
-                <CommentAdd currentUser={this.props.user}/>
+                <CommentAdd currentUser={this.props.user} currentShare={this.props.id} loadShare={this.loadShare}/>
                 
             </div>
         </div>

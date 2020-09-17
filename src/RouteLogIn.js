@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {Link, navigate} from '@reach/router'
 import './App.css';
+import API from './API'
 
 class RouteLogIn extends Component {
     constructor(props) {

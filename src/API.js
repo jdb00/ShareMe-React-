@@ -30,6 +30,9 @@ var API = {
     updateShare : (id, data) => {
         return axios.put(urlPrefix + '/shares/' + id,data)
     },
+    addComment : (data) =>{
+        return axios.post(urlPrefix + '/comments',data)
+    },
     authenticate : (data) => {
         return axios.post(urlPrefix+'/users/authenticate',data)          
     },
