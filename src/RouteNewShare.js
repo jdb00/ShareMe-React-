@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Link, navigate } from '@reach/router'
 import Footer from './footer'
 import './App.css'
+import RouteNewCard from './RouteNewCard'
+import API from './API'
 
 class RouteNewShare extends Component {
     constructor(props) {

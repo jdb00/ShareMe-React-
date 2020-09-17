@@ -16,7 +16,31 @@ import RouteShareModal from './RouteShareModal';
 class App extends Component {
     constructor(props) {
         super(props)
+
+        this.state = {
+            activeView:'shares',
+            projects:[
+              {
+                id:1,
+                title:'Hello123',
+                user: 'john01'
+              },{
+                id:2,
+                title:'Hi123',
+                user: 'amy01'
+              }
+            ],
+            sharesToUpdate:{
+              id:2,
+              title:'Hi123',
+              user: 'amy01',
+            }
+          }
     }
+
+    
+    
+ 
 
     render() {
         return (
@@ -29,7 +53,7 @@ class App extends Component {
                     <RouteUserPosts path="user/posts"/>
                     <RouteAddShare path="shares/add"/>
                     <RouteNewShare path="shares"/>
-                    <RouteUpdateShare path="shares/update"/>
+                    <RouteUpdateShare path="shares/:id/update"/>
                     <RouteShareModal path="feed/share/:id"/>
                 </Router>
             </div>

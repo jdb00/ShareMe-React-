@@ -12,13 +12,17 @@ class RouteAddShare extends Component {
 
     handleFormSubmit = (e) => {
         e.preventDefault()
+       
         var formData = new FormData(this.addForm)
         var data = {
           title: formData.get('title'),
-          description: formData.get('description'),
+          description: formData.get('comment'),
           image: formData.get('pics')
         }
-        API.addShare(data).then(res => navigate('/shares'))
+
+        // console.log(data)
+        API.addShare(data).then(res => navigate('/user/posts'))
+        // API.addShare(data).then(res => console.log('hi')) 
       }
 
     render() {
@@ -36,7 +40,7 @@ class RouteAddShare extends Component {
                         <form onSubmit={this.handleFormSubmit} ref={(el) => {this.addForm = el}}>
                             <div className="form-group">
                                 <label htmlFor="title">Title of your share</label>
-                                <input type="text" defaultValue='' className="form-control" id="title" placeholder='Enter the title of the share'/>
+                                <input type="text" defaultValue='' className="form-control" id="title" name="title" placeholder='Enter the title of the share'/>
                             </div>
 
                             <div className="form-group">
@@ -46,7 +50,7 @@ class RouteAddShare extends Component {
 
                             <div className="form-group">
                                 <label htmlFor="pics">Add your image</label>
-                                <input type="file" className="form-control" id="pics" name="pics" placeholder="Add a photo" />
+                                <input type="text" className="form-control" id="pics" name="pics" placeholder="Add a photo" />
                             </div>
 
                             <button type="submit" className="btn btn-primary">Add</button>

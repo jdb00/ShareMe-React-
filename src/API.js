@@ -18,6 +18,18 @@ var API = {
     addShare : (data) => {
         return axios.post(urlPrefix+'/shares',data)
     },
+    getShares : () => {
+        return axios.get(urlPrefix+'/shares')
+    },
+    getShare : (id) => {
+        return axios.get(urlPrefix+'/shares/'+id)
+    },
+    deleteShares : (id) => {
+        return axios.delete(urlPrefix+'/shares/'+id)
+    },
+    updateShares : (id,data) => {
+        return axios.put(urlPrefix+'/shares/'+id,data)
+    },
 }
 
 export default API

@@ -864,3 +864,61 @@ body {
   border-top: thin white solid;
 }
 /*# sourceMappingURL=App.css.map */
+
+
+/* newcard css */
+
+.share .box {
+  margin: 60px auto 0;
+  width: 350px;
+  height: 100px;
+  display: flex;
+  background-color: #1d1d1d;
+  color: white;
+  border-radius: 0.3em;
+}
+.share .box .left {
+  display: flex;
+  align-items: center;
+}
+.share .box .left img {
+  width: 80px;
+  height: 60px;
+  margin: 0 10px;
+}
+.share .box .right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  margin-right: 10px;
+}
+.share .box .right .top {
+  display: flex;
+  justify-content: space-between;
+}
+.share .box .right .line {
+  height: 1px;
+  margin: 10px 0;
+  background-color: #0597F2;
+}
+.share .box .right .bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.share .box .right .bottom img {
+  width: 20px;
+  height: 20px;
+}
+
+.button i{
+  color:#0597F2;
+  padding-left: 1em;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
