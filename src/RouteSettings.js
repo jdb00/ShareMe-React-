@@ -9,6 +9,13 @@ class RouteSettings extends Component {
         super(props)
     }
 
+    handleClick = (e) =>{
+        e.preventDefault()
+        localStorage.removeItem('userId')
+        this.props.logOut()
+        navigate('/users/authenticate')
+    }
+
     render() {
         return (
             <div className="app">
@@ -52,7 +59,7 @@ class RouteSettings extends Component {
 
                             <div className="buttons">
                                 <button type="submit" className="update">Update</button>
-                                <button type="submit" className="sign-out">Sign out</button>
+                                <button type="submit" className="sign-out" onClick={this.handleClick}>Sign out</button>
                             </div>
                         </form>
                     </main>

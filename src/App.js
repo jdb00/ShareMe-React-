@@ -20,25 +20,32 @@ class App extends Component {
         super(props)
         this.state = {
             currentUser: {
-                id:2,
-                name: 'JimCarreyGodX',
-                password: 'password101',
-                email: 'jayfrost@gmail.com',
-                profile_picture: 'photo.jpg',
-                about_me: 'The motto γνῶθι σ(ε)αυτόν (“know thyself”) was one of the maxims inscribed on the pediment of the temple of Apollo at Delphi, along with μηδὲν ἄγαν (“nothing in excess”), inviting mankind to exercise moderation in life.'
+                // id:2,
+                // name: 'JimCarreyGodX',
+                // password: 'password101',
+                // email: 'jayfrost@gmail.com',
+                // profile_picture: 'photo.jpg',
+                // about_me: 'The motto γνῶθι σ(ε)αυτόν (“know thyself”) was one of the maxims inscribed on the pediment of the temple of Apollo at Delphi, along with μηδὲν ἄγαν (“nothing in excess”), inviting mankind to exercise moderation in life.'
             }
         }
     }
 
+    setCurrentUser = (user) => {
+        this.setState({currentUser:user})
+    }
+
+    userLogOut = () => {
+        this.setState({currentUser: null})
+    }
 
     render() {
         return (
             <div className="app">
                 <Router>
                     <RouteSplashPage path="splash"/>
-                    <RouteLogIn  path="users/authenticate"/>
+                    <RouteLogIn  path="users/authenticate" setCurrentUser={this.setCurrentUser}/>
                     <RouteSignUp path="users/create"/>
-                    <RouteSettings path="user/settings"/>
+                    <RouteSettings path="user/settings" logOut = {this.userLogOut}/>
                     <RouteUserPosts path="user/shares" user = {this.state.currentUser}/>
                     <RouteAddShare path="shares/add" currentUser = {this.state.currentUser}/>
                     <RouteNewShare path="shares"/>

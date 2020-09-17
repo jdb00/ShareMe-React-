@@ -12,22 +12,24 @@ class RouteLogIn extends Component {
         e.preventDefault()
         var formData = new FormData(this.form);
         var data = {
-          username:formData.get('username-input'),
-          password:formData.get('password-input'),
+          email:formData.get('email'),
+          password:formData.get('password'),
         }
     
         var {setCurrentUser} = this.props
+
+        console.log(data)
     
         API.authenticate(data)
         .then(res => {
-        var user = res.data
-        return user
+            var user = res.data
+            return user
         })
         .then(user => {
             if(user){
                 setCurrentUser(user)
                 localStorage.setItem('userId',user.id)
-                navigate('/projects')
+                navigate('/shares')
             }else{
                 this.setState({message:'Try again'})
             }
@@ -48,23 +50,21 @@ class RouteLogIn extends Component {
                             <h1>Sign in</h1>
                             <img src='../assets/signup-faded.svg' alt="" />
                         </div>
-                        <form>
 
+                        <form autoComplete="off" onSubmit={this.handleFormSubmit} ref={(el)=> {this.form = el}} >
                             <div className="form-group">
                                 <label htmlFor="email"></label>
-                                <input type="email" className="form-control" id="email" aria-describedby="email"
+                                <input type="email" className="form-control" id="email" name="email" aria-describedby="email"
                                     placeholder="Email" />
                             </div>
-
                             <div className="form-group">
                                 <label htmlFor="password"></label>
-                                <input type="text" className="form-control" id="password" aria-describedby="password"
+                                <input type="password" className="form-control" id="password" aria-describedby="password" name="password"
                                     placeholder="Password" />
                             </div>
-
+                            <button type="submit" className="btn btn-primary">Sign In</button>
                         </form>
 
-                        <button type="submit" className="btn btn-primary"><Link to='/user/posts'>Sign In</Link></button>
 
                     </main>
                     <footer>
