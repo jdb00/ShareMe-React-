@@ -43,12 +43,11 @@ class App extends Component {
                     <RouteLogIn setCurrentUser={this.setCurrentUser} path="/users/authenticate" />
                     <RouteSignUp path="users/create" />
                     <RouteSettings path="user/settings" />
-                    <RouteUserPosts currentUser={currentUser} path="user/posts" />
-                    <RouteAddShare currentUser={currentUser}  path="shares/add" />
+                    <RouteUserPosts currentUser={currentUser} setCurrentUser={this.setCurrentUser} path="user/posts" />
+                    <RouteAddShare currentUser={currentUser} path="shares/add" />
                     <RouteNewShare path="shares" />
-                    <RouteUpdateShare path="shares/update" />
+                    <RouteUpdateShare path="shares/:id/update" />
                     {currentUser ? <NewCard currentUser={currentUser} path="new/card" /> : null}
-
                 </Router>
             </div>
         )

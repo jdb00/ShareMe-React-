@@ -26,8 +26,9 @@ class RouteUserPosts extends Component {
     handleLogoutClick = (e) => {
         e.preventDefault()
         localStorage.removeItem('userId')
-        this.setState({ currentUser: null })
-        navigate('/splash')
+        // this.setState({ currentUser: null })
+        // navigate('/splash')
+        this.props.setCurrentUser(null)
     }
 
     render() {

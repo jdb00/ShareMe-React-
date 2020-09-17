@@ -30,9 +30,18 @@ var API = {
         return axios.get(urlPrefix + '/shares')
     },
 
+    updateShares: (id,data) => {
+        return axios.put(urlPrefix + '/shares/' + id,data)
+    },
+
     deleteShares: (id) => {
         return axios.delete(urlPrefix + '/shares/' + id)
     },
+
+    getSingleShare : (id) => {
+        return axios.get(urlPrefix+'/shares/'+id)
+    },
+
 
     //Title
     addTitle: (data) => {
