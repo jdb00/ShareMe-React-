@@ -10,7 +10,7 @@ class Header extends Component {
     render() {
         return (
                 <header>
-                    <div class="header-container">
+                    <div className="header-container">
                         <i className="fas fa-chevron-left" onClick={this.goBack}></i>
                         <div className="logo">
                             <img src="../assets/ShareMe Logo 1.svg" alt="" />

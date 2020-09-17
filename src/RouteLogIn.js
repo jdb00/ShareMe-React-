@@ -7,6 +7,32 @@ class RouteLogIn extends Component {
         super(props)
     }
 
+    handleFormSubmit = (e) => {
+        e.preventDefault()
+        var formData = new FormData(this.form);
+        var data = {
+          username:formData.get('username-input'),
+          password:formData.get('password-input'),
+        }
+    
+        var {setCurrentUser} = this.props
+    
+        API.authenticate(data)
+        .then(res => {
+        var user = res.data
+        return user
+        })
+        .then(user => {
+            if(user){
+                setCurrentUser(user)
+                localStorage.setItem('userId',user.id)
+                navigate('/projects')
+            }else{
+                this.setState({message:'Try again'})
+            }
+        })
+    }
+
     render() {
         return (
             <div className="app">

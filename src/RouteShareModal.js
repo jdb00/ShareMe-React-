@@ -3,6 +3,7 @@ import './App.css'
 import API from './API'
 import CommentCard from './CommentCard'
 import { Link, navigate } from '@reach/router'
+import CommentAdd from'./addComment'
 
 class RouteShareModal extends Component {
     constructor(props) {
@@ -22,6 +23,7 @@ class RouteShareModal extends Component {
             share:{
 
             },
+            user:{}
         }
     }
 
@@ -36,6 +38,7 @@ class RouteShareModal extends Component {
         API.getShare(id).then(res => {
             this.setState({share: res.data})
             this.setState({comments: res.data.comments})
+            this.setState({user: res.data.user})
         })
     }
 
@@ -47,7 +50,7 @@ class RouteShareModal extends Component {
 
     render() {
         var {description, image, title}  = this.state.share
-        var {user} = this.props
+        var {user} = this.state
         return title ? (
             <div className="share-modal">
                 <div className="share-container">
@@ -75,12 +78,8 @@ class RouteShareModal extends Component {
                 }
                 </div>
 
-                <div className="add-comment">
-                    <div className="add-input">
-                        <input type="text" name="comment-input" id="comment-input" placeholder="Add a Comment!"/>
-                        <i className="fas fa-caret-right"></i>
-                    </div>
-                </div>
+                <CommentAdd currentUser={this.props.user}/>
+                
             </div>
         </div>
         ):null

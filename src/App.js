@@ -39,11 +39,11 @@ class App extends Component {
                     <RouteLogIn  path="users/authenticate"/>
                     <RouteSignUp path="users/create"/>
                     <RouteSettings path="user/settings"/>
-                    <RouteUserPosts path="user/shares" user = {this.state.currentUser} loadShare={this.loadShare}/>
-                    <RouteAddShare path="shares/add"/>
-                    <RouteNewShare path="shares" loadShare = {this.loadShare}/>
-                    <RouteUpdateShare path="shares/update"/>
-                    <RouteShareModal path="shares/:id" user = {this.state.currentUser} targetShareProps = {this.state.targetShare}/>
+                    <RouteUserPosts path="user/shares" user = {this.state.currentUser}/>
+                    <RouteAddShare path="shares/add" currentUser = {this.state.currentUser}/>
+                    <RouteNewShare path="shares"/>
+                    <RouteUpdateShare path="shares/update/:id"/>
+                    <RouteShareModal path="shares/:id" user = {this.state.currentUser}/>
                 </Router>
             </div>
         )

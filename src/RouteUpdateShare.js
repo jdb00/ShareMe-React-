@@ -3,12 +3,46 @@ import { Link, navigate } from '@reach/router'
 import Footer from './footer'
 import Header from './header'
 import './App.css'
+import API from './API'
 
 class RouteUpdateShare extends Component {
     constructor(props) {
         super(props)
+        this.state = {
+            share:{
+                //title: 
+                //description:
+                //image:
+            }
+        }
     }
+
+    handleFormSubmit = (e) => {
+        e.preventDefault()
+        var formData = new FormData(this.addForm)
+        var data = {
+          title: formData.get('title'),
+          description: formData.get('description'),
+          //image: formData.get('pics'),
+        }
+        console.log(data)
+        API.updateShare(this.props.id,data).then(res => navigate('/shares/'+this.props.id))
+    }
+
+    loadShare = () => {
+        var {id} = this.props
+   
+        API.getShare(id).then(res => {
+            this.setState({share: res.data})
+        })
+    }
+
+    componentDidMount(){
+        this.loadShare()
+    }
+
     render() {
+        var {title, description, image} = this.state.share
         return (
             <div className="app">
                 <div className="addUpdateShare">
@@ -20,21 +54,21 @@ class RouteUpdateShare extends Component {
                         <div className="logo">
                             <img src="assets/Vector.png" alt="" />
                         </div>
-                        <form>
-                            <div className="form-group">
+                        <form onSubmit={this.handleFormSubmit} ref={(el) => {this.addForm = el}}>
+                            <div className="form-group" >
                                 <label htmlFor="update-title">Update title</label>
-                                <input type="text" className="form-control" id="updatetitle" aria-describedby="update-title"
-                                    placeholder="Update title of share" />
+                                <input type="text" className="form-control" id="title" name='title' aria-describedby="update-title"
+                                    defaultValue={title}/>
                             </div>
 
                             <div className="form-group">
                                 <label htmlFor="update-description">Update description</label>
-                                <textarea name="comment" defaultValue='' id="update-description" cols="30" rows="10" placeholder='Update comment'></textarea>
+                                <textarea name="comment" defaultValue='' id="description" name="description" cols="30" rows="10" defaultValue={description}></textarea>
                             </div>
 
                             <div className="form-group">
                                 <label htmlFor="update-image">Update image</label>
-                                <input type="file" className="form-control" id="update-image" placeholder="Update photo" />
+                                <input type="file" className="form-control" id="update-image" placeholder={image} />
                             </div>
 
                             <button type="submit" className="btn btn-primary">Update</button>

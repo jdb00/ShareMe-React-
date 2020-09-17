@@ -16,7 +16,8 @@ class RouteAddShare extends Component {
         var data = {
           title: formData.get('title'),
           description: formData.get('description'),
-          image: formData.get('pics')
+          //image: formData.get('pics'),
+          user_id: this.props.currentUser.id
         }
         API.addShare(data).then(res => navigate('/shares'))
       }
@@ -36,12 +37,12 @@ class RouteAddShare extends Component {
                         <form onSubmit={this.handleFormSubmit} ref={(el) => {this.addForm = el}}>
                             <div className="form-group">
                                 <label htmlFor="title">Title of your share</label>
-                                <input type="text" defaultValue='' className="form-control" id="title" placeholder='Enter the title of the share'/>
+                                <input type="text" defaultValue='' className="form-control" name="title" id="title" placeholder='Enter the title of the share'/>
                             </div>
 
                             <div className="form-group">
                                 <label htmlFor="comment">Description of your share</label>
-                                <textarea defaultValue='' name="comment" id="" cols="30" rows="10" placeholder='Enter a comment'></textarea>
+                                <textarea defaultValue='' name="description" id="description" cols="30" rows="10" placeholder='Enter a comment'></textarea>
                             </div>
 
                             <div className="form-group">

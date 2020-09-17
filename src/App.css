@@ -867,6 +867,7 @@ body {
 }
 
 .add-comment #comment-input {
+  outline: none;
   padding: .5em 1em;
   width: 80%;
   border: 0;
