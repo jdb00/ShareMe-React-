@@ -35,7 +35,7 @@ class RouteUpdateShare extends Component {
     }
 
     render() {
-        var { photo, title, share } = this.state.share
+        var { photo, title, share, currentUser } = this.state.share
         return (
             <div className="app">
                 <div className="addUpdateShare">
@@ -53,7 +53,7 @@ class RouteUpdateShare extends Component {
 
                             <div className="form-group">
                                 <label htmlFor="update-description">Update description</label>
-                                <textarea name="update-description" defaultValue='' id="update-description" cols="30" rows="10" defaultValue={share}></textarea>
+                                <textarea name="update-description" id="update-description" cols="30" rows="10" defaultValue={share}></textarea>
                             </div>
 
                             <div className="form-group">
@@ -64,9 +64,7 @@ class RouteUpdateShare extends Component {
                             <button type="submit" className="btn btn-primary">Update</button>
                         </form>
                     </main>
-                    <footer>
-                        <Footer />
-                    </footer>
+                    <Footer />
                 </div>
             </div>
         )

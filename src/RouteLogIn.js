@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
-import {  navigate } from '@reach/router'
+import { navigate } from '@reach/router'
+import Footer from './footer'
 import API from './API';
 
 class RouteLogIn extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            message: ''
+            message: '',
         }
     }
 
@@ -14,7 +15,7 @@ class RouteLogIn extends Component {
         e.preventDefault()
         var formData = new FormData(this.form);
         var data = {
-            username: formData.get('username-input'),
+            users: formData.get('name-input'),
             password: formData.get('password-input'),
         }
 
@@ -34,7 +35,10 @@ class RouteLogIn extends Component {
                     this.setState({ message: 'Try again' })
                 }
             })
+    }
 
+    handleBackClick = () => {
+        navigate(-1)
     }
 
     render() {
@@ -42,6 +46,7 @@ class RouteLogIn extends Component {
             <div className="app">
                 <div className="signIn">
                     <header>
+                        <i className="fas fa-chevron-left" onClick={this.handleBackClick}></i>
                         <div className="logo">
                             <img src='../assets/ShareMe Logo 1.svg' alt="" />
                         </div>
@@ -53,9 +58,9 @@ class RouteLogIn extends Component {
                         </div>
                         <form onSubmit={this.handleFormSubmit} ref={(el) => { this.form = el }}>
                             <div className="form-group">
-                                <label htmlFor="email-input"></label>
-                                <input type="email" className="form-control" id="email-input" name="email-input"
-                                    placeholder="Email" />
+                                <label htmlFor="name-input"></label>
+                                <input type="text" className="form-control" id="name-input" name="name-input"
+                                    placeholder="Name" />
                             </div>
 
                             <div className="form-group">
@@ -63,13 +68,11 @@ class RouteLogIn extends Component {
                                 <input type="password" className="form-control" id="password-input" name="password-input"
                                     placeholder="Password" />
                             </div>
-                            <button type="submit" className="btn btn-primary">Sign In</button>
+                            <button type="submit" className="btn btn-primary">Log In</button>
                             <p>{this.state.message}</p>
                         </form>
                     </main>
-                    <footer>
-
-                    </footer>
+                    <Footer />
                 </div>
             </div>
         )

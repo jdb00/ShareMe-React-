@@ -1,73 +1,76 @@
 import React, { Component } from 'react'
 import Footer from './footer'
 import Header from './header'
-import {navigate} from '@reach/router'
+import API from './API'
+import { navigate } from '@reach/router'
 import './App.css'
 
 class RouteSettings extends Component {
-    constructor(props){
+    constructor(props) {
         super(props)
         this.state = {
-          currentUser: null
+            share: {}
         }
-      }
-    setCurrentUser = (user) => {
-        this.setState({currentUser:user})
-      }
+    }
 
-      handleLogoutClick = (e) => {
+    componentDidMount() {
+        var { id } = this.props
+        API.getSingleShare(id).then(res => {
+            this.setState({ user: res.data })
+        })
+    }
+
+    handleFormSubmit = (e) => {
         e.preventDefault()
-        localStorage.removeItem('userId')
-        this.setState({currentUser:null})
-        navigate('/user/posts')
-      }
+
+        var formData = new FormData(this.Form)
+
+        var data = {
+            title: formData.get('update-title'),
+            share: formData.get('update-description'),
+            // photo: formData.get('update-image')
+        }
+        var { id } = this.props
+        API.updateShares(id, data).then(res => navigate('/user/posts'))
+    }
+
+    // handleTrashClick = () => {
+    //     var { id, loadUser } = this.state.name
+    //     API.deleteUser(id)
+    //     loadUser()
+    // }
 
     render() {
-        var {  user } = this.props
+        var { photo, name, title, share, email, currentUser } = this.state.share
         return (
             <div className="app">
                 <div className="settings">
-                        <Header />
+                    <Header />
                     <main>
-                        <h1>Settings</h1>
-                        <form>
+                        <h1>User <br />Settings</h1>
+                        <form onSubmit={this.handleFormSubmit} ref={(el) => { this.Form = el }}>
                             <div className="form-group">
-                                <label htmlFor="name">Name</label>
-                                <input type="text" className="form-control" id="name" aria-describedby="name"
-                                    placeholder={user} />
-                                <i className="fas fa-edit"></i>
-                            </div>
-
-                            <div className="form-group">
-                                <label htmlFor="user-name">User name</label>
-                                <input type="text" className="form-control" id="user-name" aria-describedby="user-name"
-                                    placeholder="The_Real_Jim_Carry" />
-                                <i className="fas fa-edit"></i>
+                                <label htmlFor="name-update">Name</label>
+                                <input name="name-update" type="text" className="form-control" id="name-update" defaultValue={title} />
                             </div>
 
                             <div className="form-group">
                                 <label htmlFor="description">About me</label>
-                                <textarea name="comment" defaultValue='' id="description" cols="10"
-                                    rows="5" placeholder='Add a comment'></textarea>
-                                <i className="fas fa-edit"></i>
+                                <textarea name="comment" id="description" cols="10" rows="5" defaultValue={share}></textarea>
                             </div>
 
                             <div className="form-group">
-                                <label htmlFor="email">Email</label>
-                                <input type="email" className="form-control" id="email" aria-describedby="emai"
-                                    placeholder="jimcarry@gmail.com" />
-                                <i className="fas fa-edit"></i>
+                                <label htmlFor="email-update">Email</label>
+                                <input name="email-update" type="email" className="form-control" id="email-update" defaultValue={email} />
                             </div>
 
                             <div className="buttons">
                                 <button type="submit" className="update">Update</button>
-                                <button type="submit" className="sign-out" onClick={this.handleLogoutClick}>Sign out</button>
+                                <button type="submit" className="sign-out" onClick={this.handleTrashClick}>Delete</button>
                             </div>
                         </form>
                     </main>
-                    <footer>
-                        <Footer />
-                    </footer>
+                    <Footer />
                 </div>
             </div>
         )

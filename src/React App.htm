@@ -1,7 +1,41 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,300&display=swap");
-@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css");
-@import url("https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css");
-* {
+<!DOCTYPE html>
+<!-- saved from url=(0035)http://localhost:3000/user/settings -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <link rel="icon" href="http://localhost:3000/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Web site created using create-react-app">
+    <link rel="apple-touch-icon" href="http://localhost:3000/logo192.png">
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="http://localhost:3000/manifest.json">
+    <!--
+      Notice the use of  in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+  <style type="text/css">body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+</style><style type="text/css">@import url(https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,300&display=swap);</style><style type="text/css">@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css);</style><style type="text/css">@import url(https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css);</style><style type="text/css">* {
   padding: 0;
   margin: 0;
   border: none;
@@ -21,24 +55,16 @@ body {
   position: absolute;
   top: 1em;
   left: 1em;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 2em;
-          flex: 0 0 2em;
+  flex: 0 0 2em;
   font-size: 2em;
   color: #0597F2;
 }
 
 .app .splashPage main {
   height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .app .splashPage main .logo img {
@@ -67,21 +93,14 @@ body {
   height: 3em;
   border-radius: .5em .5em 0em 0em;
   background-color: #00283e;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
   position: fixed;
   bottom: 0;
   left: 0;
   padding: .5em 2em;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   width: 100vw;
 }
 
@@ -97,8 +116,7 @@ body {
   width: 100%;
   text-align: center;
   border-radius: 10px;
-  -webkit-box-shadow: 0px 0px 5px #0CF25D;
-          box-shadow: 0px 0px 5px #0CF25D;
+  box-shadow: 0px 0px 5px #0CF25D;
 }
 
 .app .signUp, .app .signIn {
@@ -108,17 +126,14 @@ body {
 .app .signUp header, .app .signIn header {
   text-align: center;
   padding-top: 3em;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .app .signUp header .fa-chevron-left, .app .signIn header .fa-chevron-left {
   position: absolute;
   top: 1em;
   left: 1em;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 2em;
-          flex: 0 0 2em;
+  flex: 0 0 2em;
   font-size: 2em;
   color: #0597F2;
 }
@@ -138,41 +153,26 @@ body {
   color: #E5E5E5;
   letter-spacing: .1em;
   padding-top: 1.25em;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .app .signUp main img, .app .signIn main img {
   width: 8em;
   padding-top: 3em;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .app .signUp main form, .app .signIn main form {
   width: 90vw;
   margin: 0 auto;
   padding-top: 3em;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .app .signUp main form input, .app .signIn main form input {
   background-color: transparent;
   border: none;
   border-bottom: 1px solid rgba(5, 151, 242, 0.5);
-}
-
-.app .signUp main form ::-webkit-input-placeholder, .app .signIn main form ::-webkit-input-placeholder {
-  color: rgba(5, 151, 242, 0.5);
-}
-
-.app .signUp main form :-ms-input-placeholder, .app .signIn main form :-ms-input-placeholder {
-  color: rgba(5, 151, 242, 0.5);
-}
-
-.app .signUp main form ::-ms-input-placeholder, .app .signIn main form ::-ms-input-placeholder {
-  color: rgba(5, 151, 242, 0.5);
 }
 
 .app .signUp main form ::placeholder, .app .signIn main form ::placeholder {
@@ -201,21 +201,14 @@ body {
   height: 3em;
   border-radius: .5em .5em 0em 0em;
   background-color: #00283e;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
   position: fixed;
   bottom: 0;
   left: 0;
   padding: .5em 2em;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   width: 100vw;
 }
 
@@ -231,36 +224,25 @@ body {
   width: 100%;
   text-align: center;
   border-radius: 10px;
-  -webkit-box-shadow: 0px 0px 5px #0CF25D;
-          box-shadow: 0px 0px 5px #0CF25D;
+  box-shadow: 0px 0px 5px #0CF25D;
 }
 
 .app .newShares header {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  position: -webkit-sticky;
+  justify-content: space-between;
+  align-items: center;
   position: sticky;
   z-index: 10;
   top: 0;
   height: auto;
   margin: 0 auto;
   padding: 1em;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #00283e), to(rgba(13, 13, 13, 0)));
   background: linear-gradient(180deg, #00283e 50%, rgba(13, 13, 13, 0) 100%);
   padding-top: 3em;
 }
 
 .app .newShares header .fa-chevron-left {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 2em;
-          flex: 0 0 2em;
+  flex: 0 0 2em;
   font-size: 2em;
   color: #0597F2;
 }
@@ -274,8 +256,7 @@ body {
   width: 4em;
   height: 4em;
   border-radius: 50%;
-  -webkit-box-shadow: 0px 0px 10px #0CF25D;
-          box-shadow: 0px 0px 10px #0CF25D;
+  box-shadow: 0px 0px 10px #0CF25D;
 }
 
 .app .newShares header .welcome {
@@ -291,8 +272,7 @@ body {
 .app .newShares header .profimg img {
   width: 6em;
   height: 6em;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }
 
 .app .newShares main {
@@ -327,21 +307,14 @@ body {
   height: 3em;
   border-radius: .5em .5em 0em 0em;
   background-color: #00283e;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
   position: fixed;
   bottom: 0;
   left: 0;
   padding: .5em 2em;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   width: 100vw;
 }
 
@@ -357,8 +330,7 @@ body {
   width: 100%;
   text-align: center;
   border-radius: 10px;
-  -webkit-box-shadow: 0px 0px 5px #0CF25D;
-          box-shadow: 0px 0px 5px #0CF25D;
+  box-shadow: 0px 0px 5px #0CF25D;
 }
 
 .app .addUpdateShare {
@@ -366,30 +338,20 @@ body {
 }
 
 .app .addUpdateShare header {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  position: -webkit-sticky;
+  justify-content: space-between;
+  align-items: center;
   position: sticky;
   z-index: 10;
   top: 0;
   height: auto;
   margin: 0 auto;
   padding: 1em;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #00283e), to(rgba(13, 13, 13, 0)));
   background: linear-gradient(180deg, #00283e 50%, rgba(13, 13, 13, 0) 100%);
 }
 
 .app .addUpdateShare header .fa-chevron-left {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 2em;
-          flex: 0 0 2em;
+  flex: 0 0 2em;
   font-size: 2em;
   color: #0597F2;
 }
@@ -403,8 +365,7 @@ body {
   width: 4em;
   height: 4em;
   border-radius: 50%;
-  -webkit-box-shadow: 0px 0px 10px #0CF25D;
-          box-shadow: 0px 0px 10px #0CF25D;
+  box-shadow: 0px 0px 10px #0CF25D;
 }
 
 .app .addUpdateShare header .welcome {
@@ -474,21 +435,6 @@ body {
   padding: 2em;
 }
 
-.app .addUpdateShare main form .form-group ::-webkit-input-placeholder {
-  font-size: .85em;
-  font-weight: 400;
-}
-
-.app .addUpdateShare main form .form-group :-ms-input-placeholder {
-  font-size: .85em;
-  font-weight: 400;
-}
-
-.app .addUpdateShare main form .form-group ::-ms-input-placeholder {
-  font-size: .85em;
-  font-weight: 400;
-}
-
 .app .addUpdateShare main form .form-group ::placeholder {
   font-size: .85em;
   font-weight: 400;
@@ -511,21 +457,14 @@ body {
   height: 3em;
   border-radius: .5em .5em 0em 0em;
   background-color: #00283e;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
   position: fixed;
   bottom: 0;
   left: 0;
   padding: .5em 2em;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   width: 100vw;
 }
 
@@ -541,8 +480,7 @@ body {
   width: 100%;
   text-align: center;
   border-radius: 10px;
-  -webkit-box-shadow: 0px 0px 5px #0CF25D;
-          box-shadow: 0px 0px 5px #0CF25D;
+  box-shadow: 0px 0px 5px #0CF25D;
 }
 
 .app .usersPosts {
@@ -551,33 +489,21 @@ body {
 }
 
 .app .usersPosts header {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  position: -webkit-sticky;
+  justify-content: space-between;
+  align-items: center;
   position: sticky;
   z-index: 10;
   top: 0;
   height: auto;
   margin: 0 auto;
   padding: 1em;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #00283e), to(rgba(13, 13, 13, 0)));
   background: linear-gradient(180deg, #00283e 50%, rgba(13, 13, 13, 0) 100%);
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  align-items: flex-start;
 }
 
 .app .usersPosts header .fa-chevron-left {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 2em;
-          flex: 0 0 2em;
+  flex: 0 0 2em;
   font-size: 2em;
   color: #0597F2;
 }
@@ -591,8 +517,7 @@ body {
   width: 4em;
   height: 4em;
   border-radius: 50%;
-  -webkit-box-shadow: 0px 0px 10px #0CF25D;
-          box-shadow: 0px 0px 10px #0CF25D;
+  box-shadow: 0px 0px 10px #0CF25D;
 }
 
 .app .usersPosts header .welcome {
@@ -656,21 +581,14 @@ body {
   height: 3em;
   border-radius: .5em .5em 0em 0em;
   background-color: #00283e;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
   position: fixed;
   bottom: 0;
   left: 0;
   padding: .5em 2em;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   width: 100vw;
 }
 
@@ -686,8 +604,7 @@ body {
   width: 100%;
   text-align: center;
   border-radius: 10px;
-  -webkit-box-shadow: 0px 0px 5px #0CF25D;
-          box-shadow: 0px 0px 5px #0CF25D;
+  box-shadow: 0px 0px 5px #0CF25D;
 }
 
 .app .usersPosts .cards {
@@ -700,30 +617,20 @@ body {
 }
 
 .app .settings header {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  position: -webkit-sticky;
+  justify-content: space-between;
+  align-items: center;
   position: sticky;
   z-index: 10;
   top: 0;
   height: auto;
   margin: 0 auto;
   padding: 1em;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #00283e), to(rgba(13, 13, 13, 0)));
   background: linear-gradient(180deg, #00283e 50%, rgba(13, 13, 13, 0) 100%);
 }
 
 .app .settings header .fa-chevron-left {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 2em;
-          flex: 0 0 2em;
+  flex: 0 0 2em;
   font-size: 2em;
   color: #0597F2;
 }
@@ -737,8 +644,7 @@ body {
   width: 4em;
   height: 4em;
   border-radius: 50%;
-  -webkit-box-shadow: 0px 0px 10px #0CF25D;
-          box-shadow: 0px 0px 10px #0CF25D;
+  box-shadow: 0px 0px 10px #0CF25D;
 }
 
 .app .settings header .welcome {
@@ -795,21 +701,6 @@ body {
   padding: 2em;
 }
 
-.app .settings main form .form-group ::-webkit-input-placeholder {
-  font-size: .85em;
-  font-weight: 400;
-}
-
-.app .settings main form .form-group :-ms-input-placeholder {
-  font-size: .85em;
-  font-weight: 400;
-}
-
-.app .settings main form .form-group ::-ms-input-placeholder {
-  font-size: .85em;
-  font-weight: 400;
-}
-
 .app .settings main form .form-group ::placeholder {
   font-size: .85em;
   font-weight: 400;
@@ -850,21 +741,14 @@ body {
   height: 3em;
   border-radius: .5em .5em 0em 0em;
   background-color: #00283e;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
   position: fixed;
   bottom: 0;
   left: 0;
   padding: .5em 2em;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   width: 100vw;
 }
 
@@ -880,23 +764,17 @@ body {
   width: 100%;
   text-align: center;
   border-radius: 10px;
-  -webkit-box-shadow: 0px 0px 5px #0CF25D;
-          box-shadow: 0px 0px 5px #0CF25D;
+  box-shadow: 0px 0px 5px #0CF25D;
 }
 
 .app .share-card {
   margin: .5em auto;
   padding: .55em;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   width: 90%;
   height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   background-color: #1d1d1d;
   color: white;
   border-radius: 0.3em;
@@ -908,8 +786,7 @@ body {
 
 .app .share-card .photo img {
   border-radius: 0.25em;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   width: 4em;
   height: 4em;
 }
@@ -919,12 +796,8 @@ body {
 }
 
 .app .share-card .comments .top {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
 
 .app .share-card .comments .top h3 {
@@ -938,8 +811,7 @@ body {
   text-align: right;
   font-size: 1.5em;
   padding: .55em;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .app .share-card .comments span {
@@ -962,5 +834,20 @@ body {
 
 .app .share-card .comments .bottom span {
   font-weight: 700;
-}
-/*# sourceMappingURL=App.css.map */
+}</style></head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"><div class="app"><div tabindex="-1" style="outline: none;"><div class="app"><div class="settings"><header><i class="fas fa-chevron-left"></i><div class="logo"><img src="http://localhost:3000/assets/ShareMe%20Logo%201.svg" alt=""></div><div class="profimg"><img src="http://localhost:3000/assets/avatar.jpg" alt=""></div></header><main><h1><br>Settings</h1><form><div class="form-group"><label for="name-update">Name</label><input name="name-update" type="text" class="form-control" id="name-update" value=""></div><div class="form-group"><label for="description">About me</label><textarea name="comment" id="description" cols="10" rows="5"></textarea></div><div class="form-group"><label for="email-update">Email</label><input name="email-update" type="email" class="form-control" id="email-update" value=""></div><div class="buttons"><button type="submit" class="update">Update</button><button type="submit" class="sign-out">Delete</button></div></form></main><footer><p>Please log in to use more features</p></footer>                </div></div></div></div></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  <script src="./React App_files/bundle.js"></script><script src="./React App_files/0.chunk.js"></script><script src="./React App_files/main.chunk.js"></script><script src="./React App_files/main.515e759aabeb4c04e0db.hot-update.js"></script>
+
+</body></html>

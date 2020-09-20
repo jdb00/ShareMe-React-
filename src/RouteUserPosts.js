@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Footer from './footer'
 import NewCard from './NewCard'
-import { Link, navigate } from '@reach/router';
+import { Link } from '@reach/router';
 import API from './API'
 import './App.css'
 
@@ -10,6 +10,7 @@ class RouteUserPosts extends Component {
         super(props)
         this.state = {
             shares: [],
+            user: {},
         }
     }
 
@@ -42,12 +43,12 @@ class RouteUserPosts extends Component {
                         </div>
                         <div className="logedInUser">
                             {
-                                currentUser ? <h1>Hello <br /><span>{currentUser.name}</span></h1> : <p>You have to<br/>log in<br/>to add and edit posts</p>
+                                currentUser ? <h1>Hello <br /><span>{currentUser.name}</span></h1> : <p>You have to<br />log in<br />to add and edit posts</p>
                             }
                         </div>
                         <div className="profimg">
                             <img src="../assets/avatar.jpg" alt="" />
-                            <Link to='/users/authenticate'>
+                            <Link to='/splash'>
                                 {
                                     (currentUser ? <p onClick={this.handleLogoutClick}>Log out</p> : <p>Log in</p>)
                                 }
@@ -71,9 +72,7 @@ class RouteUserPosts extends Component {
                             }
                         </div>
                     </main>
-                    <footer>
-                        <Footer />
-                    </footer>
+                    <Footer />
                 </div>
             </div>
         )

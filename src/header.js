@@ -7,16 +7,16 @@ class Header extends Component {
     handleBackClick = () => {
         navigate(-1)
     }
+    
     render() {
-        var { currentUser } = this.props
         return (
             <header>
                 <i className="fas fa-chevron-left" onClick={this.handleBackClick}></i>
                 <div className="logo">
-                    <img src="../assets/ShareMe Logo 1.svg" alt="" />
+                    <img src="/assets/ShareMe Logo 1.svg" alt="" />
                 </div>
                 <div className="profimg">
-                    <img src="../assets/avatar.jpg" alt="" />
+                    <img src="/assets/avatar.jpg" alt="" />
                 </div>
             </header>
         )

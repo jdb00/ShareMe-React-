@@ -12,8 +12,16 @@ var API = {
         return axios.post(urlPrefix + '/users/authenticate', data)
     },
 
-    getSingleUser: (id) => {
-        return axios.get(urlPrefix + '/users/' + id)
+    updateUser: (id,data) => {
+        return axios.put(urlPrefix + '/users/' + id,data)
+    },
+
+    getUser: () => {
+        return axios.get(urlPrefix + '/users')
+    },
+
+    getSingleUser: (id, data) => {
+        return axios.get(urlPrefix + '/users/' + id, data)
     },
 
     deleteUser: (id) => {

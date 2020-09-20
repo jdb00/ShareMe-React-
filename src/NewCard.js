@@ -12,7 +12,7 @@ class NewCard extends Component {
     }
 
     render() {
-        var { share, title, photo, user, currentUser,id } = this.props
+        var { share, title, photo, user, currentUser, id } = this.props
         return (
             <div className="app">
                 <div className="share-card">
@@ -27,7 +27,7 @@ class NewCard extends Component {
                                     (currentUser && currentUser.id === user.id) ? (
                                         <>
                                             <i className="fas fa-comment share-comment"></i>
-                                            <Link to={'/shares/'+id+'/update'}><i className="fas fa-edit share-edit"></i></Link>
+                                            <Link to={'/shares/' + id + '/update'}><i className="fas fa-edit share-edit"></i></Link>
                                             <i className="fas fa-trash-alt share-trash" onClick={this.handleTrashClick}></i>
                                         </>
                                     ) : null
