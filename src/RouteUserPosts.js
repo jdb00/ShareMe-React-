@@ -7,7 +7,7 @@ import './App.css'
 
 class RouteUserPosts extends Component {
     constructor(props) {
-        super(props)
+        super()
         this.state = {
             shares: [],
             user: {},

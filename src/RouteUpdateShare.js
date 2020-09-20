@@ -2,12 +2,11 @@ import React, { Component } from 'react'
 import Footer from './footer'
 import Header from './header'
 import API from './API'
-import { navigate } from '@reach/router';
-import './App.css'
+import { navigate } from '@reach/router'
 
 class RouteUpdateShare extends Component {
     constructor(props) {
-        super(props)
+        super()
         this.state = {
             share: {}
         }
@@ -35,7 +34,7 @@ class RouteUpdateShare extends Component {
     }
 
     render() {
-        var { photo, title, share, currentUser } = this.state.share
+        var { photo, title, share } = this.state.share
         return (
             <div className="app">
                 <div className="addUpdateShare">

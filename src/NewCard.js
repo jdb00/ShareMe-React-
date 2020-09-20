@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Link } from '@reach/router';
-import './App.css'
 import API from './API'
 
 class NewCard extends Component {

@@ -4,7 +4,7 @@ import NewCard from './NewCard'
 
 class UserPosts extends Component {
   constructor(props) {
-    super(props)
+    super()
     this.state = {
       shares:[
         {

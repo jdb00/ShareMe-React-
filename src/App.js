@@ -9,12 +9,10 @@ import RouteNewShare from './RouteNewShare'
 import RouteUpdateShare from './RouteUpdateShare'
 import RouteUserPosts from './RouteUserPosts'
 import RouteSettings from './RouteSettings'
-import NewCard from './NewCard';
-
 
 class App extends Component {
     constructor(props) {
-        super(props)
+        super()
         this.state = {
             shares: [],
             currentUser: null
@@ -31,28 +29,27 @@ class App extends Component {
         }
     }
 
-setCurrentUser = (user) => {
-    this.setState({ currentUser: user })
-}
+    setCurrentUser = (user) => {
+        this.setState({ currentUser: user })
+    }
 
-render() {
-    var { currentUser } = this.state
-    return (
-        <div className="app">
-            <Router>
-                <RouteSplashPage path="splash" />
-                <RouteLogIn setCurrentUser={this.setCurrentUser} path="/users/authenticate" />
-                <RouteSignUp currentUser={currentUser} setCurrentUser={this.setCurrentUser} path="users/create" />
-                <RouteSettings currentUser={currentUser} path="user/settings" />
-                <RouteUserPosts currentUser={currentUser} setCurrentUser={this.setCurrentUser} path="user/posts" />
-                <RouteAddShare currentUser={currentUser} path="shares/add" />
-                <RouteNewShare path="shares" />
-                <RouteUpdateShare path="shares/:id/update" />
-                {currentUser ? <NewCard currentUser={currentUser} path="new/card" /> : null}
-            </Router>
-        </div>
-    )
-}
+    render() {
+        var { currentUser } = this.state
+        return (
+            <div className="app">
+                <Router>
+                    <RouteSplashPage path="splash" />
+                    <RouteLogIn setCurrentUser={this.setCurrentUser} path="/users/authenticate" />
+                    <RouteSignUp currentUser={currentUser} setCurrentUser={this.setCurrentUser} path="users/create" />
+                    <RouteSettings path="/users/:id/settings" />
+                    <RouteUserPosts currentUser={currentUser} setCurrentUser={this.setCurrentUser} path="user/posts" />
+                    <RouteAddShare currentUser={currentUser} path="shares/add" />
+                    <RouteNewShare path="shares" />
+                    <RouteUpdateShare path="shares/:id/update" />
+                </Router>
+            </div>
+        )
+    }
 }
 
 export default App;

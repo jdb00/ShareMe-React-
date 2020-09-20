@@ -3,19 +3,18 @@ import Footer from './footer'
 import Header from './header'
 import API from './API'
 import { navigate } from '@reach/router'
-import './App.css'
 
 class RouteSettings extends Component {
     constructor(props) {
-        super(props)
+        super()
         this.state = {
-            share: {}
+            user: {},
         }
     }
 
     componentDidMount() {
         var { id } = this.props
-        API.getSingleShare(id).then(res => {
+        API.getSingleUser(id).then(res => {
             this.setState({ user: res.data })
         })
     }
@@ -31,43 +30,43 @@ class RouteSettings extends Component {
             // photo: formData.get('update-image')
         }
         var { id } = this.props
-        API.updateShares(id, data).then(res => navigate('/user/posts'))
+        API.updateUser(id, data).then(res => navigate('/user/posts'))
     }
 
-    // handleTrashClick = () => {
-    //     var { id, loadUser } = this.state.name
-    //     API.deleteUser(id)
-    //     loadUser()
-    // }
+    handleTrashClick = () => {
+        var { id, loadUser } = this.state.name
+        API.deleteUser(id)
+        loadUser()
+    }
 
     render() {
-        var { photo, name, title, share, email, currentUser } = this.state.share
+        var { name } = this.state.user
         return (
             <div className="app">
-                <div className="settings">
+                <div className="addUpdateShare">
                     <Header />
                     <main>
-                        <h1>User <br />Settings</h1>
+                        <h2>Settings for<br/></h2>
+                        <div className="logo">
+                            <img src="assets/Vector.png" alt="" />
+                        </div>
                         <form onSubmit={this.handleFormSubmit} ref={(el) => { this.Form = el }}>
                             <div className="form-group">
-                                <label htmlFor="name-update">Name</label>
-                                <input name="name-update" type="text" className="form-control" id="name-update" defaultValue={title} />
+                                <label htmlFor="update-title">Update title</label>
+                                <input name="update-title" type="text" className="form-control" id="update-title" defaultValue={name} />
                             </div>
 
                             <div className="form-group">
-                                <label htmlFor="description">About me</label>
-                                <textarea name="comment" id="description" cols="10" rows="5" defaultValue={share}></textarea>
+                                <label htmlFor="update-description">Update description</label>
+                                <textarea name="update-description" id="update-description" cols="30" rows="10" defaultValue=''></textarea>
                             </div>
 
                             <div className="form-group">
-                                <label htmlFor="email-update">Email</label>
-                                <input name="email-update" type="email" className="form-control" id="email-update" defaultValue={email} />
+                                <label htmlFor="update-image">Update image</label>
+                                <input type="email" className="form-control" name='update-image' id="update-image" defaultValue="" />
                             </div>
 
-                            <div className="buttons">
-                                <button type="submit" className="update">Update</button>
-                                <button type="submit" className="sign-out" onClick={this.handleTrashClick}>Delete</button>
-                            </div>
+                            <button type="submit" className="btn btn-primary">Update</button>
                         </form>
                     </main>
                     <Footer />

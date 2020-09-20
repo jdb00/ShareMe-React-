@@ -5,7 +5,6 @@ import { navigate } from '@reach/router';
 
 class RouteSignUp extends Component {
 
-
     handleFormSubmit = (e) => {
         e.preventDefault();
 

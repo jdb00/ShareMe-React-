@@ -6,7 +6,7 @@ var API = {
     //USER
     serverUrl : 'http://localhost:4020/',
     addUser: (data) => {
-        return axios.post(urlPrefix + '/users/', data)
+        return axios.post(urlPrefix + '/users', data)
     },
     authenticate: (data) => {
         return axios.post(urlPrefix + '/users/authenticate', data)
@@ -20,8 +20,8 @@ var API = {
         return axios.get(urlPrefix + '/users')
     },
 
-    getSingleUser: (id, data) => {
-        return axios.get(urlPrefix + '/users/' + id, data)
+    getSingleUser: (id) => {
+        return axios.get(urlPrefix + '/users/' + id)
     },
 
     deleteUser: (id) => {

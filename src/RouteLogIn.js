@@ -5,7 +5,7 @@ import API from './API';
 
 class RouteLogIn extends Component {
     constructor(props) {
-        super(props)
+        super()
         this.state = {
             message: '',
         }

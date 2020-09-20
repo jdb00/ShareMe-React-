@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Footer from './footer'
-import './App.css'
 import API from './API'
 import NewCard from './NewCard'
 
@@ -43,8 +42,9 @@ class RouteNewShare extends Component {
                                         loadShares: this.loadShares
                                     };
                                     if (shareProps.user != null) {
-                                        return (<NewCard{...shareProps} />)
                                     }
+                                    return (<NewCard{...shareProps} />)
+
                                 })
                             }
                         </div>
