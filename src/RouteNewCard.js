@@ -3,15 +3,24 @@ import './App.css';
 import API from './API';
 import { navigate } from '@reach/router';
 import ReactDOM, { findDOMNode, unmountComponentAtNode } from 'react-dom';
+import ShareCardEditDelete from './ShareCardEditDelete';
 
 class RouteNewCard extends Component {
     constructor(props) {
         super(props)
+        this.state = {
+            belongsToUser: false
+        }
     }
     
+    handleUsernameClick = () =>{
+        var {user} = this.props
+        navigate(/user/+user.id)
+    }
+
     handleShareClick = () => {
         var id = this.props.id
-        navigate('shares/'+id)
+        navigate('/shares/'+id)
     }
 
     handleGarbageClick = () => {
@@ -23,23 +32,50 @@ class RouteNewCard extends Component {
         navigate('/shares/update/' + this.props.id)
     }
 
-
-    // if title is super long trim it down to a reasonable number of characters and add ellipses, otherwise return original title
     titleLength = (title) => {
-        var titleLength = title.length
-
-        if (titleLength > 50){
-            var newTitle = title.slice(0, 50)
-            newTitle = newTitle.trim()
-            return newTitle + '...'
+        if(title === undefined){
+            return this.props.title
         }
         else{
-            return title
+            var titleLength = title.length
+
+            if (titleLength > 50){
+                var newTitle = title.slice(0, 50)
+                newTitle = newTitle.trim()
+                return newTitle + '...'
+            }
+            else{
+                return title
+            }
         }
+    }
+
+    checkUser = () =>{
+        var {currentUser, user} = this.props
+        if(currentUser.id === user.id){
+            this.setState({belongsToUser: true})
+        }
+        else{
+            this.setState({belongsToUser: false})
+        }
+    }
+    
+    componentDidMount(){
+        this.checkUser()
     }
 
     render() {
         var {title, image, user, createdAt} = this.props
+        let button
+        if(this.state.belongsToUser){
+            button = 
+            <>
+            <i className="fas fa-edit share-edit" onClick={this.handleEditClick}></i>
+            <i className="fas fa-trash-alt share-trash" onClick={this.handleGarbageClick}></i> 
+            </>
+        }else{
+            button = null
+        }
         return (
             <div className="share-card" id="share-card">
                 <div className="left">
@@ -51,11 +87,11 @@ class RouteNewCard extends Component {
                     </div>
                     <div className="line"></div>
                     <div className="bottom">
-                        <div className="user">By: <span>{user.name}</span></div>
+                        <div className="user" onClick={this.handleUsernameClick}>By: <span>{user.name}</span></div>
                         <div className="button">
+                            <span>{this.props.comments.length}</span>
                             <i className="fas fa-comment share-comment"></i>
-                            <i className="fas fa-edit share-edit" onClick={this.handleEditClick}></i>
-                            <i className="fas fa-trash-alt share-trash" onClick={this.handleGarbageClick}></i> 
+                            {button}
                         </div>
                     </div>
                 </div>

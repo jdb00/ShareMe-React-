@@ -9,6 +9,9 @@ var API = {
     getUser : (id) => {
         return axios.get(urlPrefix+'/users/'+id)
     },
+    updateUser : (id, data) =>{
+        return axios.put(urlPrefix+ '/users/'+ id, data)
+    },
     addUser : (data) => {
         return axios.post(urlPrefix+'/users/',data)
     },

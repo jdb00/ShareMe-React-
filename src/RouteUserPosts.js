@@ -9,23 +9,43 @@ class RouteUserPosts extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            userShares: [
-            ]
+            user: {
+                shares:[
+                    {
+                        comments:[
+                            {
+
+                            }
+                        ]
+                    }
+                ]
+
+            }
         }
     }
 
-    loadUser = (user) => {
-        API.getUser(user).then(res => {
-            this.setState({userShares: res.data.shares})
+
+
+    loadUser = () => {
+        var {id} = this.props
+        console.log(this.props)
+        API.getUser(id).then(res=>{
+            this.setState({user: res.data})
         })
     }
 
-    componentDidMount = () => {
-        this.loadUser(this.props.user.id)
+    loadShares = () => {
+        API.getShares().then(res => {
+            this.setState({shares: res.data})
+        })
+    }
+
+    componentDidMount(){
+        this.loadUser()
     }
 
     render() {
-        var {user} = this.props
+        var {user} = this.state
         return (
             <div className="app">
                 <div className="usersPosts">
@@ -40,13 +60,19 @@ class RouteUserPosts extends Component {
                         <p>{user.about_me}</p>
 
                         <div className="user-shares">
-                            {this.state.userShares.map((share) => {
+                            {this.state.user.shares.map((share) => {
                                 var shareProps = {
                                     ...share,
-                                    user,
                                     key: share.id,
-                                };
-                                return <RouteNewCard {...shareProps}/>
+                                    user: this.state.user,
+                                    loadShares: this.loadShares,
+                                    currentUser: this.props.currentUser
+                                    };
+                                    console.log(shareProps)
+                                    if(shareProps.user != null){
+                                        console.log(shareProps)
+                                        return (<RouteNewCard{...shareProps}/>)
+                                    }
                             })
                         } 
                         </div>

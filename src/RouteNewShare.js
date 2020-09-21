@@ -16,6 +16,10 @@ class RouteNewShare extends Component {
         }
     }
 
+    checkUser = () =>{
+        console.log('abc')
+    }
+
     loadShares = () => {
         API.getShares().then(res => {
             this.setState({shares: res.data})
@@ -26,6 +30,10 @@ class RouteNewShare extends Component {
         this.loadShares()
     }
 
+    handleProfileClick = () => {
+        navigate ('/user/'+this.props.currentUser.id)
+    }
+
     render() {
         return (
             <div className="app">
@@ -33,9 +41,7 @@ class RouteNewShare extends Component {
                     <header>
                         <div className="header-container">
                             <div className="profimg">
-                                <Link to="/user/shares">
-                                    <img src='../assets/gettyimages-472015658 2.svg' alt=""/>
-                                </Link>
+                                <img src='../assets/gettyimages-472015658 2.svg' alt="" onClick={this.handleProfileClick}/>
                             </div>
                             <div className="welcome">
                                 <p>Hello <span className="name">Jim.</span><br/>What would you like to share today?</p>
@@ -54,7 +60,7 @@ class RouteNewShare extends Component {
                                     ...share,
                                     key: share.id,
                                     loadShares: this.loadShares,
-                                    // loadShare: this.props.loadShare
+                                    currentUser: this.props.currentUser
                                     };
                                     if(shareProps.user != null){
                                         return (<RouteNewCard{...shareProps}/>)

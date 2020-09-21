@@ -11,13 +11,6 @@ class RouteShareModal extends Component {
         this.state = {
             comments: [
                 {
-                    id: 40,
-                    user_id: 2,
-                    share_id: 1600141887518,
-                    comment: 'blablablabla',
-                    user: {
-
-                    }
                 }
             ],
             share:{
@@ -73,12 +66,14 @@ class RouteShareModal extends Component {
                             ...comment,
                             key: "comment" + comment.id,
                         }
-                        return (<CommentCard {...commentProps}/>)
+                        if(user != null){
+                            return (<CommentCard {...commentProps}/>)
+                        }
                     })
                 }
                 </div>
 
-                <CommentAdd currentUser={this.props.user} currentShare={this.props.id} loadShare={this.loadShare}/>
+                <CommentAdd currentUser={this.props.currentUser} currentShare={this.props.id} loadShare={this.loadShare}/>
                 
             </div>
         </div>
