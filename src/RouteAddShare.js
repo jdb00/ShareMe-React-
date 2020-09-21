@@ -13,21 +13,29 @@ class RouteAddShare extends Component {
     handleFormSubmit = (e) => {
         e.preventDefault()
         var formData = new FormData(this.addForm)
-        var data = {
-          title: formData.get('title'),
-          description: formData.get('description'),
-          //image: formData.get('pics'),
-          user_id: this.props.currentUser.id
-        }
-        API.addShare(data).then(res => navigate('/shares'))
+
+        API.uploadFile(formData)
+        .then(res => res.data)
+        .then(fileName => {
+            var {currentUser} = this.props;
+            var data = {
+                title: formData.get('title'),
+                description: formData.get('description'),
+                user_id: currentUser.id,
+                image: fileName,
+                type_id:formData.get('type-input'),
+            }
+            API.addShare(data).then(res => navigate('/shares'))
+        })
       }
 
     render() {
+        var {currentUser} = this.props
         return (
             <div className="app">
                 <div className="addUpdateShare">
                     <header>
-                        <Header />
+                        <Header currentUser={currentUser}/>
                     </header>
                     <main>
                         <h2>Add share</h2>

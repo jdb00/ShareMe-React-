@@ -35,16 +35,17 @@ class RouteNewShare extends Component {
     }
 
     render() {
+        var {currentUser} = this.props
         return (
             <div className="app">
                 <div className="newShares">
                     <header>
                         <div className="header-container">
                             <div className="profimg">
-                                <img src='../assets/gettyimages-472015658 2.svg' alt="" onClick={this.handleProfileClick}/>
+                                <img src={API.serverURL+currentUser.profile_picture} alt="" onClick={this.handleProfileClick}/>
                             </div>
                             <div className="welcome">
-                                <p>Hello <span className="name">Jim.</span><br/>What would you like to share today?</p>
+                                <p>Hello <span className="name">{this.props.currentUser.name}</span><br/>What would you like to share today?</p>
                             </div>
                         </div>
                     </header>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Router, Link, navigate} from '@reach/router'
 import './App.css'
+import API from './API';
 
 class Header extends Component {
     goBack = () =>{
@@ -8,6 +9,7 @@ class Header extends Component {
     }
 
     render() {
+        var {currentUser} = this.props
         return (
                 <header>
                     <div className="header-container">
@@ -17,7 +19,7 @@ class Header extends Component {
                         </div>
                         <div className="profimg">
                             <Link to="/user/shares">
-                                <img src="../assets/gettyimages-472015658 2.svg" alt="" />
+                                <img src={currentUser ? API.serverURL+currentUser.profile_picture:API.defaultUser} alt="" />
                             </Link>
                         </div>
                     </div>

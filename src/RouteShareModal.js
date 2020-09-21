@@ -48,7 +48,7 @@ class RouteShareModal extends Component {
             <div className="share-modal">
                 <div className="share-container">
                     <i className="fas fa-times" onClick={this.goBack}></i>    
-                    <img className="share-image" src="/assets/gettyimages-472015658 2.svg" alt=""/>
+                    <img className="share-image" src={image ? API.serverURL+image : API.defaultImage}alt=""/>
                     <div className="content">
                         <div className="body-text">
                         <h1 className="title">{title}</h1>

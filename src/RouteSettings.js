@@ -12,25 +12,31 @@ class RouteSettings extends Component {
 
     handleLogOutClick = (e) =>{
         e.preventDefault()
-        localStorage.removeItem('userId')
         this.props.logOut()
+        localStorage.removeItem('userId')
         navigate('/users/authenticate')
     }
 
     handleFormSubmit = (e) => {
         e.preventDefault()
         var formData = new FormData(this.addForm)
-        var data = {
-          name: formData.get('name'),
-          email: formData.get('email'),
-          about_me: formData.get('about_me'),
-          password: formData.get('password'),
-          //profile_picture: formData.get('profile_image'),
-        }
-        console.log(this.props.currentUser.id)
-        console.log(data)
-        API.updateUser(this.props.currentUser.id,data).then(res => navigate('/user/'+this.props.currentUser.id))
-    }
+
+        API.uploadFile(formData)
+        .then(res => res.data)
+        .then(fileName => {
+            var {setCurrentUser} = this.props;
+            var data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                about_me: formData.get('about_me'),
+                password: formData.get('password'),
+                profile_picture: fileName,
+                type_id:formData.get('type-input'),
+            }
+            API.updateUser(this.props.currentUser.id,data).then(res => navigate('/user/'+this.props.currentUser.id))
+
+        })
+      }
 
     render() {
         var {currentUser} = this.props
@@ -38,12 +44,12 @@ class RouteSettings extends Component {
             <div className="app">
                 <div className="settings">
                     <header>
-                        <Header />
+                        <Header currentUser={currentUser}/>
                     </header>
                     <main>
                         <h1>Settings</h1>
                         <div className="profimg">
-                            <img src="../assets/gettyimages-472015658 2.svg" alt="" />
+                            <img src={API.serverURL+currentUser.profile_picture} alt="" />
                         </div>
                         <form onSubmit={this.handleFormSubmit} ref={(el) => {this.addForm = el}}>
                             <div className="form-group">

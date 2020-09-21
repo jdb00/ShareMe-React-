@@ -21,7 +21,8 @@ class RouteSignUp extends Component {
         var data = {
             name: formData.get('name-input'),
             email: formData.get('email-input'),
-            password: this.validatePassword((formData.get('password-input')), (formData.get('confirm-password')))
+            password: this.validatePassword((formData.get('password-input')), (formData.get('confirm-password'))),
+            profile_picture: '1600664160374default-user.png'
         }
         if(data.password !== null){
             var users = API.getUsers()

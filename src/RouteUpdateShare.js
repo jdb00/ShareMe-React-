@@ -42,12 +42,12 @@ class RouteUpdateShare extends Component {
     }
 
     render() {
-        var {title, description, image} = this.state.share
+        var {title, description, image, user} = this.state.share
         return (
             <div className="app">
                 <div className="addUpdateShare">
                     <header>
-                        <Header />
+                        <Header currentUser={user}/>
                     </header>
                     <main>
                         <h2>Update share</h2>

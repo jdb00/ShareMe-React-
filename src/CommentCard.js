@@ -18,7 +18,7 @@ class CommentCard extends Component {
         return user ? (
             <div className="comment">
                 <div className="comment-info">
-                    <img className="user-image" src="/assets/gettyimages-472015658 2.svg" alt=""/>
+                    <img className="user-image" src={user.profile_picture ? API.serverURL+user.profile_picture : API.defaultUser } alt=""/>
                     <h3 className="user-name" onClick={this.handleUsernameClick}>{user.name}</h3>
                 </div>
                 <div className="comment-body">

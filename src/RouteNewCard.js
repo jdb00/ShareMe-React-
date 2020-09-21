@@ -3,7 +3,6 @@ import './App.css';
 import API from './API';
 import { navigate } from '@reach/router';
 import ReactDOM, { findDOMNode, unmountComponentAtNode } from 'react-dom';
-import ShareCardEditDelete from './ShareCardEditDelete';
 
 class RouteNewCard extends Component {
     constructor(props) {
@@ -79,7 +78,7 @@ class RouteNewCard extends Component {
         return (
             <div className="share-card" id="share-card">
                 <div className="left">
-                    <img src="https://picsum.photos/id/237/200/300"/>
+                    <img src={image ? API.serverURL+image : API.defaultImage}/>
                 </div>
                  <div className="right">
                     <div className="top">

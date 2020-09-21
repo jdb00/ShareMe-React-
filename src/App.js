@@ -12,7 +12,7 @@ import RouteUpdateShare from './RouteUpdateShare'
 import RouteUserPosts from './RouteUserPosts'
 import RouteSettings from './RouteSettings'
 import RouteShareModal from './RouteShareModal';
-import RouteNewCard from './RouteNewCard'
+import Header from './header'
 
 
 class App extends Component {
@@ -21,10 +21,10 @@ class App extends Component {
         this.state = {
             currentUser: {
                 id:2,
-                name: 'JimCarreyGodX',
+                name: 'HelloImBob',
                 password: 'password101',
                 email: 'jayfrost@gmail.com',
-                profile_picture: 'photo.jpg',
+                profile_picture: '1600665125769pexels-photo-1544880.jpeg',
                 about_me: 'The motto γνῶθι σ(ε)αυτόν (“know thyself”) was one of the maxims inscribed on the pediment of the temple of Apollo at Delphi, along with μηδὲν ἄγαν (“nothing in excess”), inviting mankind to exercise moderation in life.'
             }
         }
@@ -45,7 +45,7 @@ class App extends Component {
                     <RouteSplashPage path="splash"/>
                     <RouteLogIn  path="users/authenticate" setCurrentUser={this.setCurrentUser}/>
                     <RouteSignUp path="users/create"/>
-                    <RouteSettings path="user/settings" currentUser = {this.state.currentUser} logOut = {this.userLogOut}/>
+                    <RouteSettings path="user/settings" setCurrentUser = {this.setCurrentUser}currentUser = {this.state.currentUser} logOut = {this.userLogOut}/>
                     <RouteUserPosts path="user/:id" currentUser = {this.state.currentUser}/>
                     <RouteAddShare path="shares/add" currentUser = {this.state.currentUser}/>
                     <RouteNewShare path="shares" currentUser = {this.state.currentUser}/>
