@@ -54,7 +54,7 @@ class RouteSettings extends Component {
 
                             <div className="form-group">
                                 <label htmlFor="profile_image">Update Profile Image</label>
-                                <input type="file" className="form-control" id="profile_image" name="profile_image"/>
+                                <input type="file" className="form-control" id="profile_image" name="profile_image" defaultValue={user.profile_picture}/>
                             </div>
 
                             <div className="form-group">

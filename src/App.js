@@ -18,7 +18,7 @@ class App extends Component {
         this.state = {
             currentUser: {
                 id:2,
-                name: 'HelloImBob',
+                name: 'Heyguys',
                 password: 'password101',
                 email: 'jayfrost@gmail.com',
                 profile_picture: '1600665125769pexels-photo-1544880.jpeg',
