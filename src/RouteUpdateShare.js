@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link, navigate } from '@reach/router'
+import {navigate } from '@reach/router'
 import Footer from './footer'
 import Header from './header'
 import './App.css'
@@ -63,7 +63,7 @@ class RouteUpdateShare extends Component {
 
                             <div className="form-group">
                                 <label htmlFor="update-description">Update description</label>
-                                <textarea name="comment" defaultValue='' id="description" name="description" cols="30" rows="10" defaultValue={description}></textarea>
+                                <textarea id="description" name="description" cols="30" rows="10" defaultValue={description}/>
                             </div>
 
                             <div className="form-group">

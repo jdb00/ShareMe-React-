@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import './App.css'
 import API from './API'
 import CommentCard from './CommentCard'
-import { Link, navigate } from '@reach/router'
 import CommentAdd from'./addComment'
 
 class RouteShareModal extends Component {
@@ -21,7 +20,6 @@ class RouteShareModal extends Component {
     }
 
     componentDidMount(){
-        //todo: get comments from share need virtual?
         this.loadShare()
     }
 
@@ -36,7 +34,6 @@ class RouteShareModal extends Component {
     }
 
     goBack = () =>{
-        // console.log(this.state.comments)
         window.history.back()
     }
 
@@ -47,7 +44,7 @@ class RouteShareModal extends Component {
         return title ? (
             <div className="share-modal">
                 <div className="share-container">
-                    <i className="fas fa-times" onClick={this.goBack}></i>    
+                    <i className="modal-close fas fa-times" onClick={this.goBack}></i>    
                     <img className="share-image" src={image ? API.serverURL+image : API.defaultImage}alt=""/>
                     <div className="content">
                         <div className="body-text">
@@ -64,9 +61,12 @@ class RouteShareModal extends Component {
                     {this.state.comments.map((comment)=>{
                         var commentProps = {
                             ...comment,
+                            currentUser: this.props.currentUser,
+                            loadShare: this.loadShare,
                             key: "comment" + comment.id,
                         }
-                        if(user != null){
+                        {/* ask trung how to not go through all trash comments or something it goes through so many without shareid/userid can i put this if statement any earlier */}      
+                        if(comment.user != null){
                             return (<CommentCard {...commentProps}/>)
                         }
                     })

@@ -25,7 +25,6 @@ class RouteSignUp extends Component {
             profile_picture: '1600664160374default-user.png'
         }
         if(data.password !== null){
-            var users = API.getUsers()
             API.addUser(data).then(res => navigate('/users/authenticate'))  
         }
     }

@@ -6,10 +6,6 @@ import API from './API'
 
 
 class RouteAddShare extends Component {
-    constructor(props) {
-        super(props)
-    }
-
     handleFormSubmit = (e) => {
         e.preventDefault()
         var formData = new FormData(this.addForm)

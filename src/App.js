@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { Router, Link, navigate} from '@reach/router'
+import { Router} from '@reach/router'
 import './App.css';
-import API from './API'
 
 import RouteSplashPage from './RouteSplashPage'
 import RouteLogIn from './RouteLogIn'
@@ -11,9 +10,7 @@ import RouteNewShare from './RouteNewShare'
 import RouteUpdateShare from './RouteUpdateShare'
 import RouteUserPosts from './RouteUserPosts'
 import RouteSettings from './RouteSettings'
-import RouteShareModal from './RouteShareModal';
-import Header from './header'
-
+import RouteShareModal from './RouteShareModal'
 
 class App extends Component {
     constructor(props) {

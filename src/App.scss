@@ -424,10 +424,11 @@ body{
     background-color: $bg-color;
     min-width: 100vw;
     height: 100vh;
-    .fa-times{
+    .modal-close{
         color: $logo-color;
         font-size: 2em;
-        position:absolute;
+        position: absolute;
+        z-index: 90;
         right: .5em;
         top: .25em;
     }
@@ -495,7 +496,12 @@ body{
     .comment-info{
         display: flex;
         position: relative;
+        justify-content: space-between;
         color: $light-color;
+    }
+    .comment-delete{
+        font-size: 1.5em;
+        color: $logo-color;
     }
     .user-image{
         height: 1.75em;
@@ -513,14 +519,18 @@ body{
         vertical-align: middle;
     }
     .comment-body{
-        display: flex;
-        justify-content: space-between;
         p{
             margin: .25em 0;
             color: $light-color;
+            width: 100%;
+            word-wrap: break-word;
+        }
+        .timestamp{
+            text-align: right;
+            font-weight: bold;
         }
     }
-    .comment::after{
+    .comment-text::after{
         content: '';
         display: block;
         margin-top: .5em;

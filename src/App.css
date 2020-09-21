@@ -732,10 +732,11 @@ body {
   height: 100vh;
 }
 
-.share-modal .fa-times {
+.share-modal .modal-close {
   color: #0597F2;
   font-size: 2em;
   position: absolute;
+  z-index: 90;
   right: .5em;
   top: .25em;
 }
@@ -818,7 +819,15 @@ body {
   display: -ms-flexbox;
   display: flex;
   position: relative;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   color: white;
+}
+
+.comments .comment-delete {
+  font-size: 1.5em;
+  color: #0597F2;
 }
 
 .comments .user-image {
@@ -839,21 +848,19 @@ body {
   vertical-align: middle;
 }
 
-.comments .comment-body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
 .comments .comment-body p {
   margin: .25em 0;
   color: white;
+  width: 100%;
+  word-wrap: break-word;
 }
 
-.comments .comment::after {
+.comments .comment-body .timestamp {
+  text-align: right;
+  font-weight: bold;
+}
+
+.comments .comment-text::after {
   content: '';
   display: block;
   margin-top: .5em;

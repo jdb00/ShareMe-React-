@@ -1,18 +1,13 @@
 import React, { Component } from 'react'
-import { Link, navigate } from '@reach/router'
+import {navigate } from '@reach/router'
 import Footer from './footer'
 import Header from './header'
 import './App.css'
 import API from './API'
 
 class RouteSettings extends Component {
-    constructor(props) {
-        super(props)
-    }
-
     handleLogOutClick = (e) =>{
         e.preventDefault()
-        this.props.logOut()
         localStorage.removeItem('userId')
         navigate('/users/authenticate')
     }
@@ -24,7 +19,6 @@ class RouteSettings extends Component {
         API.uploadFile(formData)
         .then(res => res.data)
         .then(fileName => {
-            var {setCurrentUser} = this.props;
             var data = {
                 name: formData.get('name'),
                 email: formData.get('email'),
@@ -54,7 +48,7 @@ class RouteSettings extends Component {
                         <form onSubmit={this.handleFormSubmit} ref={(el) => {this.addForm = el}}>
                             <div className="form-group">
                                 <label htmlFor="name">Display Name</label>
-                                <input type="text" className="form-control" id="name" name="name" aria-describedby="name" maxlength="8"
+                                <input type="text" className="form-control" id="name" name="name" aria-describedby="name" maxLength="8"
                                     defaultValue={currentUser.name} />
                             </div>
 
@@ -71,7 +65,7 @@ class RouteSettings extends Component {
 
                             <div className="form-group">
                                 <label htmlFor="about_me">About me</label>
-                                <textarea name="about_me" defaultValue='' id="about_me" cols="10"
+                                <textarea name="about_me" id="about_me" cols="10"
                                     rows="5" defaultValue={currentUser.about_me}></textarea>
                             </div>
 

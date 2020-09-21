@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import API from './API';
 import { navigate } from '@reach/router';
-import ReactDOM, { findDOMNode, unmountComponentAtNode } from 'react-dom';
 
 class RouteNewCard extends Component {
     constructor(props) {
@@ -64,7 +63,7 @@ class RouteNewCard extends Component {
     }
 
     render() {
-        var {title, image, user, createdAt} = this.props
+        var {title, image, user} = this.props
         let button
         if(this.state.belongsToUser){
             button = 
@@ -78,7 +77,7 @@ class RouteNewCard extends Component {
         return (
             <div className="share-card" id="share-card">
                 <div className="left">
-                    <img src={image ? API.serverURL+image : API.defaultImage}/>
+                    <img src={image ? API.serverURL+image : API.defaultImage} alt="share"/>
                 </div>
                  <div className="right">
                     <div className="top">

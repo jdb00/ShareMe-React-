@@ -40,6 +40,9 @@ var API = {
     addComment : (data) =>{
         return axios.post(urlPrefix + '/comments',data)
     },
+    deleteComment : (id) => {
+        return axios.delete(urlPrefix + '/comments/' + id)
+    },
     authenticate : (data) => {
         return axios.post(urlPrefix+'/users/authenticate',data)          
     },
