@@ -49,6 +49,7 @@ $light-color: white;
             height: 4em;
             border-radius: 50%;
             box-shadow: 0px 0px 10px $shadow-color;
+            object-fit: cover;
             
         }   
     }
@@ -237,6 +238,7 @@ body{
                     width: 6em;
                     height: 6em;
                     box-shadow: none;
+                    object-fit: cover;
                 }   
             }
             .header-container{
@@ -370,6 +372,7 @@ body{
                     width: 8em;
                     height: 8em;
                     border-radius: 50%;
+                    object-fit: cover;
                 }
             }
 
@@ -499,6 +502,7 @@ body{
         width: 1.75em;
         border: thin $logo-color solid;
         border-radius: 50%;
+        object-fit: cover;
     }
     .user-name{
         font-size: 1em;
