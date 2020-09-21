@@ -35,7 +35,9 @@ class NewCard extends Component {
                         </div>
                         <hr />
                         <div className="bottom">
-                            <div className="title"><span>Title: </span>{title}</div>
+                            <div className="title">
+                                <span>Title: </span>{title}
+                            </div>
                             <p>{share}</p>
                         </div>
                     </div>

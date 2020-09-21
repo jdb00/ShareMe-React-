@@ -8,7 +8,8 @@ class RouteUpdateShare extends Component {
     constructor(props) {
         super()
         this.state = {
-            share: {}
+            share: {},
+            user: {}
         }
     }
 
@@ -35,6 +36,7 @@ class RouteUpdateShare extends Component {
 
     render() {
         var { photo, title, share } = this.state.share
+
         return (
             <div className="app">
                 <div className="addUpdateShare">
@@ -63,7 +65,7 @@ class RouteUpdateShare extends Component {
                             <button type="submit" className="btn btn-primary">Update</button>
                         </form>
                     </main>
-                    <Footer />
+                    <Footer currentUser={this.state.user} />
                 </div>
             </div>
         )

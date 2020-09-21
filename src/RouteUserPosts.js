@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Footer from './footer'
 import NewCard from './NewCard'
+import MyStory from './MyStory'
 import { Link } from '@reach/router';
 import API from './API'
 import './App.css'
@@ -56,6 +57,7 @@ class RouteUserPosts extends Component {
                         </div>
                     </header>
                     <main>
+                        <MyStory user={currentUser} />
                         <div className="cards">
                             {
                                 this.state.shares.map((share) => {
@@ -72,7 +74,7 @@ class RouteUserPosts extends Component {
                             }
                         </div>
                     </main>
-                    <Footer />
+                    <Footer currentUser={this.props.currentUser} />
                 </div>
             </div>
         )

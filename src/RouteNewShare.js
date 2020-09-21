@@ -34,19 +34,7 @@ class RouteNewShare extends Component {
                             <img src="../assets/signup-faded.svg" alt="" />
                         </div>
                         <div className="shares">
-                            {
-                                this.state.shares.map((share) => {
-                                    var shareProps = {
-                                        ...share,
-                                        key: share.id,
-                                        loadShares: this.loadShares
-                                    };
-                                    if (shareProps.user != null) {
-                                    }
-                                    return (<NewCard{...shareProps} />)
 
-                                })
-                            }
                         </div>
                     </main>
                     <footer>

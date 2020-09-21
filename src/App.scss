@@ -23,7 +23,6 @@ $light-color: white;
     padding: 1em;
     background: linear-gradient(180deg, rgba(0,40,62,1) 50%, rgba(13,13,13,.0) 100%);
 
-
     .fa-chevron-left{
         flex: 0 0 2em;
         font-size: 2em;
@@ -77,6 +76,7 @@ $light-color: white;
             input{
                 background-color: rgba($color: $logo-color, $alpha: .25);
                 border: none;
+                color: $text-color;
             }
 
             input[type='text']{
@@ -130,7 +130,8 @@ $light-color: white;
 
         p{
             color:$shadow-color;
-            margin: 0;
+            margin: 2em;
+            font-size: .8em;
             width: 100%;
             text-align: center;
             border-radius: 10px;
@@ -197,7 +198,7 @@ body{
         footer{
             @include footer;
         }
-      }
+    }
 
     .signUp, .signIn{
         height: 100vh;
@@ -352,7 +353,7 @@ body{
 
                 button{
                     @include button;
-                    margin-top: 3em;
+                    margin-top: .5em;
                     text-align: center;
                     display: block;
                 }
@@ -384,6 +385,7 @@ body{
                     color: $logo-color;
                     font-size: .8em;
                     text-transform: uppercase;
+                    font-weight: 700;
                 }
 
                 p{
@@ -402,26 +404,6 @@ body{
             }
         }
 
-        main{
-            
-            margin: 0 auto;
-            color: $text-color;
-
-            h1{
-                text-align: center;
-            }
-
-            span{
-                font-size: .7em;
-                margin-top: 2em;
-            }
-
-            p{
-                font-size: .85em;
-                font-weight: 100;
-            }
-        }
-
         footer{
             @include footer;
         }
@@ -429,6 +411,25 @@ body{
             background-color: transparent;
             padding-bottom: 3em;
         }
+
+    }
+
+    .myStory{
+        width: 90vw;
+        margin: 0 auto;
+
+        h3{
+            font-size: .9em;
+            color: $text-color;
+            font-weight: 300;
+        }
+
+        p{
+            color: $text-color;
+            font-size: .7em;
+            font-weight: 100;
+        }
+        
     }
 
     .settings{
@@ -439,19 +440,23 @@ body{
         }
 
         main{
-            margin-top: 2em;
 
-            h1{
+            h2{
                 text-align: center;
                 color: $text-color;
+
+                span{
+                    font-weight: 700;
+                    color: $logo-color;
+                }
             }
 
             form{
                 @include form;
-                margin: 1em auto;
+                margin: 0 auto;
 
                 .form-group{
-                    margin: 1em 0;
+                    margin: 0;
                     position: relative;
                 }
 
@@ -507,6 +512,7 @@ body{
         
         .comments {
             width: 30em;
+            
             .top {
                 display: flex;
                 justify-content: space-between;
@@ -544,6 +550,10 @@ body{
                 
                 span{
                     font-weight: 700;
+                }
+
+                p{
+                    font-size: .7em;
                 }
             }
         }    

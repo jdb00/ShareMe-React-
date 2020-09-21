@@ -15,13 +15,17 @@ class App extends Component {
         super()
         this.state = {
             shares: [],
-            currentUser: null
+            currentUser: null,
+            user: {}
         }
     }
 
     componentDidMount() {
         API.getShares().then(res => this.setState({ shares: res.data }))
+        this.loadUser()
 
+    }
+    loadUser = () =>{
         //local storage
         var userId = localStorage.getItem('userId')
         if (userId) {
@@ -41,7 +45,7 @@ class App extends Component {
                     <RouteSplashPage path="splash" />
                     <RouteLogIn setCurrentUser={this.setCurrentUser} path="/users/authenticate" />
                     <RouteSignUp currentUser={currentUser} setCurrentUser={this.setCurrentUser} path="users/create" />
-                    <RouteSettings path="/users/:id/settings" />
+                    <RouteSettings loadUser={this.loadUser} path="/users/:id/settings" />
                     <RouteUserPosts currentUser={currentUser} setCurrentUser={this.setCurrentUser} path="user/posts" />
                     <RouteAddShare currentUser={currentUser} path="shares/add" />
                     <RouteNewShare path="shares" />

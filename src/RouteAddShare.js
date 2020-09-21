@@ -57,7 +57,7 @@ class RouteAddShare extends Component {
                         </form>
                     </main>
                     <footer>
-                        <Footer />
+                        <Footer currentUser={this.props.currentUser} />
                     </footer>
                 </div>
             </div>
