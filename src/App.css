@@ -18,7 +18,7 @@ body {
   height: 100vh;
 }
 
-.app .splashPage main {
+.app .splash-page main {
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -31,18 +31,18 @@ body {
       justify-content: space-around;
 }
 
-.app .splashPage main .logo img {
+.app .splash-page main .logo img {
   display: block;
   margin: 0 auto;
 }
 
-.app .splashPage main .signin-signup {
+.app .splash-page main .sign-in-sign-up {
   margin: 0 auto;
   width: 40%;
   text-align: center;
 }
 
-.app .splashPage main .signin-signup button {
+.app .splash-page main .sign-in-sign-up button {
   position: relative;
   margin: 0 auto;
   background-color: #E5E5E5;
@@ -53,23 +53,23 @@ body {
   margin-bottom: 2em;
 }
 
-.app .signUp header, .app .signIn header {
+.app .sign-up header, .app .sign-in header {
   text-align: center;
   padding-top: 3em;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
-.app .signUp main, .app .signIn main {
+.app .sign-up main, .app .sign-in main {
   text-align: center;
   margin-top: 3em;
 }
 
-.app .signUp main .signIn, .app .signUp main .signUp, .app .signIn main .signIn, .app .signIn main .signUp {
+.app .sign-up main .sign-in, .app .sign-up main .sign-up, .app .sign-in main .sign-in, .app .sign-in main .sign-up {
   position: relative;
 }
 
-.app .signUp main .signIn h1, .app .signUp main .signUp h1, .app .signIn main .signIn h1, .app .signIn main .signUp h1 {
+.app .sign-up main .sign-in h1, .app .sign-up main .sign-up h1, .app .sign-in main .sign-in h1, .app .sign-in main .sign-up h1 {
   position: absolute;
   text-align: center;
   width: 100vw;
@@ -77,39 +77,39 @@ body {
   letter-spacing: .1em;
 }
 
-.app .signUp main img, .app .signIn main img {
+.app .sign-up main img, .app .sign-in main img {
   width: 8em;
 }
 
-.app .signUp main form, .app .signIn main form {
+.app .sign-up main form, .app .sign-in main form {
   width: 90vw;
   margin: 3em auto;
   height: 16em;
 }
 
-.app .signUp main form input, .app .signIn main form input {
+.app .sign-up main form input, .app .sign-in main form input {
   background-color: transparent;
   border: none;
   border-bottom: 1px solid rgba(5, 151, 242, 0.5);
 }
 
-.app .signUp main form ::-webkit-input-placeholder, .app .signIn main form ::-webkit-input-placeholder {
+.app .sign-up main form ::-webkit-input-placeholder, .app .sign-in main form ::-webkit-input-placeholder {
   color: rgba(5, 151, 242, 0.5);
 }
 
-.app .signUp main form :-ms-input-placeholder, .app .signIn main form :-ms-input-placeholder {
+.app .sign-up main form :-ms-input-placeholder, .app .sign-in main form :-ms-input-placeholder {
   color: rgba(5, 151, 242, 0.5);
 }
 
-.app .signUp main form ::-ms-input-placeholder, .app .signIn main form ::-ms-input-placeholder {
+.app .sign-up main form ::-ms-input-placeholder, .app .sign-in main form ::-ms-input-placeholder {
   color: rgba(5, 151, 242, 0.5);
 }
 
-.app .signUp main form ::placeholder, .app .signIn main form ::placeholder {
+.app .sign-up main form ::placeholder, .app .sign-in main form ::placeholder {
   color: rgba(5, 151, 242, 0.5);
 }
 
-.app .signUp main button, .app .signIn main button {
+.app .sign-up main button, .app .sign-in main button {
   position: relative;
   margin: 0 auto;
   background-color: #E5E5E5;
@@ -120,11 +120,11 @@ body {
   margin-top: 2em;
 }
 
-.app .newShares header {
+.app .new-shares header {
   padding-top: 1.5em;
 }
 
-.app .newShares header .header-container {
+.app .new-shares header .header-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -146,7 +146,7 @@ body {
   background: linear-gradient(180deg, #00283e 50%, rgba(13, 13, 13, 0) 100%);
 }
 
-.app .newShares header .fa-chevron-left {
+.app .new-shares header .fa-chevron-left {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 2em;
           flex: 0 0 2em;
@@ -154,12 +154,12 @@ body {
   color: #0597F2;
 }
 
-.app .newShares header .logo img {
+.app .new-shares header .logo img {
   width: 4em;
   margin: 0 auto;
 }
 
-.app .newShares header .profimg img {
+.app .new-shares header .prof-img img {
   width: 4em;
   height: 4em;
   border-radius: 50%;
@@ -169,17 +169,17 @@ body {
      object-fit: cover;
 }
 
-.app .newShares header .welcome {
+.app .new-shares header .welcome {
   width: 60%;
 }
 
-.app .newShares header .welcome p {
+.app .new-shares header .welcome p {
   color: #E5E5E5;
   font-size: 1.25em;
   font-weight: 100;
 }
 
-.app .newShares header .profimg img {
+.app .new-shares header .prof-img img {
   width: 6em;
   height: 6em;
   -webkit-box-shadow: none;
@@ -188,29 +188,29 @@ body {
      object-fit: cover;
 }
 
-.app .newShares header .header-container {
+.app .new-shares header .header-container {
   background: transparent;
 }
 
-.app .newShares main {
+.app .new-shares main {
   position: relative;
   margin-top: 2em;
 }
 
-.app .newShares main .shares {
+.app .new-shares main .shares {
   padding-bottom: 4em;
 }
 
-.app .newShares main .logo {
+.app .new-shares main .logo {
   text-align: center;
   padding: 1em 0;
 }
 
-.app .newShares main .logo img {
+.app .new-shares main .logo img {
   width: 40vw;
 }
 
-.app .newShares main .logo h2 {
+.app .new-shares main .logo h2 {
   position: absolute;
   top: .05em;
   color: #E5E5E5;
@@ -220,7 +220,7 @@ body {
   text-align: center;
 }
 
-.app .newShares footer {
+.app .new-shares footer {
   height: 3em;
   border-radius: .5em .5em 0em 0em;
   background-color: #00283e;
@@ -242,14 +242,14 @@ body {
   width: 100vw;
 }
 
-.app .newShares footer i {
+.app .new-shares footer i {
   position: relative;
   z-index: 100;
   font-size: 2.5em;
   color: #0597F2;
 }
 
-.app .addUpdateShare header .header-container {
+.app .add-update-share header .header-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -271,7 +271,7 @@ body {
   background: linear-gradient(180deg, #00283e 50%, rgba(13, 13, 13, 0) 100%);
 }
 
-.app .addUpdateShare header .fa-chevron-left {
+.app .add-update-share header .fa-chevron-left {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 2em;
           flex: 0 0 2em;
@@ -279,12 +279,12 @@ body {
   color: #0597F2;
 }
 
-.app .addUpdateShare header .logo img {
+.app .add-update-share header .logo img {
   width: 4em;
   margin: 0 auto;
 }
 
-.app .addUpdateShare header .profimg img {
+.app .add-update-share header .prof-img img {
   width: 4em;
   height: 4em;
   border-radius: 50%;
@@ -294,22 +294,22 @@ body {
      object-fit: cover;
 }
 
-.app .addUpdateShare header .welcome {
+.app .add-update-share header .welcome {
   width: 60%;
 }
 
-.app .addUpdateShare header .welcome p {
+.app .add-update-share header .welcome p {
   color: #E5E5E5;
   font-size: 1.25em;
   font-weight: 100;
 }
 
-.app .addUpdateShare main {
+.app .add-update-share main {
   position: relative;
   margin-top: 2em;
 }
 
-.app .addUpdateShare main h2 {
+.app .add-update-share main h2 {
   position: absolute;
   top: .05em;
   color: #E5E5E5;
@@ -319,24 +319,24 @@ body {
   text-align: center;
 }
 
-.app .addUpdateShare main .logo {
+.app .add-update-share main .logo {
   text-align: center;
 }
 
-.app .addUpdateShare main .logo img {
+.app .add-update-share main .logo img {
   width: 40vw;
 }
 
-.app .addUpdateShare main form {
+.app .add-update-share main form {
   margin: 4em auto;
   width: 80vw;
 }
 
-.app .addUpdateShare main form .form-group {
+.app .add-update-share main form .form-group {
   margin: 2em 0;
 }
 
-.app .addUpdateShare main form .form-group label {
+.app .add-update-share main form .form-group label {
   color: #E5E5E5;
   font-weight: 400;
   font-size: .75em;
@@ -344,16 +344,16 @@ body {
   letter-spacing: .15em;
 }
 
-.app .addUpdateShare main form .form-group input {
+.app .add-update-share main form .form-group input {
   background-color: rgba(5, 151, 242, 0.25);
   border: none;
 }
 
-.app .addUpdateShare main form .form-group input[type='text'] {
+.app .add-update-share main form .form-group input[type='text'] {
   color: #E5E5E5;
 }
 
-.app .addUpdateShare main form .form-group textarea {
+.app .add-update-share main form .form-group textarea {
   width: 80vw;
   background-color: rgba(5, 151, 242, 0.25);
   font-size: .85em;
@@ -361,27 +361,27 @@ body {
   padding: 2em;
 }
 
-.app .addUpdateShare main form .form-group ::-webkit-input-placeholder {
+.app .add-update-share main form .form-group ::-webkit-input-placeholder {
   font-size: .85em;
   font-weight: 400;
 }
 
-.app .addUpdateShare main form .form-group :-ms-input-placeholder {
+.app .add-update-share main form .form-group :-ms-input-placeholder {
   font-size: .85em;
   font-weight: 400;
 }
 
-.app .addUpdateShare main form .form-group ::-ms-input-placeholder {
+.app .add-update-share main form .form-group ::-ms-input-placeholder {
   font-size: .85em;
   font-weight: 400;
 }
 
-.app .addUpdateShare main form .form-group ::placeholder {
+.app .add-update-share main form .form-group ::placeholder {
   font-size: .85em;
   font-weight: 400;
 }
 
-.app .addUpdateShare main form button {
+.app .add-update-share main form button {
   position: relative;
   margin: 0 auto;
   background-color: #E5E5E5;
@@ -394,7 +394,7 @@ body {
   display: block;
 }
 
-.app .addUpdateShare footer {
+.app .add-update-share footer {
   height: 3em;
   border-radius: .5em .5em 0em 0em;
   background-color: #00283e;
@@ -416,14 +416,14 @@ body {
   width: 100vw;
 }
 
-.app .addUpdateShare footer i {
+.app .add-update-share footer i {
   position: relative;
   z-index: 100;
   font-size: 2.5em;
   color: #0597F2;
 }
 
-.app .usersPosts header .header-container {
+.app .users-posts header .header-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -445,7 +445,7 @@ body {
   background: linear-gradient(180deg, #00283e 50%, rgba(13, 13, 13, 0) 100%);
 }
 
-.app .usersPosts header .fa-chevron-left {
+.app .users-posts header .fa-chevron-left {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 2em;
           flex: 0 0 2em;
@@ -453,12 +453,12 @@ body {
   color: #0597F2;
 }
 
-.app .usersPosts header .logo img {
+.app .users-posts header .logo img {
   width: 4em;
   margin: 0 auto;
 }
 
-.app .usersPosts header .profimg img {
+.app .users-posts header .prof-img img {
   width: 4em;
   height: 4em;
   border-radius: 50%;
@@ -468,27 +468,27 @@ body {
      object-fit: cover;
 }
 
-.app .usersPosts header .welcome {
+.app .users-posts header .welcome {
   width: 60%;
 }
 
-.app .usersPosts header .welcome p {
+.app .users-posts header .welcome p {
   color: #E5E5E5;
   font-size: 1.25em;
   font-weight: 100;
 }
 
-.app .usersPosts main {
+.app .users-posts main {
   width: 100vw;
   margin: 2em auto;
   color: #E5E5E5;
 }
 
-.app .usersPosts main .profimg {
+.app .users-posts main .prof-img {
   text-align: center;
 }
 
-.app .usersPosts main .profimg img {
+.app .users-posts main .prof-img img {
   width: 8em;
   height: 8em;
   border-radius: 50%;
@@ -496,21 +496,21 @@ body {
      object-fit: cover;
 }
 
-.app .usersPosts main .user-shares {
+.app .users-posts main .user-shares {
   padding-bottom: 1em;
 }
 
-.app .usersPosts main h1 {
+.app .users-posts main h1 {
   text-align: center;
 }
 
-.app .usersPosts main p {
+.app .users-posts main p {
   text-align: center;
   font-size: .85em;
   font-weight: 100;
 }
 
-.app .usersPosts footer {
+.app .users-posts footer {
   height: 3em;
   border-radius: .5em .5em 0em 0em;
   background-color: #00283e;
@@ -532,7 +532,7 @@ body {
   width: 100vw;
 }
 
-.app .usersPosts footer i {
+.app .users-posts footer i {
   position: relative;
   z-index: 100;
   font-size: 2.5em;
@@ -574,7 +574,7 @@ body {
   margin: 0 auto;
 }
 
-.app .settings header .profimg img {
+.app .settings header .prof-img img {
   width: 4em;
   height: 4em;
   border-radius: 50%;
@@ -594,11 +594,11 @@ body {
   font-weight: 100;
 }
 
-.app .settings main .profimg {
+.app .settings main .prof-img {
   text-align: center;
 }
 
-.app .settings main .profimg img {
+.app .settings main .prof-img img {
   width: 8em;
   height: 8em;
   border-radius: 50%;

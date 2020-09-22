@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import {navigate } from '@reach/router'
 import Footer from './footer'
 import './App.css'
-import RouteNewCard from './RouteNewCard'
+import RouteNewCard from './ShareCard'
 import API from './API'
 
 class RouteNewShare extends Component {
@@ -37,10 +37,10 @@ class RouteNewShare extends Component {
         var {currentUser} = this.props
         return (
             <div className="app">
-                <div className="newShares">
+                <div className="new-shares">
                     <header>
                         <div className="header-container">
-                            <div className="profimg">
+                            <div className="prof-img">
                                 <img src={API.serverURL+currentUser.profile_picture} alt="" onClick={this.handleProfileClick}/>
                             </div>
                             <div className="welcome">

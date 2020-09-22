@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import './App.css'
 import API from './API'
 import CommentCard from './CommentCard'
-import CommentAdd from'./addComment'
+import CommentAdd from'./CommentAdd'
 
 class RouteShareModal extends Component {
     constructor(props) {
@@ -36,7 +36,6 @@ class RouteShareModal extends Component {
     goBack = () =>{
         window.history.back()
     }
-
 
     render() {
         var {description, image, title}  = this.state.share

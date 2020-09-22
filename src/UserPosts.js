@@ -9,7 +9,7 @@ class UserPosts extends Component {
   render() {
     return (
       <div className="app">
-        <div className="usersPosts">
+        <div className="users-posts">
           <header>
             <i className="fas fa-chevron-left"></i>
             <div className="logo">

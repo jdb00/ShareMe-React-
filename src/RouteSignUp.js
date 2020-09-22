@@ -4,7 +4,6 @@ import API from './API';
 import { navigate } from '@reach/router';
 
 class RouteSignUp extends Component {
-
     validatePassword = (password, password2) => {
         if(password === password2){
             return password
@@ -32,14 +31,14 @@ class RouteSignUp extends Component {
     render() {
         return (
             <div className="app">
-                <div className="signUp">
+                <div className="sign-up">
                     <header>
                         <div className="logo">
                             <img src='../assets/ShareMe Logo 1.svg' alt="" />
                         </div>
                     </header>
                     <main>
-                        <div className="signUp">
+                        <div className="sign-up">
                             <h1>Sign up</h1>
                             <img src="../assets/signup-faded.svg" alt="" />
                         </div>

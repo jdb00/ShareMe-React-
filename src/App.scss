@@ -25,38 +25,28 @@ $light-color: white;
         padding: 1em;
         background: linear-gradient(180deg, rgba(0,40,62,1) 50%, rgba(13,13,13,.0) 100%);
     }
-   
-
-
     .fa-chevron-left{
         flex: 0 0 2em;
         font-size: 2em;
         color: $logo-color;
     }
-
     .logo{
-
         img{
             width: 4em;
             margin: 0 auto;
         }
     }
-
-    .profimg{
-
+    .prof-img{
         img{
             width: 4em;
             height: 4em;
             border-radius: 50%;
             box-shadow: 0px 0px 10px $shadow-color;
             object-fit: cover;
-            
         }   
     }
-
     .welcome{
         width: 60%;
-
         p{
             color: $text-color;
             font-size: 1.25em;
@@ -66,42 +56,36 @@ $light-color: white;
 }
 
 @mixin form {
-        margin: 4em auto;
-        width: 80vw;
-
-        .form-group{
-            margin: 2em 0;
-
-            label{
-                color: $text-color;
-                font-weight: 400;
-                font-size: .75em;
-                text-transform: uppercase;
-                letter-spacing: .15em;
-            }
-
-            input{
-                background-color: rgba($color: $logo-color, $alpha: .25);
-                border: none;
-            }
-
-            input[type='text']{
-                color: $text-color;
-            }
-
-            textarea{
-                width: 80vw;
-                background-color: rgba($color: $logo-color, $alpha: .25);
-                font-size: .85em;
-                color: $text-color;
-                padding: 2em;
-            }
-
-            ::placeholder{
-                font-size: .85em;
-                font-weight: 400;
-            }
+    margin: 4em auto;
+    width: 80vw;
+    .form-group{
+        margin: 2em 0;
+        label{
+            color: $text-color;
+            font-weight: 400;
+            font-size: .75em;
+            text-transform: uppercase;
+            letter-spacing: .15em;
         }
+        input{
+            background-color: rgba($color: $logo-color, $alpha: .25);
+            border: none;
+        }
+        input[type='text']{
+            color: $text-color;
+        }
+        textarea{
+            width: 80vw;
+            background-color: rgba($color: $logo-color, $alpha: .25);
+            font-size: .85em;
+            color: $text-color;
+            padding: 2em;
+        }
+        ::placeholder{
+            font-size: .85em;
+            font-weight: 400;
+        }
+    }
 }
 
 @mixin button {
@@ -152,7 +136,7 @@ body{
     width: 100vw;
     height: 100vh;
 
-    .splashPage{
+    .splash-page{
 
         main{
             height: 100vh;
@@ -168,7 +152,7 @@ body{
             }
           }
     
-          .signin-signup{
+          .sign-in-sign-up{
               margin: 0 auto;
               width: 40%;
               text-align: center;
@@ -181,8 +165,7 @@ body{
         }
       }
 
-    .signUp, .signIn{
-
+    .sign-up, .sign-in{
         header{
             text-align: center;
             padding-top: 3em;
@@ -191,9 +174,8 @@ body{
         main{
             text-align: center;
             margin-top: 3em;
-            .signIn, .signUp{
+            .sign-in, .sign-up{
                 position: relative;
-
                 h1{
                     position: absolute;
                     text-align: center;
@@ -202,6 +184,7 @@ body{
                     letter-spacing: .1em;
                 }
             }
+
             img{
                 width: 8em;
             }
@@ -210,7 +193,6 @@ body{
                 width: 90vw;
                 margin: 3em auto;
                 height: 16em;
-
                 input{
                     background-color: transparent;
                     border: none;
@@ -229,11 +211,11 @@ body{
         }
     }
 
-    .newShares{
+    .new-shares{
         header{
             @include header;
             padding-top: 1.5em;
-            .profimg{
+            .prof-img{
                 img{
                     width: 6em;
                     height: 6em;
@@ -275,8 +257,7 @@ body{
         }
     }
 
-    .addUpdateShare{
-
+    .add-update-share{
         header{
             @include header;
         }
@@ -320,7 +301,7 @@ body{
         }
     }
 
-    .usersPosts{
+    .users-posts{
         header{
             @include header;
         }
@@ -329,8 +310,7 @@ body{
             width: 100vw;
             margin: 2em auto;
             color: $text-color;
-
-            .profimg{
+            .prof-img{
                 text-align: center;
                 img{
                     width: 8em;
@@ -364,10 +344,8 @@ body{
         @include header;
         }
         main{
-
-            .profimg{
+            .prof-img{
                 text-align: center;
-
                 img{
                     width: 8em;
                     height: 8em;
@@ -599,7 +577,7 @@ body{
         }
     }
     
-    .right {
+    .right{
         display: flex;
         flex-direction: column;
         justify-content: center;

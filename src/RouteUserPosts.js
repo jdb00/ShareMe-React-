@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Footer from './footer'
 import Header from './header'
 import './App.css'
-import RouteNewCard from './RouteNewCard'
+import RouteNewCard from './ShareCard'
 import API from './API'
 
 class RouteUserPosts extends Component {
@@ -48,12 +48,12 @@ class RouteUserPosts extends Component {
         var {currentUser} = this.props
         return (
             <div className="app">
-                <div className="usersPosts">
+                <div className="users-posts">
                     <header>
                         <Header currentUser = {currentUser}/>
                     </header>
                     <main>
-                        <div className="profimg">
+                        <div className="prof-img">
                             <img src={API.serverURL+user.profile_picture} alt="" />
                         </div>
                         <h1 className="user-name">{user.name}</h1>

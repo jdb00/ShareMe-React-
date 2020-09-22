@@ -35,14 +35,14 @@ class RouteLogIn extends Component {
     render() {
         return (
             <div className="app">
-                <div className="signIn">
+                <div className="sign-in">
                     <header>
                         <div className="logo">
                         <img src='../assets/ShareMe Logo 1.svg' alt="" />
                         </div>
                     </header>
                     <main>
-                        <div className="signIn">
+                        <div className="sign-in">
                             <h1>Sign in</h1>
                             <img src='../assets/signup-faded.svg' alt="" />
                         </div>

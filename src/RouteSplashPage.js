@@ -13,7 +13,7 @@ class RouteSplashPage extends Component {
     render() {
         return (
             <div className="app">
-                <div className="splashPage">
+                <div className="splash-page">
                     <header>
 
                     </header>
@@ -21,7 +21,7 @@ class RouteSplashPage extends Component {
                         <div className="logo">
                             <img src='../assets/ShareMe Logo 1.svg' alt="" />
                         </div>
-                        <div className="signin-signup">
+                        <div className="sign-in-sign-up">
                             <button type="submit" className="btn btn-primary"><Link to='/users/authenticate'>Sign in</Link></button>
                             <button type="submit" className="btn btn-primary"><Link to='/users/create'>Sign up</Link></button>
                         </div>

@@ -17,7 +17,7 @@ class Header extends Component {
                         <div className="logo">
                             <img src="../assets/ShareMe Logo 1.svg" alt="" />
                         </div>
-                        <div className="profimg">
+                        <div className="prof-img">
                             <Link to="/user/shares">
                                 <img src={currentUser ? API.serverURL+currentUser.profile_picture:API.defaultUser} alt="" />
                             </Link>

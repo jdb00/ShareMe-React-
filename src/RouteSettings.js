@@ -15,7 +15,7 @@ class RouteSettings extends Component {
     handleFormSubmit = (e) => {
         e.preventDefault()
         var formData = new FormData(this.addForm)
-
+        console.log(formData)
         API.uploadFile(formData)
         .then(res => res.data)
         .then(fileName => {
@@ -27,6 +27,7 @@ class RouteSettings extends Component {
                 profile_picture: fileName,
                 type_id:formData.get('type-input'),
             }
+            console.log(data)
             API.updateUser(this.props.currentUser.id,data).then(res => navigate('/user/'+this.props.currentUser.id))
 
         })
@@ -42,7 +43,7 @@ class RouteSettings extends Component {
                     </header>
                     <main>
                         <h1>Settings</h1>
-                        <div className="profimg">
+                        <div className="prof-img">
                             <img src={API.serverURL+currentUser.profile_picture} alt="" />
                         </div>
                         <form onSubmit={this.handleFormSubmit} ref={(el) => {this.addForm = el}}>
@@ -53,8 +54,8 @@ class RouteSettings extends Component {
                             </div>
 
                             <div className="form-group">
-                                <label htmlFor="profile_image">Update Profile Image</label>
-                                <input type="file" className="form-control" id="profile_image" name="profile_image" defaultValue={user.profile_picture}/>
+                                <label htmlFor="profile_-mage">Update Profile Image</label>
+                                <input type="file" className="form-control" id="profile-image" name="profile-image"/>
                             </div>
 
                             <div className="form-group">
@@ -64,8 +65,8 @@ class RouteSettings extends Component {
                             </div>
 
                             <div className="form-group">
-                                <label htmlFor="about_me">About me</label>
-                                <textarea name="about_me" id="about_me" cols="10"
+                                <label htmlFor="about-me">About me</label>
+                                <textarea name="about-me" id="about-me" cols="10"
                                     rows="5" defaultValue={currentUser.about_me}></textarea>
                             </div>
 

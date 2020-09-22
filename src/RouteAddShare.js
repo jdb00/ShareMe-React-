@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {navigate} from '@reach/router'
-import Footer from './footer'
-import Header from './header'
+import Footer from './Footer'
+import Header from './Header'
 import API from './API'
 
 
@@ -29,7 +29,7 @@ class RouteAddShare extends Component {
         var {currentUser} = this.props
         return (
             <div className="app">
-                <div className="addUpdateShare">
+                <div className="add-update-share">
                     <header>
                         <Header currentUser={currentUser}/>
                     </header>
