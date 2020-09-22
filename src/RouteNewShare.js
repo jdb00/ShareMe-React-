@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import Footer from './footer'
 import API from './API'
-import NewCard from './NewCard'
 
 class RouteNewShare extends Component {
 

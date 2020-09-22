@@ -6,7 +6,7 @@ import { navigate } from '@reach/router'
 
 class RouteSettings extends Component {
     constructor(props) {
-        super()
+        super(props)
         this.state = {
             user: {},
             currentUser: {},
@@ -43,7 +43,7 @@ class RouteSettings extends Component {
     }
 
     render() {
-        var { user, name, email } = this.state.user
+        var { myStory, name, email } = this.state.user
         return (
             <div className="app">
                 <div className="settings">
@@ -61,7 +61,7 @@ class RouteSettings extends Component {
 
                             <div className="form-group">
                                 <label htmlFor="myStory">Add description</label>
-                                <textarea name="myStory" id="myStory" cols="30" rows="10" defaultValue=''></textarea>
+                                <textarea name="myStory" id="myStory" cols="30" rows="10" defaultValue={myStory}></textarea>
                             </div>
 
                             <div className="form-group">
@@ -70,7 +70,6 @@ class RouteSettings extends Component {
                             </div>
                             <div className='buttons'>
                                 <button type="submit" className="btn btn-primary">Update</button>
-                                <button type="submit" className="btn btn-primary" onClick={this.handleTrashClick}>Delete</button>
                             </div>
                         </form>
                     </main>
