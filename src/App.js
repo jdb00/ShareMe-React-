@@ -45,7 +45,7 @@ class App extends Component {
                     <RouteSplashPage path="splash" />
                     <RouteLogIn setCurrentUser={this.setCurrentUser} path="/users/authenticate" />
                     <RouteSignUp currentUser={currentUser} setCurrentUser={this.setCurrentUser} path="users/create" />
-                    <RouteSettings loadUser={this.loadUser} path="/users/:id/settings" />
+                    <RouteSettings currentUser={currentUser} loadUser={this.loadUser} path="/users/:id/settings" />
                     <RouteUserPosts currentUser={currentUser} setCurrentUser={this.setCurrentUser} path="user/posts" />
                     <RouteAddShare currentUser={currentUser} path="shares/add" />
                     <RouteNewShare path="shares" />

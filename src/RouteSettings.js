@@ -37,8 +37,8 @@ class RouteSettings extends Component {
     }
 
     handleTrashClick = () => {
-        var { id, data, loadUser } = this.props
-        API.deleteUser(id, data)
+        var { currentUser, loadUser } = this.props
+        API.deleteUser(currentUser)
         loadUser()
     }
 
