@@ -77,7 +77,7 @@ class RouteNewCard extends Component {
         return (
             <div className="share-card" id="share-card">
                 <div className="left">
-                    <img src={image ? API.serverURL+image : API.defaultImage} alt="share"/>
+                    <img src={image ? API.serverURL+image : API.defaultImage} alt="share" onClick={this.handleShareClick}/>
                 </div>
                  <div className="right">
                     <div className="top">

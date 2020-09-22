@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {navigate } from '@reach/router'
-import Footer from './footer'
+import Footer from './Footer'
 import './App.css'
 import RouteNewCard from './ShareCard'
 import API from './API'
@@ -61,12 +61,14 @@ class RouteNewShare extends Component {
                                     key: share.id,
                                     loadShares: this.loadShares,
                                     currentUser: this.props.currentUser
-                                    };
-                                    if(shareProps.user != null){
-                                        return (<RouteNewCard{...shareProps}/>)
-                                    }
-                                })
-                            }
+                                };
+
+                                if(shareProps.user != null){
+                                    return (<RouteNewCard{...shareProps}/>)
+                                }
+
+                                return null
+                            })}
                         </div>
                     </main>
                     <footer>

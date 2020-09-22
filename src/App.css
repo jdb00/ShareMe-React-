@@ -221,9 +221,11 @@ body {
 }
 
 .app .new-shares footer {
-  height: 3em;
+  height: 3.25em;
   border-radius: .5em .5em 0em 0em;
   background-color: #00283e;
+  -webkit-box-shadow: 15px 15px 15px rgba(5, 151, 242, 0.25);
+          box-shadow: 15px 15px 15px rgba(5, 151, 242, 0.25);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -245,7 +247,7 @@ body {
 .app .new-shares footer i {
   position: relative;
   z-index: 100;
-  font-size: 2.5em;
+  font-size: 2.25em;
   color: #0597F2;
 }
 
@@ -395,9 +397,11 @@ body {
 }
 
 .app .add-update-share footer {
-  height: 3em;
+  height: 3.25em;
   border-radius: .5em .5em 0em 0em;
   background-color: #00283e;
+  -webkit-box-shadow: 15px 15px 15px rgba(5, 151, 242, 0.25);
+          box-shadow: 15px 15px 15px rgba(5, 151, 242, 0.25);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -419,7 +423,7 @@ body {
 .app .add-update-share footer i {
   position: relative;
   z-index: 100;
-  font-size: 2.5em;
+  font-size: 2.25em;
   color: #0597F2;
 }
 
@@ -511,9 +515,11 @@ body {
 }
 
 .app .users-posts footer {
-  height: 3em;
+  height: 3.25em;
   border-radius: .5em .5em 0em 0em;
   background-color: #00283e;
+  -webkit-box-shadow: 15px 15px 15px rgba(5, 151, 242, 0.25);
+          box-shadow: 15px 15px 15px rgba(5, 151, 242, 0.25);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -535,7 +541,7 @@ body {
 .app .users-posts footer i {
   position: relative;
   z-index: 100;
-  font-size: 2.5em;
+  font-size: 2.25em;
   color: #0597F2;
 }
 
@@ -698,9 +704,11 @@ body {
 }
 
 .app .settings footer {
-  height: 3em;
+  height: 3.25em;
   border-radius: .5em .5em 0em 0em;
   background-color: #00283e;
+  -webkit-box-shadow: 15px 15px 15px rgba(5, 151, 242, 0.25);
+          box-shadow: 15px 15px 15px rgba(5, 151, 242, 0.25);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -722,7 +730,7 @@ body {
 .app .settings footer i {
   position: relative;
   z-index: 100;
-  font-size: 2.5em;
+  font-size: 2.25em;
   color: #0597F2;
 }
 

@@ -24,6 +24,8 @@ class CommentAdd extends Component {
             comment: newComment
         }
 
+        this.setState({newComment: ''})
+
         if(currentUser.id != null){
             API.addComment(data).then(res=> loadShare(currentShare))
         }
@@ -36,7 +38,7 @@ class CommentAdd extends Component {
         return (
             <div className="add-comment">
                 <div className="add-input">
-                    <input type="text" name="comment-input" id="comment-input" placeholder="Add a Comment!" onChange={this.handleChange}/>
+                    <input type="text" name="comment-input" id="comment-input" placeholder="Add a Comment!" value={this.state.newComment} onChange={this.handleChange}/>
                     <i className="fas fa-caret-right" onClick={this.handleClick}></i>
                 </div>
             </div>

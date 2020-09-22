@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {navigate } from '@reach/router'
-import Footer from './footer'
-import Header from './header'
+import Footer from './Footer'
+import Header from './Header'
 import './App.css'
 import API from './API'
 
@@ -15,22 +15,40 @@ class RouteSettings extends Component {
     handleFormSubmit = (e) => {
         e.preventDefault()
         var formData = new FormData(this.addForm)
-        console.log(formData)
-        API.uploadFile(formData)
-        .then(res => res.data)
-        .then(fileName => {
+        var {currentUser, setCurrentUser} = this.props
+
+        if(formData.get('profile-image').size > 0){
+            API.uploadFile(formData)
+            .then(res => res.data)
+            .then(fileName => {
+                var data = {
+                    name: formData.get('name'),
+                    email: formData.get('email'),
+                    about_me: formData.get('about_me'),
+                    password: formData.get('password'),
+                    profile_picture: fileName,
+                    type_id:formData.get('type-input'),
+                }
+                API.updateUser(currentUser.id,data)
+                .then(res => navigate('/user/'+currentUser.id))
+                .then(res=> setCurrentUser(data))
+    
+            })
+
+        }else{
             var data = {
                 name: formData.get('name'),
                 email: formData.get('email'),
                 about_me: formData.get('about_me'),
                 password: formData.get('password'),
-                profile_picture: fileName,
+                profile_picture: currentUser.profile_picture,
                 type_id:formData.get('type-input'),
             }
             console.log(data)
-            API.updateUser(this.props.currentUser.id,data).then(res => navigate('/user/'+this.props.currentUser.id))
-
-        })
+            API.updateUser(currentUser.id,data)
+            .then(res => navigate('/user/'+currentUser.id))
+            .then(res=> setCurrentUser(data))
+        }
       }
 
     render() {

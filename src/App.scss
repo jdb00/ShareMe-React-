@@ -99,9 +99,10 @@ $light-color: white;
 }
 
 @mixin footer {
-        height: 3em;
+        height: 3.25em;
         border-radius: .5em .5em 0em 0em;
         background-color: #00283e;
+        box-shadow: 15px 15px 15px rgba($color: $logo-color, $alpha: .25);
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -111,11 +112,10 @@ $light-color: white;
         padding: .5em 2em;
         box-sizing: border-box;
         width: 100vw;
-
         i{
             position: relative;
             z-index: 100;
-            font-size: 2.5em;
+            font-size: 2.25em;
             color: $logo-color;
         }
 }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import Footer from './footer'
-import Header from './header'
+import Footer from './Footer'
+import Header from './Header'
 import './App.css'
 import RouteNewCard from './ShareCard'
 import API from './API'
@@ -10,6 +10,7 @@ class RouteUserPosts extends Component {
         super(props)
         this.state = {
             user: {
+                profile_picture: '1600664160374default-user.png',
                 shares:[
                     {
                         comments:[
@@ -23,8 +24,6 @@ class RouteUserPosts extends Component {
             }
         }
     }
-
-
 
     loadUser = () => {
         var {id} = this.props
@@ -62,17 +61,19 @@ class RouteUserPosts extends Component {
                         <div className="user-shares">
                             {this.state.user.shares.map((share) => {
                                 var shareProps = {
-                                    ...share,
+                                ...share,
                                     key: 'share' + share.id,
                                     user: this.state.user,
                                     loadShares: this.loadShares,
                                     currentUser: this.props.currentUser
-                                    };
-                                    if(shareProps.user != null){
-                                        return (<RouteNewCard{...shareProps}/>)
-                                    }
-                            })
-                        } 
+                                };
+                                
+                                if(shareProps.user != null){
+                                    return (<RouteNewCard{...shareProps}/>)
+                                }
+
+                                return null
+                            })} 
                         </div>
 
                     </main>

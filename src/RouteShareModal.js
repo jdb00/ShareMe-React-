@@ -64,12 +64,14 @@ class RouteShareModal extends Component {
                             loadShare: this.loadShare,
                             key: "comment" + comment.id,
                         }
-                        {/* ask trung how to not go through all trash comments or something it goes through so many without shareid/userid can i put this if statement any earlier */}      
+     
                         if(comment.user != null){
                             return (<CommentCard {...commentProps}/>)
                         }
-                    })
-                }
+
+                        return null
+                    })}
+
                 </div>
 
                 <CommentAdd currentUser={this.props.currentUser} currentShare={this.props.id} loadShare={this.loadShare}/>

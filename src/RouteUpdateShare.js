@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {navigate } from '@reach/router'
-import Footer from './footer'
-import Header from './header'
+import Footer from './Footer'
+import Header from './Header'
 import './App.css'
 import API from './API'
 
@@ -20,13 +20,31 @@ class RouteUpdateShare extends Component {
     handleFormSubmit = (e) => {
         e.preventDefault()
         var formData = new FormData(this.addForm)
-        var data = {
-          title: formData.get('title'),
-          description: formData.get('description'),
-          //image: formData.get('pics'),
+
+        if(formData.get('update-image').size > 0){
+            API.uploadFile(formData)
+            .then(res => res.data)
+            .then(fileName => {
+                var data = {
+                    title: formData.get('title'),
+                    description: formData.get('description'),
+                    image: fileName,
+                    type_id: formData.get('type-input')
+                  }
+                API.updateShare(this.props.id,data).then(res => navigate('/shares/'))
+
+            })
+        }else{
+            var data = {
+                title: formData.get('title'),
+                description: formData.get('description'),
+                image: this.state.share.image,
+                type_id: formData.get('type-input')
+              }
+            API.updateShare(this.props.id,data).then(res => navigate('/shares/'+this.props.id))
         }
-        console.log(data)
-        API.updateShare(this.props.id,data).then(res => navigate('/shares/'+this.props.id))
+        
+        
     }
 
     loadShare = () => {
@@ -68,7 +86,7 @@ class RouteUpdateShare extends Component {
 
                             <div className="form-group">
                                 <label htmlFor="update-image">Update image</label>
-                                <input type="file" className="form-control" id="update-image" placeholder={image} />
+                                <input type="file" className="form-control" id="update-image" name="update-image" placeholder={image} />
                             </div>
 
                             <button type="submit" className="btn btn-primary">Update</button>
