@@ -1,961 +1,184 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,300&display=swap");
-@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css");
-@import url("https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css");
-* {
-  padding: 0;
-  margin: 0;
-  border: none;
+@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css';
+@import 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css';
+
+/*GLOBAL*/
+*{
+  margin:0;
+  padding:0;
   list-style-type: none;
+  box-sizing:border-box;
 }
-
-body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #0D0D0D;
+body{
+  font-family: Verdana ;
 }
-
-.app {
-  width: 100vw;
-  height: 100vh;
-}
-
-.app .splashPage main {
-  height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
+.header{
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-}
-
-.app .splashPage main .logo img {
-  display: block;
-  margin: 0 auto;
-}
-
-.app .splashPage main .signin-signup {
-  margin: 0 auto;
-  width: 40%;
-  text-align: center;
-}
-
-.app .splashPage main .signin-signup button {
-  position: relative;
-  margin: 0 auto;
-  background-color: #E5E5E5;
-  padding: 0em 2em;
-  border: none;
-  color: #0597F2;
-  border-radius: 15px;
-  margin-bottom: 2em;
-}
-
-.app .signUp header, .app .signIn header {
-  text-align: center;
-  padding-top: 3em;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-.app .signUp main, .app .signIn main {
-  text-align: center;
-  margin-top: 3em;
-}
-
-.app .signUp main .signIn, .app .signUp main .signUp, .app .signIn main .signIn, .app .signIn main .signUp {
-  position: relative;
-}
-
-.app .signUp main .signIn h1, .app .signUp main .signUp h1, .app .signIn main .signIn h1, .app .signIn main .signUp h1 {
-  position: absolute;
-  text-align: center;
-  width: 100vw;
-  color: #E5E5E5;
-  letter-spacing: .1em;
-}
-
-.app .signUp main img, .app .signIn main img {
-  width: 8em;
-}
-
-.app .signUp main form, .app .signIn main form {
-  width: 90vw;
-  margin: 3em auto;
-  height: 16em;
-}
-
-.app .signUp main form input, .app .signIn main form input {
-  background-color: transparent;
-  border: none;
-  border-bottom: 1px solid rgba(5, 151, 242, 0.5);
-}
-
-.app .signUp main form ::-webkit-input-placeholder, .app .signIn main form ::-webkit-input-placeholder {
-  color: rgba(5, 151, 242, 0.5);
-}
-
-.app .signUp main form :-ms-input-placeholder, .app .signIn main form :-ms-input-placeholder {
-  color: rgba(5, 151, 242, 0.5);
-}
-
-.app .signUp main form ::-ms-input-placeholder, .app .signIn main form ::-ms-input-placeholder {
-  color: rgba(5, 151, 242, 0.5);
-}
-
-.app .signUp main form ::placeholder, .app .signIn main form ::placeholder {
-  color: rgba(5, 151, 242, 0.5);
-}
-
-.app .signUp main button, .app .signIn main button {
-  position: relative;
-  margin: 0 auto;
-  background-color: #E5E5E5;
-  padding: 0em 2em;
-  border: none;
-  color: #0597F2;
-  border-radius: 15px;
-  margin-top: 2em;
-}
-
-.app .newShares header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  position: -webkit-sticky;
-  position: sticky;
-  z-index: 10;
-  top: 0;
-  width: 100vw;
-  height: 6em;
-  margin: 0 auto;
-  padding: 1em;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #00283e), to(rgba(13, 13, 13, 0)));
-  background: linear-gradient(180deg, #00283e 50%, rgba(13, 13, 13, 0) 100%);
-  padding-top: 3em;
-}
-
-.app .newShares header .fa-chevron-left {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 2em;
-          flex: 0 0 2em;
-  font-size: 2em;
-  color: #0597F2;
-}
-
-.app .newShares header .logo img {
-  width: 4em;
-  margin: 0 auto;
-}
-
-.app .newShares header .profimg img {
-  width: 4em;
-  height: 4em;
-  border-radius: 50%;
-  -webkit-box-shadow: 0px 0px 10px #0CF25D;
-          box-shadow: 0px 0px 10px #0CF25D;
-}
-
-.app .newShares header .welcome {
-  width: 60%;
-}
-
-.app .newShares header .welcome p {
-  color: #E5E5E5;
-  font-size: 1.25em;
-  font-weight: 100;
-}
-
-.app .newShares header .profimg img {
-  width: 6em;
-  height: 6em;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-
-.app .newShares main {
-  position: relative;
-  margin-top: 2em;
-}
-
-.app .newShares main .shares {
-  padding-bottom: 4em;
-}
-
-.app .newShares main .logo {
-  text-align: center;
-  padding: 1em 0;
-}
-
-.app .newShares main .logo img {
-  width: 40vw;
-}
-
-.app .newShares main .logo h2 {
-  position: absolute;
-  top: .05em;
-  color: #E5E5E5;
-  font-size: 2.5em;
-  text-transform: uppercase;
-  width: 100vw;
-  text-align: center;
-}
-
-.app .newShares footer {
-  height: 3em;
-  border-radius: .5em .5em 0em 0em;
-  background-color: #00283e;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  padding: .5em 2em;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  width: 100vw;
-}
-
-.app .newShares footer i {
-  position: relative;
-  z-index: 100;
-  font-size: 2.5em;
-  color: #0597F2;
-}
-
-.app .addUpdateShare header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  position: -webkit-sticky;
-  position: sticky;
-  z-index: 10;
-  top: 0;
-  width: 100vw;
-  height: 6em;
-  margin: 0 auto;
-  padding: 1em;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #00283e), to(rgba(13, 13, 13, 0)));
-  background: linear-gradient(180deg, #00283e 50%, rgba(13, 13, 13, 0) 100%);
-}
-
-.app .addUpdateShare header .fa-chevron-left {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 2em;
-          flex: 0 0 2em;
-  font-size: 2em;
-  color: #0597F2;
-}
-
-.app .addUpdateShare header .logo img {
-  width: 4em;
-  margin: 0 auto;
-}
-
-.app .addUpdateShare header .profimg img {
-  width: 4em;
-  height: 4em;
-  border-radius: 50%;
-  -webkit-box-shadow: 0px 0px 10px #0CF25D;
-          box-shadow: 0px 0px 10px #0CF25D;
-}
-
-.app .addUpdateShare header .welcome {
-  width: 60%;
-}
-
-.app .addUpdateShare header .welcome p {
-  color: #E5E5E5;
-  font-size: 1.25em;
-  font-weight: 100;
-}
-
-.app .addUpdateShare main {
-  position: relative;
-  margin-top: 2em;
-}
-
-.app .addUpdateShare main h2 {
-  position: absolute;
-  top: .05em;
-  color: #E5E5E5;
-  font-size: 2.5em;
-  text-transform: uppercase;
-  width: 100vw;
-  text-align: center;
-}
-
-.app .addUpdateShare main .logo {
-  text-align: center;
-}
-
-.app .addUpdateShare main .logo img {
-  width: 40vw;
-}
-
-.app .addUpdateShare main form {
-  margin: 4em auto;
-  width: 80vw;
-}
-
-.app .addUpdateShare main form .form-group {
-  margin: 2em 0;
-}
-
-.app .addUpdateShare main form .form-group label {
-  color: #E5E5E5;
-  font-weight: 400;
-  font-size: .75em;
-  text-transform: uppercase;
-  letter-spacing: .15em;
-}
-
-.app .addUpdateShare main form .form-group input {
-  background-color: rgba(5, 151, 242, 0.25);
-  border: none;
-}
-
-.app .addUpdateShare main form .form-group input[type='text'] {
-  color: #E5E5E5;
-}
-
-.app .addUpdateShare main form .form-group textarea {
-  width: 80vw;
-  background-color: rgba(5, 151, 242, 0.25);
-  font-size: .85em;
-  color: #E5E5E5;
-  padding: 2em;
-}
-
-.app .addUpdateShare main form .form-group ::-webkit-input-placeholder {
-  font-size: .85em;
-  font-weight: 400;
-}
-
-.app .addUpdateShare main form .form-group :-ms-input-placeholder {
-  font-size: .85em;
-  font-weight: 400;
-}
-
-.app .addUpdateShare main form .form-group ::-ms-input-placeholder {
-  font-size: .85em;
-  font-weight: 400;
-}
-
-.app .addUpdateShare main form .form-group ::placeholder {
-  font-size: .85em;
-  font-weight: 400;
-}
-
-.app .addUpdateShare main form button {
-  position: relative;
-  margin: 0 auto;
-  background-color: #E5E5E5;
-  padding: 0em 2em;
-  border: none;
-  color: #0597F2;
-  border-radius: 15px;
-  margin-top: -1em;
-  text-align: center;
-  display: block;
-}
-
-.app .addUpdateShare footer {
-  height: 3em;
-  border-radius: .5em .5em 0em 0em;
-  background-color: #00283e;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  padding: .5em 2em;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  width: 100vw;
-}
-
-.app .addUpdateShare footer i {
-  position: relative;
-  z-index: 100;
-  font-size: 2.5em;
-  color: #0597F2;
-}
-
-.app .usersPosts header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  position: -webkit-sticky;
-  position: sticky;
-  z-index: 10;
-  top: 0;
-  width: 100vw;
-  height: 6em;
-  margin: 0 auto;
-  padding: 1em;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #00283e), to(rgba(13, 13, 13, 0)));
-  background: linear-gradient(180deg, #00283e 50%, rgba(13, 13, 13, 0) 100%);
-}
-
-.app .usersPosts header .fa-chevron-left {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 2em;
-          flex: 0 0 2em;
-  font-size: 2em;
-  color: #0597F2;
-}
-
-.app .usersPosts header .logo img {
-  width: 4em;
-  margin: 0 auto;
-}
-
-.app .usersPosts header .profimg img {
-  width: 4em;
-  height: 4em;
-  border-radius: 50%;
-  -webkit-box-shadow: 0px 0px 10px #0CF25D;
-          box-shadow: 0px 0px 10px #0CF25D;
-}
-
-.app .usersPosts header .welcome {
-  width: 60%;
-}
-
-.app .usersPosts header .welcome p {
-  color: #E5E5E5;
-  font-size: 1.25em;
-  font-weight: 100;
-}
-
-.app .usersPosts main {
-  width: 80vw;
-  margin: 2em auto;
-  color: #E5E5E5;
-}
-
-.app .usersPosts main .profimg {
-  text-align: center;
-}
-
-.app .usersPosts main .profimg img {
-  width: 8em;
-  height: 8em;
-  border-radius: 50%;
-}
-
-.app .usersPosts main h1 {
-  text-align: center;
-}
-
-.app .usersPosts main p {
-  text-align: center;
-  font-size: .85em;
-  font-weight: 100;
-}
-
-.app .usersPosts footer {
-  height: 3em;
-  border-radius: .5em .5em 0em 0em;
-  background-color: #00283e;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  padding: .5em 2em;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  width: 100vw;
-}
-
-.app .usersPosts footer i {
-  position: relative;
-  z-index: 100;
-  font-size: 2.5em;
-  color: #0597F2;
-}
-
-.app .settings header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  position: -webkit-sticky;
-  position: sticky;
-  z-index: 10;
-  top: 0;
-  width: 100vw;
-  height: 6em;
-  margin: 0 auto;
-  padding: 1em;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #00283e), to(rgba(13, 13, 13, 0)));
-  background: linear-gradient(180deg, #00283e 50%, rgba(13, 13, 13, 0) 100%);
-}
-
-.app .settings header .fa-chevron-left {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 2em;
-          flex: 0 0 2em;
-  font-size: 2em;
-  color: #0597F2;
-}
-
-.app .settings header .logo img {
-  width: 4em;
-  margin: 0 auto;
-}
-
-.app .settings header .profimg img {
-  width: 4em;
-  height: 4em;
-  border-radius: 50%;
-  -webkit-box-shadow: 0px 0px 10px #0CF25D;
-          box-shadow: 0px 0px 10px #0CF25D;
-}
-
-.app .settings header .welcome {
-  width: 60%;
-}
-
-.app .settings header .welcome p {
-  color: #E5E5E5;
-  font-size: 1.25em;
-  font-weight: 100;
-}
-
-.app .settings main .profimg {
-  text-align: center;
-}
-
-.app .settings main .profimg img {
-  width: 8em;
-  height: 8em;
-  border-radius: 50%;
-}
-
-.app .settings main h1 {
-  text-align: center;
-  color: #E5E5E5;
-}
-
-.app .settings main form {
-  margin: 4em auto;
-  width: 80vw;
-  margin: 1em auto;
-}
-
-.app .settings main form .form-group {
-  margin: 2em 0;
-}
-
-.app .settings main form .form-group label {
-  color: #E5E5E5;
-  font-weight: 400;
-  font-size: .75em;
-  text-transform: uppercase;
-  letter-spacing: .15em;
-}
-
-.app .settings main form .form-group input {
-  background-color: rgba(5, 151, 242, 0.25);
-  border: none;
-}
-
-.app .settings main form .form-group input[type='text'] {
-  color: #E5E5E5;
-}
-
-.app .settings main form .form-group textarea {
-  width: 80vw;
-  background-color: rgba(5, 151, 242, 0.25);
-  font-size: .85em;
-  color: #E5E5E5;
-  padding: 2em;
-}
-
-.app .settings main form .form-group ::-webkit-input-placeholder {
-  font-size: .85em;
-  font-weight: 400;
-}
-
-.app .settings main form .form-group :-ms-input-placeholder {
-  font-size: .85em;
-  font-weight: 400;
-}
-
-.app .settings main form .form-group ::-ms-input-placeholder {
-  font-size: .85em;
-  font-weight: 400;
-}
-
-.app .settings main form .form-group ::placeholder {
-  font-size: .85em;
-  font-weight: 400;
-}
-
-.app .settings main form .form-group {
-  margin: 1em 0;
-  position: relative;
-}
-
-.app .settings main form i {
-  position: absolute;
-  bottom: .7em;
-  right: .25em;
-  color: #0597F2;
-}
-
-.app .settings main form .buttons {
-  width: 50%;
-  padding-bottom: 4em;
-  margin: 1em auto;
-  text-align: center;
-}
-
-.app .settings main form .buttons button {
-  position: relative;
-  margin: 0 auto;
-  background-color: #E5E5E5;
-  padding: 0em 2em;
-  border: none;
-  color: #0597F2;
-  border-radius: 15px;
+  justify-content: space-between;
+  margin-left: 1.2em;
   margin-top: 1em;
-  width: 8em;
 }
-
-.app .settings footer {
-  height: 3em;
-  border-radius: .5em .5em 0em 0em;
-  background-color: #00283e;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  padding: .5em 2em;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  width: 100vw;
-}
-
-.app .settings footer i {
+.app{
+  max-width: 30em;
+  margin:auto;
   position: relative;
-  z-index: 100;
-  font-size: 2.5em;
-  color: #0597F2;
-}
-
-.share-modal {
-  background-color: #0D0D0D;
-  min-width: 100vw;
-  height: 100vh;
-}
-
-.share-modal .fa-times {
-  color: #0597F2;
-  font-size: 2em;
-  position: absolute;
-  right: .5em;
-  top: .25em;
-}
-
-.share-modal .share-image {
-  width: 100%;
-  max-height: 25vh;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 0 0 .5em .5em;
-}
-
-.share-modal .content {
-  color: white;
-  border-radius: .5em;
-  width: 100%;
-  margin: auto;
-  padding: 1em;
-}
-
-.share-modal .content::after {
-  content: "";
-  display: block;
-  margin-top: 1em;
-  border-bottom: 1px #0597F2 solid;
-}
-
-.share-modal .body-text {
-  border-radius: .5em;
-  background-color: #1D1D1D;
-  padding: .5em .75em;
-}
-
-.share-modal .share-info {
-  display: -webkit-box;
-  display: -ms-flexbox;
+  min-height: 100vh;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  flex-direction:column;
+  background-color: rgb(67, 56, 165);
 }
-
-.share-modal .share-info span {
-  font-weight: 600;
-}
-
-.share-modal h1 {
-  padding: 0;
-  margin: 0;
-  font-weight: 500;
-  font-size: 1.5em;
-  border-bottom: thin #fcfcfc solid;
-}
-
-.share-modal p {
-  font-weight: 300;
-}
-
-.comments {
+form {
   width: 80%;
-  margin: auto;
-  overflow-y: auto;
+  background-color: rgb(97, 85, 204);
+  margin: 2.8em;
+  margin-bottom: 0em;
+  padding: 2em;
+  border-radius: 5px;
 }
-
-.comments .comment {
-  margin-bottom: 1em;
-}
-
-.comments .comment-info {
-  display: -webkit-box;
-  display: -ms-flexbox;
+.heading {
   display: flex;
-  position: relative;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5em;
   color: white;
 }
 
-.comments .user-image {
-  height: 1.75em;
-  width: 1.75em;
-  border: thin #0597F2 solid;
-  border-radius: 50%;
-}
 
-.comments .user-name {
-  font-size: 1em;
-  padding: 0;
-  margin: 0;
-  padding: .25em;
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.comments .comment-body {
-  display: -webkit-box;
-  display: -ms-flexbox;
+/*Buttons*/
+.links{
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  flex-direction: column;
+  margin-top: 5em;
 }
-
-.comments .comment-body p {
-  margin: .25em 0;
+.btn-primary{
+  width: 100%;
+  justify-content: center;
+  padding: 1.5em;
+  border: none;
+  border-radius: 1px;
+  background-color: rgb(97, 85, 204);
+}
+.btn-nav{
+  width: 100%;
+  text-align: left;
+  padding: 1em;
+  padding-left: 3em;
+  background-color: rgb(97, 85, 204);
   color: white;
 }
-
-.comments .comment::after {
-  content: '';
-  display: block;
-  margin-top: .5em;
-  border-bottom: thin white solid;
-}
-
-.add-comment {
-  bottom: 0;
-  min-height: 4.5em;
-  left: 0;
-  width: 100vw;
-  padding-bottom: .5em;
-  background-color: #1D1D1D;
-}
-
-.add-comment .add-input {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.btn:hover{
   background-color: white;
-  margin: auto;
-  padding: .25em .75em;
-  width: 80%;
-  border-radius: .5em;
 }
-
-.add-comment #comment-input {
-  padding: .5em 1em;
-  width: 80%;
-  border: 0;
-  display: block;
-  margin: auto;
-}
-
-.add-comment i {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  color: #0597F2;
-  font-size: 2em;
-  padding: 0 .5em;
-  text-align: center;
-}
-
-.add-comment::before {
-  content: '';
-  margin-bottom: 1em;
-  display: block;
-  border-top: thin white solid;
-}
-
-.share-card {
-  /* newcard css */
-  margin: 1em auto;
-  width: 90%;
-  height: 100px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  background-color: #1d1d1d;
+.btn-form{
+  background-color: rgb(9, 162, 209);
+  margin-top: 1em;
   color: white;
-  border-radius: 0.3em;
+  width: 20em;
+}
+.btn-leave{
+  background-color: rgb(231, 60, 38);
+  margin-top: 1em;
+  color: white;
+  width: 20em;
 }
 
-.share-card .left {
-  display: -webkit-box;
-  display: -ms-flexbox;
+
+/*Settings*/
+.settings{
+  color: white;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+}
+.profile{
+  border-radius: 50%;
+  border: 1px white solid;
+}
+.profile:hover{
+  cursor: pointer;
+  opacity: 0.5;
+}
+.delete{
+  text-align: center;
+  margin-top: 0em;
+  margin-bottom: 0em;
 }
 
-.share-card .left img {
-  border-radius: 0.25em;
-  -o-object-fit: cover;
-     object-fit: cover;
-  width: 80px;
-  height: 75px;
-  margin: 0 10px;
-}
 
-.share-card .right {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  margin-right: 10px;
-}
-
-.share-card .right .top {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.share-card .right span {
-  font-weight: bold;
-}
-
-.share-card .right .line {
-  height: 1px;
-  margin: 10px 0;
-  background-color: #0597F2;
-}
-
-.share-card .bottom {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.share-card .bottom img {
-  width: 20px;
-  height: 20px;
-}
-
-.share-card .button i {
-  color: #0597F2;
+label{
+  color: white;
+  width: 100%;
+  text-align: left;
+  margin-top: 1em;
   font-size: 1.2em;
-  padding: .25em;
 }
-/*# sourceMappingURL=App.css.map */
+.welcome{
+  margin-left: 1em;
+}
+.view{
+  min-height: 100vh;
+}
+.view{
+  display: flex;
+  flex-direction:column;
+}
+.header i{
+  color: white;
+  font-size: 3em;
+}
+.main{
+  flex: 1 0 auto;
+  padding:1em;
+}
+h3{
+  text-align: center;
+  margin-top: 2em;
+  color: white;
+  padding-bottom: 0.5em;
+}
+h1{
+  text-align: center;
+  color: white;
+  margin-top: 1em;
+}
+
+/*Share Card*/
+.share-wrap{
+  color: white;
+  background-color: rgb(97, 85, 204);
+  margin-top: 1em;
+  padding: 0.5em;
+  border-radius: 5px;
+}
+.share-img-top{
+  width: 100%;
+  margin: auto;
+  height: 280px;
+}
+.share-title{
+  font-weight: bold;
+  font-size: 1.2em;
+  color: white;
+  margin: 0.8em;
+}
+#image-input{
+  padding-bottom: 2.2em;
+}
+#profile-picture{
+  padding-bottom: 2.2em;
+  margin-top: 1em;
+}
+.share-description{
+  font-size: 0.9em;
+  margin: 1.2em;
+}
+.icons{
+  display: flex;
+  margin-top: 3em;
+  justify-content: space-around;
+}
+i{
+  color: white;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+.like{
+  color: lightcoral;
+}
