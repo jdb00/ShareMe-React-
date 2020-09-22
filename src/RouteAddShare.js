@@ -20,9 +20,8 @@ class RouteAddShare extends Component {
           image: formData.get('pics')
         }
 
-        // console.log(data)
+       
         API.addShare(data).then(res => navigate('/user/posts'))
-        // API.addShare(data).then(res => console.log('hi')) 
       }
 
     render() {

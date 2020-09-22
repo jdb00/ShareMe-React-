@@ -32,7 +32,7 @@ class RouteUpdateShare extends Component {
           image: formData.get('pics')
         }
 
-        // console.log(data)
+       
         var {id} = this.props;
         API.updateShares(id,data).then(res => navigate('/user/posts'))
 

@@ -15,8 +15,7 @@ class RouteNewCard extends Component {
     }
 
     handleUpdateClick = ()=>{
-        // var {id,loadShares} = this.props
-        // API.updateShares(id).then(res=>loadShares())
+        
         navigate('/shares/'+this.props.id+'/update')
      }
 
