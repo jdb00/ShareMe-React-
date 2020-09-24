@@ -41,7 +41,7 @@ class RouteUpdateShare extends Component {
                 image: this.state.share.image,
                 type_id: formData.get('type-input')
               }
-            API.updateShare(this.props.id,data).then(res => navigate('/shares/'+this.props.id))
+            API.updateShare(this.props.id,data).then(res => navigate('/shares/'))
         }
         
         

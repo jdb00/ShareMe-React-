@@ -38,7 +38,7 @@ class CommentAdd extends Component {
         return (
             <div className="add-comment">
                 <div className="add-input">
-                    <input type="text" name="comment-input" id="comment-input" placeholder="Add a Comment!" autocomplete="off" value={this.state.newComment} onChange={this.handleChange}/>
+                    <input type="text" name="comment-input" id="comment-input" placeholder="Add a Comment!" autoComplete="off" value={this.state.newComment} onChange={this.handleChange}/>
                     <i className="fas fa-caret-right" onClick={this.handleClick}></i>
                 </div>
             </div>

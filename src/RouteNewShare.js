@@ -4,7 +4,7 @@ import Footer from './Footer'
 import './App.css'
 import RouteNewCard from './ShareCard'
 import API from './API'
-import { Spring, Transition } from 'react-spring/renderprops';
+import { Spring } from 'react-spring/renderprops';
 
 class RouteNewShare extends Component {
     constructor(props) {

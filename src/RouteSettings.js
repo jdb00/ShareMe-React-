@@ -10,7 +10,7 @@ class RouteSettings extends Component {
     handleLogOutClick = (e) =>{
         e.preventDefault()
         localStorage.removeItem('userId')
-        navigate('/users/authenticate')
+        navigate('/')
     }
 
     handleFormSubmit = (e) => {
@@ -25,7 +25,7 @@ class RouteSettings extends Component {
                 var data = {
                     name: formData.get('name'),
                     email: formData.get('email'),
-                    about_me: formData.get('about_me'),
+                    about_me: formData.get('about-me'),
                     password: formData.get('password'),
                     profile_picture: fileName,
                     type_id:formData.get('type-input'),
@@ -40,7 +40,7 @@ class RouteSettings extends Component {
             var data = {
                 name: formData.get('name'),
                 email: formData.get('email'),
-                about_me: formData.get('about_me'),
+                about_me: formData.get('about-me'),
                 password: formData.get('password'),
                 profile_picture: currentUser.profile_picture,
                 type_id:formData.get('type-input'),

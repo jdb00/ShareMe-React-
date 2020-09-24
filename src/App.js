@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Router, navigate} from '@reach/router'
+import { Router } from '@reach/router'
 import './App.css';
 
 import RouteSplashPage from './RouteSplashPage'
@@ -17,12 +17,12 @@ class App extends Component {
         super(props)
         this.state = {
             currentUser: {
-                id:2,
-                name: 'Heyguys',
-                password: 'password101',
-                email: 'jayfrost@gmail.com',
-                profile_picture: '1600665125769pexels-photo-1544880.jpeg',
-                about_me: 'The motto γνῶθι σ(ε)αυτόν (“know thyself”) was one of the maxims inscribed on the pediment of the temple of Apollo at Delphi, along with μηδὲν ἄγαν (“nothing in excess”), inviting mankind to exercise moderation in life.'
+                // id:2,
+                // name: 'Heyguys',
+                // password: 'password101',
+                // email: 'jayfrost@gmail.com',
+                // profile_picture: '1600665125769pexels-photo-1544880.jpeg',
+                // about_me: 'The motto γνῶθι σ(ε)αυτόν (“know thyself”) was one of the maxims inscribed on the pediment of the temple of Apollo at Delphi, along with μηδὲν ἄγαν (“nothing in excess”), inviting mankind to exercise moderation in life.'
             }
         }
     }
