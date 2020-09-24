@@ -38,7 +38,7 @@ class RouteAddShare extends Component {
                         <div className="logo">
                             <img src="../assets/Vector.png" alt="" />
                         </div>
-                        <form onSubmit={this.handleFormSubmit} ref={(el) => {this.addForm = el}}>
+                        <form autoComplete="off" onSubmit={this.handleFormSubmit} ref={(el) => {this.addForm = el}}>
                             <div className="form-group">
                                 <label htmlFor="title">Title of your share</label>
                                 <input type="text" defaultValue='' className="form-control" name="title" id="title" placeholder='Enter the title of the share'/>

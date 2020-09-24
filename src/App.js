@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Router} from '@reach/router'
+import { Router, navigate} from '@reach/router'
 import './App.css';
 
 import RouteSplashPage from './RouteSplashPage'
@@ -39,7 +39,7 @@ class App extends Component {
         return (
             <div className="app">
                 <Router>
-                    <RouteSplashPage path="splash"/>
+                    <RouteSplashPage path="/"/>
                     <RouteLogIn  path="users/authenticate" setCurrentUser={this.setCurrentUser}/>
                     <RouteSignUp path="users/create"/>
                     <RouteSettings path="user/settings" setCurrentUser = {this.setCurrentUser}currentUser = {this.state.currentUser} logOut = {this.userLogOut}/>
