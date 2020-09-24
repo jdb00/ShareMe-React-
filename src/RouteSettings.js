@@ -1,25 +1,13 @@
-import React, { Component } from 'react';
-import {Router, Link, navigate} from '@reach/router'
+import React, {Component} from 'react';
+import {Link, navigate} from '@reach/router'
 import API from './API'
-import RouteSplashPage from './RouteSplash'
-import RouteLogIn from './RouteLogIn'
-import RouteSignUp from './RouteSignUp'
-import RouteAddShare from './RouteAddShare'
-import RouteUpdateShare from './RouteUpdateShare'
-import RouteShares from './RouteShares'
-import RouteShare from './RouteShare'
-import RouteNavigation from './RouteNavigation'
 
 class RouteSettings extends Component {
-    constructor(props) {
-        super(props)
-    }
 
     handleDeleteUser = (e) => {
         e.preventDefault()
         var {currentUser} = this.props
-        API.deleteUser(currentUser.id).then(res=>{
-            navigate('/splash')
+        API.deleteUser(currentUser.id).then(res=>{navigate('/splash')
         })
     }
 
@@ -27,17 +15,17 @@ class RouteSettings extends Component {
         var {currentUser} = this.props 
         return (
             <div className="app">
-                <div class="header">
-                    <Link to="../shares"><i class="fas fa-times"></i></Link>
+                <div className="header">
+                    <Link to="../shares"><i className="fas fa-times"></i></Link>
                     {currentUser ? <label className="welcome">Welcome, {currentUser.name}</label> : null}
-                    <img src="../assets/ShareMe Logo 1.svg" width="200px" height="80px" className="logo"/>
+                    <img src="../assets/ShareMe Logo 1.svg" width="200px" height="80px" className="logo" alt="ShareMe Logo"/>
                 </div>
 
                 <h1>Settings</h1>
                 <form>
                     <div className="settings">
                         <label htmlFor="name">Update your profile picture</label>
-                        <img src="../assets/user.jpg" className="profile" width="30%"/>
+                        <img src="../assets/user.jpg" className="profile" width="30%" alt="Profile User"/>
                     </div>
                     <input type="file" className="form-control" name="profile-picture" id="profile-picture" placeholder="Update Profile Pic" />
                     <button type="submit" className="btn btn-form">Update Picture</button>

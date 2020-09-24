@@ -1,13 +1,6 @@
 import React, { Component } from 'react';
-import {Router, Link, navigate} from '@reach/router'
+import {Link, navigate} from '@reach/router'
 import API from './API'
-import RouteSplashPage from './RouteSplash'
-import RouteLogIn from './RouteLogIn'
-import RouteShares from './RouteShares'
-import RouteAddShare from './RouteAddShare'
-import RouteUpdateShare from './RouteUpdateShare'
-import RouteNavigation from './RouteNavigation'
-import RouteShare from './RouteShare'
 
 class RouteSignUp extends Component {
 
@@ -43,7 +36,7 @@ class RouteSignUp extends Component {
                 
                 <div className="heading">
                     <h1>Sign up</h1>
-                    <img src="../assets/signup-faded.svg" width="100px"/>
+                    <img src="../assets/signup-faded.svg" width="100px" alt="ShareMe Signup"/>
                 </div>
 
                 <form onSubmit={this.handleFormSubmit} ref={(el) => {this.form = el}}>

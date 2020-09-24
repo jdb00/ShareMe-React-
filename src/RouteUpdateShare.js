@@ -1,13 +1,6 @@
 import React, { Component } from 'react';
-import {Router, Link, navigate} from '@reach/router'
+import {Link, navigate} from '@reach/router'
 import API from './API'
-import RouteSplashPage from './RouteSplash'
-import RouteLogIn from './RouteLogIn'
-import RouteSignUp from './RouteSignUp'
-import RouteShares from './RouteShares'
-import RouteAddShare from './RouteAddShare'
-import RouteNavigation from './RouteNavigation'
-import RouteShare from './RouteShare'
 
 class RouteUpdateShare extends Component {
     constructor(props) {
@@ -21,6 +14,7 @@ class RouteUpdateShare extends Component {
         var {id} = this.props
         API.getOneShare(id).then(res=>this.setState({share:res.data}))
     }
+
     handleUpdateClick = () => {
 		var {setShareToUpdate, id} = this.props
 		setShareToUpdate(id)
@@ -38,7 +32,7 @@ class RouteUpdateShare extends Component {
     }
 
     render() {
-        var {title, description, image} = this.state.share
+        var {title, description} = this.state.share
         return (
             <div className="app">
                 <div className="header">

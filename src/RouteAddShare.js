@@ -1,17 +1,8 @@
 import React, { Component } from 'react';
-import {Router, Link, navigate} from '@reach/router'
+import {Link, navigate} from '@reach/router'
 import API from './API'
-import RouteSplashPage from './RouteSplash'
-import RouteLogIn from './RouteLogIn'
-import RouteSignUp from './RouteSignUp'
-import RouteShares from './RouteShares'
-import RouteUpdateShare from './RouteUpdateShare'
-import RouteNavigation from './RouteNavigation'
 
 class RouteAddShare extends Component {
-    constructor(props) {
-        super(props)
-    }
 
 	handleFormSubmit = (e) => {
         e.preventDefault()
@@ -35,7 +26,7 @@ class RouteAddShare extends Component {
             <div className="app">
                 <div className="header">
                     <Link to="../../shares"><i className="fas fa-times"></i></Link>
-                    <img src="../assets/ShareMe Logo 1.svg" width="200px" height="80px" className="logo"/>
+                    <img src="../assets/ShareMe Logo 1.svg" width="200px" height="80px" className="logo" alt="ShareMe Logo"/>
                 </div>
                 
                 <h3>Add New Share</h3>

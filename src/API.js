@@ -8,20 +8,20 @@ var API = {
     addUser: (data) => {
         return axios.post(urlPrefix + '/users', data)
     },
-    authenticate: (data) => {
-        return axios.post(urlPrefix + '/users/authenticate', data)
-    },
-    updateUser: (id,data) => {
-        return axios.put(urlPrefix + '/users/' + id,data)
-    },
     getUser: () => {
         return axios.get(urlPrefix + '/users')
     },
     getSingleUser: (id) => {
         return axios.get(urlPrefix + '/users/' + id)
     },
+    updateUser: (id,data) => {
+        return axios.put(urlPrefix + '/users/' + id,data)
+    },
     deleteUser: (id) => {
         return axios.delete(urlPrefix + '/users/' + id)
+    },
+    authenticate: (data) => {
+        return axios.post(urlPrefix + '/users/authenticate', data)
     },
 
     /*Shares*/

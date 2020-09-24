@@ -1,12 +1,6 @@
 import React, { Component } from 'react';
-import {Router, Link, navigate} from '@reach/router'
+import {Link} from '@reach/router'
 import API from './API'
-import RouteSplashPage from './RouteSplash'
-import RouteLogIn from './RouteLogIn'
-import RouteSignUp from './RouteSignUp'
-import RouteAddShare from './RouteAddShare'
-import RouteUpdateShare from './RouteUpdateShare'
-import RouteNavigation from './RouteNavigation'
 
 class RouteShare extends Component {
 
@@ -28,7 +22,7 @@ class RouteShare extends Component {
         console.log(image)
         return (
             <div className="share-wrap">
-                <img className="share-img-top" src={API.serverUrl+image} alt="Share Image"/>
+                <img className="share-img-top" src={API.serverUrl+image} alt="Data"/>
                 <div className="share-body">
                     <h5 className="share-title">{title}</h5>
                     <p className="share-description">{description}</p>

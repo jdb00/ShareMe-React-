@@ -1,15 +1,7 @@
 import React, { Component } from 'react';
-import {Router, Link, navigate} from '@reach/router'
-import API from './API'
+import {Link} from '@reach/router'
 import axios from 'axios';
-import RouteSplashPage from './RouteSplash'
-import RouteLogIn from './RouteLogIn'
-import RouteSignUp from './RouteSignUp'
-import RouteAddShare from './RouteAddShare'
-import RouteUpdateShare from './RouteUpdateShare'
-import RouteNavigation from './RouteNavigation'
 import RouteShare from './RouteShare'
-import userEvent from '@testing-library/user-event';
 
 var urlPrefix = 'http://localhost:4020/api'
 
@@ -24,7 +16,7 @@ class RouteShares extends Component {
               id:'',
               title:'Name',
               description: 'Description',
-              image: 'photo.jpg'
+              image: ''
             }],
         }
       }
@@ -35,12 +27,14 @@ class RouteShares extends Component {
           this.setState({shares:res.data})
         })
       }
+
       setShareToUpdate = (id) => {
         var foundshare = this.state.shares.find((share) =>{
           return share.id === id
         })
         this.setState({shareToUpdate:foundshare})
       }
+      
       componentDidMount(){
         this.getshares()
       }
@@ -53,7 +47,7 @@ class RouteShares extends Component {
                 <div className="header">
                     <Link to="../nav"><i className="fas fa-bars"></i></Link>
                     {currentUser ? <label className="welcome">Welcome, {currentUser.name}</label> : null}
-                    <img src="../assets/ShareMe Logo 1.svg" width="200px" height="80px" className="logo"/>
+                    <img src="../assets/ShareMe Logo 1.svg" width="200px" height="80px" className="logo" alt="ShareMe Logo"/>
                 </div>
                 <div className="main">
                     <h3>What you've shared</h3>
@@ -62,9 +56,9 @@ class RouteShares extends Component {
 
                         var shareProps = {
                             ...share,
+                            key:share.id,
                             setShareToUpdate: this.setShareToUpdate,
                             getshares: this.getshares,
-                            setShareToUpdate: this.setShareToUpdate,
                         }
                         return (<RouteShare {...shareProps} />)
                         })

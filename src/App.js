@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import {Router, Link, navigate} from '@reach/router'
-import API from './API'
+import {Router} from '@reach/router'
 import RouteSplashPage from './RouteSplash'
 import RouteLogIn from './RouteLogIn'
 import RouteSignUp from './RouteSignUp'
@@ -8,11 +7,8 @@ import RouteShares from './RouteShares'
 import RouteAddShare from './RouteAddShare'
 import RouteUpdateShare from './RouteUpdateShare'
 import RouteNavigation from './RouteNavigation'
-import RouteShare from './RouteShare'
 import RouteSettings from './RouteSettings'
 import './App.css';
-
-var urlPrefix = 'http://localhost:4020/api'
 
 class App extends Component {
     constructor(props) {
