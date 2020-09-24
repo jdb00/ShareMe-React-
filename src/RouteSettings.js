@@ -4,6 +4,7 @@ import Footer from './Footer'
 import Header from './Header'
 import './App.css'
 import API from './API'
+import { Spring } from 'react-spring/renderprops'
 
 class RouteSettings extends Component {
     handleLogOutClick = (e) =>{
@@ -54,57 +55,64 @@ class RouteSettings extends Component {
     render() {
         var {currentUser} = this.props
         return (
-            <div className="app">
-                <div className="settings">
-                    <header>
-                        <Header currentUser={currentUser}/>
-                    </header>
-                    <main>
-                        <h1>Settings</h1>
-                        <div className="prof-img">
-                            <img src={API.serverURL+currentUser.profile_picture} alt="" />
+            <Spring
+                from={{opacity: 0}}
+                to= {{opacity: 1}}
+            >
+                {props => (
+                    <div className="app" style={props}>
+                        <div className="settings">
+                            <header>
+                                <Header currentUser={currentUser}/>
+                            </header>
+                            <main>
+                                <h1>Settings</h1>
+                                <div className="prof-img">
+                                    <img src={API.serverURL+currentUser.profile_picture} alt="" />
+                                </div>
+                                <form onSubmit={this.handleFormSubmit} ref={(el) => {this.addForm = el}}>
+                                    <div className="form-group">
+                                        <label htmlFor="name">Display Name</label>
+                                        <input type="text" className="form-control" id="name" name="name" aria-describedby="name" maxLength="8"
+                                            defaultValue={currentUser.name} />
+                                    </div>
+
+                                    <div className="form-group">
+                                        <label htmlFor="profile_-mage">Update Profile Image</label>
+                                        <input type="file" className="form-control" id="profile-image" name="profile-image"/>
+                                    </div>
+
+                                    <div className="form-group">
+                                        <label htmlFor="email">Email</label>
+                                        <input type="text" className="form-control" id="email" name="email" aria-describedby="email"
+                                            defaultValue={currentUser.email} />
+                                    </div>
+
+                                    <div className="form-group">
+                                        <label htmlFor="about-me">About me</label>
+                                        <textarea name="about-me" id="about-me" cols="10"
+                                            rows="5" defaultValue={currentUser.about_me}></textarea>
+                                    </div>
+
+                                    <div className="form-group">
+                                        <label htmlFor="password">Password</label>
+                                        <input type="password" className="form-control" id="password" name="password" aria-describedby="password"
+                                            defaultValue={currentUser.password} />
+                                    </div>
+
+                                    <div className="buttons">
+                                        <button type="submit" className="update">Update</button>
+                                        <button type="submit" className="sign-out" onClick={this.handleLogOutClick}>Sign out</button>
+                                    </div>
+                                </form>
+                            </main>
+                            <footer>
+                                <Footer />
+                            </footer>
                         </div>
-                        <form onSubmit={this.handleFormSubmit} ref={(el) => {this.addForm = el}}>
-                            <div className="form-group">
-                                <label htmlFor="name">Display Name</label>
-                                <input type="text" className="form-control" id="name" name="name" aria-describedby="name" maxLength="8"
-                                    defaultValue={currentUser.name} />
-                            </div>
-
-                            <div className="form-group">
-                                <label htmlFor="profile_-mage">Update Profile Image</label>
-                                <input type="file" className="form-control" id="profile-image" name="profile-image"/>
-                            </div>
-
-                            <div className="form-group">
-                                <label htmlFor="email">Email</label>
-                                <input type="text" className="form-control" id="email" name="email" aria-describedby="email"
-                                    defaultValue={currentUser.email} />
-                            </div>
-
-                            <div className="form-group">
-                                <label htmlFor="about-me">About me</label>
-                                <textarea name="about-me" id="about-me" cols="10"
-                                    rows="5" defaultValue={currentUser.about_me}></textarea>
-                            </div>
-
-                            <div className="form-group">
-                                <label htmlFor="password">Password</label>
-                                <input type="password" className="form-control" id="password" name="password" aria-describedby="password"
-                                    defaultValue={currentUser.password} />
-                            </div>
-
-                            <div className="buttons">
-                                <button type="submit" className="update">Update</button>
-                                <button type="submit" className="sign-out" onClick={this.handleLogOutClick}>Sign out</button>
-                            </div>
-                        </form>
-                    </main>
-                    <footer>
-                        <Footer />
-                    </footer>
-                </div>
-            </div>
+                    </div>
+                )}
+            </Spring>
         )
     }
 }

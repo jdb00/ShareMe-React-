@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import API from './API';
 import { navigate } from '@reach/router';
+import { Spring } from 'react-spring/renderprops';
 
 class RouteNewCard extends Component {
     constructor(props) {
@@ -75,25 +76,32 @@ class RouteNewCard extends Component {
             button = null
         }
         return (
-            <div className="share-card" id="share-card">
-                <div className="left">
-                    <img src={image ? API.serverURL+image : API.defaultImage} alt="share" onClick={this.handleShareClick}/>
-                </div>
-                 <div className="right">
-                    <div className="top">
-                        <div className="title"  onClick={this.handleShareClick}>{this.titleLength(title)}</div>
-                    </div>
-                    <div className="line"></div>
-                    <div className="bottom">
-                        <div className="user" onClick={this.handleUsernameClick}>By: <span>{user.name}</span></div>
-                        <div className="button">
-                            <span>{this.props.comments.length}</span>
-                            <i className="fas fa-comment share-comment"></i>
-                            {button}
+            <Spring
+                from={{opacity: 0, marginTop:599}}
+                to={{opacity: 1, marginTop: 0}}
+            >
+                {props => (
+                    <div className="share-card" id="share-card" style={props}>
+                        <div className="left">
+                            <img src={image ? API.serverURL+image : API.defaultImage} alt="share" onClick={this.handleShareClick}/>
+                        </div>
+                        <div className="right">
+                            <div className="top">
+                                <div className="title"  onClick={this.handleShareClick}>{this.titleLength(title)}</div>
+                            </div>
+                            <div className="line"></div>
+                            <div className="bottom">
+                                <div className="user" onClick={this.handleUsernameClick}>By: <span>{user.name}</span></div>
+                                <div className="button">
+                                    <span>{this.props.comments.length}</span>
+                                    <i className="fas fa-comment share-comment"></i>
+                                    {button}
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                )}
+            </Spring>
         );
     }
 }

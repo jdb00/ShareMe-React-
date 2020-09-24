@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import {navigate} from '@reach/router'
 import './App.css';
 import API from './API'
+import { Spring } from 'react-spring/renderprops'
 
 class RouteLogIn extends Component {
     handleFormSubmit = (e) => {
@@ -34,40 +35,45 @@ class RouteLogIn extends Component {
 
     render() {
         return (
-            <div className="app">
-                <div className="sign-in">
-                    <header>
-                        <div className="logo">
-                        <img src='../assets/ShareMe Logo 1.svg' alt="" />
-                        </div>
-                    </header>
-                    <main>
+            <Spring
+                from={{opacity:0,}}
+                to={{opacity:1,}}
+            >
+                {props =>(
+                    <div className="app" style={props}>
                         <div className="sign-in">
-                            <h1>Sign in</h1>
-                            <img src='../assets/signup-faded.svg' alt="" />
+                            <header>
+                                <div className="logo">
+                                <img src='../assets/ShareMe Logo 1.svg' alt="" />
+                                </div>
+                            </header>
+                            <main>
+                                <div className="sign-in">
+                                    <h1>Sign in</h1>
+                                    <img src='../assets/signup-faded.svg' alt="" />
+                                </div>
+
+                                <form autoComplete="off" onSubmit={this.handleFormSubmit} ref={(el)=> {this.form = el}} >
+                                    <div className="form-group">
+                                        <label htmlFor="email"></label>
+                                        <input type="email" className="form-control" id="email" name="email" aria-describedby="email"
+                                            placeholder="Email" />
+                                    </div>
+                                    <div className="form-group">
+                                        <label htmlFor="password"></label>
+                                        <input type="password" className="form-control" id="password" aria-describedby="password" name="password"
+                                            placeholder="Password" />
+                                    </div>
+                                    <button type="submit" className="btn btn-primary">Sign In</button>
+                                </form>
+                            </main>
+                            <footer>
+
+                            </footer>
                         </div>
-
-                        <form autoComplete="off" onSubmit={this.handleFormSubmit} ref={(el)=> {this.form = el}} >
-                            <div className="form-group">
-                                <label htmlFor="email"></label>
-                                <input type="email" className="form-control" id="email" name="email" aria-describedby="email"
-                                    placeholder="Email" />
-                            </div>
-                            <div className="form-group">
-                                <label htmlFor="password"></label>
-                                <input type="password" className="form-control" id="password" aria-describedby="password" name="password"
-                                    placeholder="Password" />
-                            </div>
-                            <button type="submit" className="btn btn-primary">Sign In</button>
-                        </form>
-
-
-                    </main>
-                    <footer>
-
-                    </footer>
-                </div>
-            </div>
+                    </div>
+                )}
+            </Spring>
         )
     }
 }

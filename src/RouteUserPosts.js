@@ -4,6 +4,7 @@ import Header from './Header'
 import './App.css'
 import RouteNewCard from './ShareCard'
 import API from './API'
+import { Spring } from 'react-spring/renderprops'
 
 class RouteUserPosts extends Component {
     constructor(props) {
@@ -46,42 +47,49 @@ class RouteUserPosts extends Component {
         var {user} = this.state
         var {currentUser} = this.props
         return (
-            <div className="app">
-                <div className="users-posts">
-                    <header>
-                        <Header currentUser = {currentUser}/>
-                    </header>
-                    <main>
-                        <div className="prof-img">
-                            <img src={API.serverURL+user.profile_picture} alt="" />
+            <Spring
+                from={{opacity:0}}
+                to={{opacity:1}}
+            >
+                {props => (
+                    <div className="app" style={props}>
+                        <div className="users-posts">
+                            <header>
+                                <Header currentUser = {currentUser}/>
+                            </header>
+                            <main>
+                                <div className="prof-img">
+                                    <img src={API.serverURL+user.profile_picture} alt="" />
+                                </div>
+                                <h1 className="user-name">{user.name}</h1>
+                                <p>{user.about_me}</p>
+
+                                <div className="user-shares">
+                                    {this.state.user.shares.map((share) => {
+                                        var shareProps = {
+                                        ...share,
+                                            key: 'share' + share.id,
+                                            user: this.state.user,
+                                            loadShares: this.loadShares,
+                                            currentUser: this.props.currentUser
+                                        };
+                                        
+                                        if(shareProps.user != null){
+                                            return (<RouteNewCard{...shareProps}/>)
+                                        }
+
+                                        return null
+                                    })} 
+                                </div>
+
+                            </main>
+                            <footer>
+                                <Footer />
+                            </footer>
                         </div>
-                        <h1 className="user-name">{user.name}</h1>
-                        <p>{user.about_me}</p>
-
-                        <div className="user-shares">
-                            {this.state.user.shares.map((share) => {
-                                var shareProps = {
-                                ...share,
-                                    key: 'share' + share.id,
-                                    user: this.state.user,
-                                    loadShares: this.loadShares,
-                                    currentUser: this.props.currentUser
-                                };
-                                
-                                if(shareProps.user != null){
-                                    return (<RouteNewCard{...shareProps}/>)
-                                }
-
-                                return null
-                            })} 
-                        </div>
-
-                    </main>
-                    <footer>
-                        <Footer />
-                    </footer>
-                </div>
-            </div>
+                    </div>
+                )}
+            </Spring>
         )
     }
 }

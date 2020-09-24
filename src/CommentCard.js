@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import API from './API';
 import { navigate } from '@reach/router';
+import { Spring } from 'react-spring/renderprops'
 
 class CommentCard extends Component {
     constructor(props) {
@@ -76,19 +77,27 @@ class CommentCard extends Component {
             deleteButton = null
         }
         return user ? (
-            <div className="comment">
-                <div className="comment-info">
-                    <div className="comment-info-container">
-                        <img className="user-image" src={user.profile_picture ? API.serverURL+user.profile_picture : API.defaultUser } alt=""/>
-                        <h3 className="user-name" onClick={this.handleUsernameClick}>{user.name}</h3>
+            <Spring
+            from={{marginTop:-599}}
+            to={{marginTop:0}}
+            >
+                {props =>(
+                    <div className="comment" style={props}>
+                        <div className="comment-info">
+                            <div className="comment-info-container">
+                                <img className="user-image" src={user.profile_picture ? API.serverURL+user.profile_picture : API.defaultUser } alt=""/>
+                                <h3 className="user-name" onClick={this.handleUsernameClick}>{user.name}</h3>
+                            </div>
+                            {deleteButton}
+                        </div>
+                        <div className="comment-body">
+                            <p className="comment-text">{comment}</p>
+                            <p className="timestamp">{this.formatTimestamp(createdAt)}</p>
+                        </div>
                     </div>
-                    {deleteButton}
-                </div>
-                <div className="comment-body">
-                    <p className="comment-text">{comment}</p>
-                    <p className="timestamp">{this.formatTimestamp(createdAt)}</p>
-                </div>
-            </div>
+                )}
+            </Spring>
+
         ) : null
     }
 }
