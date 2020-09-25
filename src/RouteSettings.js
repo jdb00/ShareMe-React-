@@ -29,6 +29,7 @@ class RouteSettings extends Component {
                     password: formData.get('password'),
                     profile_picture: fileName,
                     type_id:formData.get('type-input'),
+                    id: currentUser.id
                 }
                 API.updateUser(currentUser.id,data)
                 .then(res => navigate('/user/'+currentUser.id))
@@ -44,6 +45,7 @@ class RouteSettings extends Component {
                 password: formData.get('password'),
                 profile_picture: currentUser.profile_picture,
                 type_id:formData.get('type-input'),
+                id: currentUser.id
             }
             console.log(data)
             API.updateUser(currentUser.id,data)
