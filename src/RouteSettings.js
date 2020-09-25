@@ -6,7 +6,7 @@ class RouteSettings extends Component {
 
     handleDeleteUser = (e) => {
         e.preventDefault()
-        var {currentUser} = this.props
+        var {currentUser, id} = this.props
         API.deleteUser(currentUser.id).then(res=>{navigate('/splash')
         })
     }
